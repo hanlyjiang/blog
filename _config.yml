@@ -79,4 +79,11 @@ theme: raytaylorism
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+- type: git
+  repo: https://github.com/hanlyjiang/blog.git
+  branch: master
+  message: {{ now('YYYY-MM-DD HH:mm:ss') }})
+- type: git
+  repo: https://github.com/hanlyjiang/hanlyjiang.github.com.git
+  branch: master
+  message: {{ now('YYYY-MM-DD HH:mm:ss') }})
