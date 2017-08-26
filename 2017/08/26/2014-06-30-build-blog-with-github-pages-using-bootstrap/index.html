@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Github Pages 写博客 | 装睡的人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：Blog on the way. 参考的一些文章：      Jekyll QuickStart-Host on GitHub in 3 Minutes     GitHub Pages 搭建流程-基于">
+<meta name="keywords" content="Github,博客搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Github Pages 写博客">
+<meta property="og:url" content="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/index.html">
+<meta property="og:site_name" content="装睡的人">
+<meta property="og:description" content="按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：Blog on the way. 参考的一些文章：      Jekyll QuickStart-Host on GitHub in 3 Minutes     GitHub Pages 搭建流程-基于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2017-08-26T02:44:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Github Pages 写博客">
+<meta name="twitter:description" content="按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：Blog on the way. 参考的一些文章：      Jekyll QuickStart-Host on GitHub in 3 Minutes     GitHub Pages 搭建流程-基于">
+  
+    <link rel="alternate" href="/atom.xml" title="装睡的人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">装睡的人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你永远叫不醒一个装睡的人</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hanlyjiang.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-06-30-build-blog-with-github-pages-using-bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" class="article-date">
+  <time datetime="2017-08-26T02:44:38.000Z" itemprop="datePublished">2017-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/杂项/">杂项</a>►<a class="article-category-link" href="/categories/杂项/博客/">博客</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Github Pages 写博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" data-id="cj6sx5r8g0005k870ak6jxzlj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用SublimeText 编辑Markdown 文件并预览
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/26/2016-08-03-Java注解介绍/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java注解介绍</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/API-Guide/">API_Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/测试/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/EA使用教程/">EA使用教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品设计/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/">文摘</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/柏杨/">柏杨</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/kindle/">kindle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/博客/">博客</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/">杂项记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/工具配置/">工具配置</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/SVN/">SVN</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-测试/">Android 测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android测试/">Android测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Axure/">Axure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EChart/">EChart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java注解/">Java注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kindle/">kindle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/婚姻/">婚姻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柏杨/">柏杨</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-测试/" style="font-size: 10px;">Android 测试</a> <a href="/tags/Android测试/" style="font-size: 10px;">Android测试</a> <a href="/tags/Axure/" style="font-size: 10px;">Axure</a> <a href="/tags/EChart/" style="font-size: 10px;">EChart</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java注解/" style="font-size: 10px;">Java注解</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/Webview/" style="font-size: 10px;">Webview</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitbook/" style="font-size: 10px;">gitbook</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/婚姻/" style="font-size: 10px;">婚姻</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/工具使用/" style="font-size: 10px;">工具使用</a> <a href="/tags/柏杨/" style="font-size: 10px;">柏杨</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/">使用SublimeText 编辑Markdown 文件并预览</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Java注解介绍/">Java注解介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/">【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

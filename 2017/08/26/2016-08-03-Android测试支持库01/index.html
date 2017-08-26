@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android 测试支持库介绍 | 装睡的人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。">
+<meta name="keywords" content="Android测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 测试支持库介绍">
+<meta property="og:url" content="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/index.html">
+<meta property="og:site_name" content="装睡的人">
+<meta property="og:description" content="Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2017-08-26T02:44:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 测试支持库介绍">
+<meta name="twitter:description" content="Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。">
+  
+    <link rel="alternate" href="/atom.xml" title="装睡的人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">装睡的人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你永远叫不醒一个装睡的人</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hanlyjiang.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-08-03-Android测试支持库01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/26/2016-08-03-Android测试支持库01/" class="article-date">
+  <time datetime="2017-08-26T02:44:38.000Z" itemprop="datePublished">2017-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>►<a class="article-category-link" href="/categories/Android/测试/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 测试支持库介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
+<a id="more"></a>
+<p>获取： 通过Android SDK Manager （<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#setup" target="_blank" rel="external">Testing Support Library Setup</a>）</p>
+<p>这篇文章的主要内容：</p>
+<ul>
+<li>说明了Android Testing Support Library 提供了哪些工具用以测试</li>
+<li>如何在你的测试环境中使用AndroidTestRunner</li>
+<li>关于支持库的发布信息</li>
+</ul>
+<h2 id="测试支持库-的-特性说明"><a href="#测试支持库-的-特性说明" class="headerlink" title="测试支持库 的 特性说明"></a>测试支持库 的 特性说明</h2><p>Android 测试支持库包含以下自动化测试工具：</p>
+<ul>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">AndroidJUnitRunner</a></strong>: Android 上使用的兼容Junit4 的Test Runner</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a></strong>: UI测试框架；适用于应用内功能性UI测试（functional UI testing）</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a></strong>: UI测试框架；适用于跨APP 的功能性UI测试，跨越的APP既可以是第三方APP，也可以是系统APP</li>
+</ul>
+<p>###AndroidJUnitRunner    </p>
+<p> <a href="https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html" target="_blank" rel="external">AndroidJUnitRunner
+</a> 类是一个 <a href="http://junit.org/" target="_blank" rel="external">JUnit</a> 测试Runner，它允许你在Android 设备上运行JUnit4 或JUnit3 风格的测试类，这些测试类同时也包含那些使用<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a> 和 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a>  测试框架建立的测试类。 AndroidJUnitTestRunner 能安装测试包和被测APP 到设备，并且运行测试，报告测试结果。现在AndroidJUnitTestRunner  已经取代了只支持Junit3测试的<a href="https://developer.android.com/reference/android/test/InstrumentationTestRunner.html" target="_blank" rel="external">InstrumentationTestRunner</a> 的测试类。</p>
+<p>AndroidJUnitTestRunner的主要功能包括：</p>
+<ul>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-junit" target="_blank" rel="external">JUnit support - Junit支持</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-instrumentation" target="_blank" rel="external">Access to instrumentation information - 获取 Instrumention信息</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-filtering" target="_blank" rel="external">Test filtering - 测试过滤</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-sharding" target="_blank" rel="external">Test sharding - 测试分片</a></li>
+</ul>
+<p>注： AndroidJUnitTestRunner 要求Android2.2（API level 8） 或者更高级别</p>
+<h4 id="JUnit-支持"><a href="#JUnit-支持" class="headerlink" title="JUnit 支持"></a>JUnit 支持</h4><p>AndroidJUnitTestRunner兼容JUnit3和JUnit4测试（最高支持到4.10）。但是，你最好避免将JUnit3 和 JUnit4 的测试代码放在同一个包下面，这将会导致不可预期的结果。<strong>注意</strong>如果你正在创建一个Instrumented JUnit4 测试类，那么你必须在测试类上使用<code>@RunWith(AndroidJUnit4.class)</code>注解。</p>
+<p>下面的代码片段展示了一个使用JUnit4 风格的Instrumented 测试来验证CalculatorActivity 的 <em>add</em> 方法是否正常运行。</p>
+<pre><code>import android.support.test.runner.AndroidJUnit4;
+import android.support.test.runner.AndroidJUnitRunner;
+import android.test.ActivityInstrumentationTestCase2;
+
+@RunWith(AndroidJUnit4.class)
+public class CalculatorInstrumentationTest
+        extends ActivityInstrumentationTestCase2&lt;CalculatorActivity&gt; {
+
+    @Before
+    public void setUp() throws Exception {
+        super.setUp();
+
+        // Injecting the Instrumentation instance is required
+        // for your test to run with AndroidJUnitRunner.
+        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+        mActivity = getActivity();
+    }
+
+    @Test
+    public void typeOperandsAndPerformAddOperation() {
+        // Call the CalculatorActivity add() method and pass in some operand values, then
+        // check that the expected value is returned.
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        super.tearDown();
+    }
+}
+</code></pre><h4 id="访问instrumentation-信息"><a href="#访问instrumentation-信息" class="headerlink" title="访问instrumentation 信息"></a>访问instrumentation 信息</h4><p>你可以使用 <a href="https://developer.android.com/reference/android/support/test/InstrumentationRegistry.html" target="_blank" rel="external">InstrumentationRegistry</a> 类来获取和你运行的测试有关的信息。 这个类包含  <a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>  对象、目标App 的 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象、测试App 的<a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a>以及传递到你的测试的命令行参数。 当你使用UI Automator 框架编写依赖于<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 或者 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象的测试用例时，这些信息将会非常有用。</p>
+<h4 id="测试过滤（Test-filtering）"><a href="#测试过滤（Test-filtering）" class="headerlink" title="测试过滤（Test filtering）"></a>测试过滤（Test filtering）</h4><p>在你的JUnit 4.x 的测试中，你可以使用一些注解来配置运行的测试。 这些功能可以最大限度的减少你往测试代码中添加模板和条件代码的工作量。 在标准的JUnit 4 注解之外，AndroidJUnitTestRunner 还支持以下Android特有的注解：</p>
+<ul>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/RequiresDevice.html" target="_blank" rel="external">@RequiresDevice</a>: 指定改测试只在物理设备上运行（而不是模拟器）</li>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/SdkSuppress.html" target="_blank" rel="external">@SdkSupress</a>: 禁止测试在低于给定API 级别的设备上运行。例如，禁止运行在API level低于18 的设备上运行时可以你写 <code>SDKSupress(minSdkVersion=18)</code></li>
+</ul>
+<h4 id="测试分片-Test-sharding"><a href="#测试分片-Test-sharding" class="headerlink" title="测试分片 (Test sharding)"></a>测试分片 (Test sharding)</h4><p>AndroidJUnitTestRunner 支持将一个测试套件（test suite） 分割成多个测试片，这样你就可以将属于同一个测试片的测试当做一个组一起运行， 当然，这些测试用例必须在同一个<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 实例下面。（，under the same Instumentation）. 每个测试片使用一个数字索引标记。在运行测试时，可以使用 <code>-e numShards</code>  选项来指定要创建多少个测试片，使用 <code>-e shardIndex</code> 选项来指定要运行哪一个片的测试用例。</p>
+<p>例如，为了将测试套件（test suite） 分割成为10片，并且只运行位于第二片的测试，你可以使用一下命令：</p>
+<pre><code>adb shell am instrument -w -e numShards 10 -e shardIndex 2
+</code></pre><p>你可以通过查看 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 来了解更多关于如何使用Android test runner 的信息。</p>
+<h3 id="Espresso-框架"><a href="#Espresso-框架" class="headerlink" title="Espresso 框架"></a>Espresso 框架</h3><p>Espresso 测试框架提供了一系列的APIS 用来构建单个应用内测试用户交互的UI测试用例。 它非常使用来了编写白盒类型的自动化测试用例，因为Espresso测试代码必须了解实现代码的细节。</p>
+<p>Espresso 测试框架的主要特性包括：</p>
+<ul>
+<li>一套丰富的视图和适配器（View and Adapter）匹配API。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-matching" target="_blank" rel="external">View matching</a> 以了解更多信息。</li>
+<li>一套用以进行自动化UI交互的action APIs。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-actions" target="_blank" rel="external">Action APIs</a> 以了解更多。</li>
+<li>用以提高测试可信度 的 UI 线程同步机制，查看  <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-thread-sync" target="_blank" rel="external">UI thread synchronization</a> 以获取更多信息。</li>
+</ul>
+<p>注： 需要Android2.2（API level 8） 或者更高版本</p>
+<h4 id="View-matching"><a href="#View-matching" class="headerlink" title="View matching"></a>View matching</h4><p><a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onView(org.hamcrest.Matcher&lt;android.view.View" target="_blank" rel="external">Espresso.onView()
+</a>)  使得你可以访问目标app 里的UI 组件并且与之交互。 该方法接收一个<a href="http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matcher.html" target="_blank" rel="external">Matcher
+</a> 参数，然后在视图层次树中定位到匹配到的对应的View实例。你可以使用的匹配条件有：</p>
+<ul>
+<li>view 的类名</li>
+<li>view 的 content description</li>
+<li>view 的<code>R.id</code></li>
+<li>view 上显示的文本</li>
+</ul>
+<p>例如，为了定位到一个ID 为 <code>my_button</code> 的按钮，你可以指定如下的matcher：</p>
+<pre><code>onView(withId(R.id.my_button));
+</code></pre><p>如果搜索成功，onView() 方法就会返回该View 的一个引用，然后你就可以执行actions 并且测试是否符合预期</p>
+<h4 id="Adapter-matching-适配器匹配"><a href="#Adapter-matching-适配器匹配" class="headerlink" title="Adapter matching - 适配器匹配"></a>Adapter matching - 适配器匹配</h4><p>在一个 <a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a><br>  的布局中，布局是在运行时动态改变的。如果目标View 位于一个<a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a> 的子类中（如 <a href="https://developer.android.com/reference/android/widget/ListView.html" target="_blank" rel="external">ListView</a><br> 或者 <a href="https://developer.android.com/reference/android/widget/GridView.html" target="_blank" rel="external">GridView</a>），因为当前的视图层次中只加载了一部分布局View，那么onView() 方法将无法工作。</p>
+<p>这时，你就可以使用  <a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onData(org.hamcrest.Matcher&lt;java.lang.Object" target="_blank" rel="external">Espresso.onData()
+</a>) 方法来查找目标View 。该方法会返回AdapterView中的一个元素，然后你可以在该元素上进行 用户操作模拟和断言（assertions）操作。</p>
+<h4 id="Action-APIs"><a href="#Action-APIs" class="headerlink" title="Action APIs"></a>Action APIs</h4><p>一般你都是通过在你的app 的用户界面进行一些操作以测试你的应用。而使用<a href="https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html" target="_blank" rel="external">ViewActions
+</a> API 你将可以非常容易的自动化这些交互操作。 使用这些API 你可以执行的UI操作如下：</p>
+<ul>
+<li>View click = 视图点击</li>
+<li>Swipe = 滑动</li>
+<li>Key and button presses = 按压按键和按钮</li>
+<li>Typing test = 输入文字</li>
+<li>Opeing a link =打开一个链接</li>
+</ul>
+<p>例如，你可以编写一个测试脚本来模拟输入一个字符串并且按下一个按钮来提交输入的值的几个动作。 <a href="https://developer.android.com/reference/android/support/test/espresso/ViewInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">ViewInteraction.perform()
+</a>) 和 <a href="https://developer.android.com/reference/android/support/test/espresso/DataInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">DataInteraction.perform()
+</a>) 接受一个或多个<a href="https://developer.android.com/reference/android/support/test/espresso/ViewAction.html" target="_blank" rel="external">ViewAction
+</a> 参数，并且按照提供他们的次序依次执行这些动作。</p>
+<pre><code>// Type text into an EditText view, then close the soft keyboard
+onView(withId(R.id.editTextUserInput))
+    .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+
+// Press the button to submit the text change
+onView(withId(R.id.changeTextBt)).perform(click());
+</code></pre><h4 id="UI-线程同步"><a href="#UI-线程同步" class="headerlink" title="UI 线程同步"></a>UI 线程同步</h4><p>运行与android设备的测试经常会因为时间问题而随机失败。 这个问题 称之为 <em>test flakiness</em>。 在使用 Espresso之前，解决办法是在测试代码让测试sleep 足够长的时间，或者加入一个足够长的超时时间又或者添加失败时不停尝试的代码。 然而，Espresso 测试框架替你处理了<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>和 UI 线程间的同步问题，这将是你的测试action和测试断言更加具有可信度。<br>学习 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 和 <a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html" target="_blank" rel="external">Testing UI for a Single App</a> 以了解更多.</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<hr>
+<p>原文链接：<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">Android Testing Support</a></p>
+<p><strong>说明</strong>：1. 所有链接指向原始链接； 2 .  部分名词保留英文</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/" data-id="cj6sx5r8d0002k870bz26pjcv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android测试/">Android测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/08/2016-12-08-测试hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">测试hexo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/API-Guide/">API_Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/测试/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/EA使用教程/">EA使用教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品设计/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/">文摘</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/柏杨/">柏杨</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/kindle/">kindle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/博客/">博客</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/">杂项记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/工具配置/">工具配置</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/SVN/">SVN</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-测试/">Android 测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android测试/">Android测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Axure/">Axure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EChart/">EChart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java注解/">Java注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kindle/">kindle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/婚姻/">婚姻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柏杨/">柏杨</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-测试/" style="font-size: 10px;">Android 测试</a> <a href="/tags/Android测试/" style="font-size: 10px;">Android测试</a> <a href="/tags/Axure/" style="font-size: 10px;">Axure</a> <a href="/tags/EChart/" style="font-size: 10px;">EChart</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java注解/" style="font-size: 10px;">Java注解</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/Webview/" style="font-size: 10px;">Webview</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitbook/" style="font-size: 10px;">gitbook</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/婚姻/" style="font-size: 10px;">婚姻</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/工具使用/" style="font-size: 10px;">工具使用</a> <a href="/tags/柏杨/" style="font-size: 10px;">柏杨</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/">使用SublimeText 编辑Markdown 文件并预览</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Java注解介绍/">Java注解介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/">【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
