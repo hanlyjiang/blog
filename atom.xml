@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>随波逐流的程序员</title>
+  <subtitle>观乎天文以查时变，观乎人文以化成天下</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://hanlyjiang.cn/"/>
+  <updated>2017-08-26T02:44:38.000Z</updated>
+  <id>http://hanlyjiang.cn/</id>
+  
+  <author>
+    <name>Hanly Jiang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用SublimeText 编辑Markdown 文件并预览</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc -->
+<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
+<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
+<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
+<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
+<ul>
+<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
+</ul>
+<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
+</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
+<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
+<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
+<li><p>修改配置：         </p>
+<ul>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
+<li><p>修改以下三项       </p>
+<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
+&quot;file_path_conversions&quot;: &quot;relative&quot;,   
+&quot;image_path_conversion&quot;: &quot;relative&quot;,   
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
+</ul>
+<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
+<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
+<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
+<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
+<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      使用SublimeText 编辑Markdown 文件并预览
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
+    
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 测试支持库介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
+<a id="more"></a>
+<p>获取： 通过Android SDK Manager （<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#setup" target="_blank" rel="external">Testing Support Library Setup</a>）</p>
+<p>这篇文章的主要内容：</p>
+<ul>
+<li>说明了Android Testing Support Library 提供了哪些工具用以测试</li>
+<li>如何在你的测试环境中使用AndroidTestRunner</li>
+<li>关于支持库的发布信息</li>
+</ul>
+<h2 id="测试支持库-的-特性说明"><a href="#测试支持库-的-特性说明" class="headerlink" title="测试支持库 的 特性说明"></a>测试支持库 的 特性说明</h2><p>Android 测试支持库包含以下自动化测试工具：</p>
+<ul>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">AndroidJUnitRunner</a></strong>: Android 上使用的兼容Junit4 的Test Runner</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a></strong>: UI测试框架；适用于应用内功能性UI测试（functional UI testing）</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a></strong>: UI测试框架；适用于跨APP 的功能性UI测试，跨越的APP既可以是第三方APP，也可以是系统APP</li>
+</ul>
+<p>###AndroidJUnitRunner    </p>
+<p> <a href="https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html" target="_blank" rel="external">AndroidJUnitRunner
+</a> 类是一个 <a href="http://junit.org/" target="_blank" rel="external">JUnit</a> 测试Runner，它允许你在Android 设备上运行JUnit4 或JUnit3 风格的测试类，这些测试类同时也包含那些使用<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a> 和 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a>  测试框架建立的测试类。 AndroidJUnitTestRunner 能安装测试包和被测APP 到设备，并且运行测试，报告测试结果。现在AndroidJUnitTestRunner  已经取代了只支持Junit3测试的<a href="https://developer.android.com/reference/android/test/InstrumentationTestRunner.html" target="_blank" rel="external">InstrumentationTestRunner</a> 的测试类。</p>
+<p>AndroidJUnitTestRunner的主要功能包括：</p>
+<ul>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-junit" target="_blank" rel="external">JUnit support - Junit支持</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-instrumentation" target="_blank" rel="external">Access to instrumentation information - 获取 Instrumention信息</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-filtering" target="_blank" rel="external">Test filtering - 测试过滤</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-sharding" target="_blank" rel="external">Test sharding - 测试分片</a></li>
+</ul>
+<p>注： AndroidJUnitTestRunner 要求Android2.2（API level 8） 或者更高级别</p>
+<h4 id="JUnit-支持"><a href="#JUnit-支持" class="headerlink" title="JUnit 支持"></a>JUnit 支持</h4><p>AndroidJUnitTestRunner兼容JUnit3和JUnit4测试（最高支持到4.10）。但是，你最好避免将JUnit3 和 JUnit4 的测试代码放在同一个包下面，这将会导致不可预期的结果。<strong>注意</strong>如果你正在创建一个Instrumented JUnit4 测试类，那么你必须在测试类上使用<code>@RunWith(AndroidJUnit4.class)</code>注解。</p>
+<p>下面的代码片段展示了一个使用JUnit4 风格的Instrumented 测试来验证CalculatorActivity 的 <em>add</em> 方法是否正常运行。</p>
+<pre><code>import android.support.test.runner.AndroidJUnit4;
+import android.support.test.runner.AndroidJUnitRunner;
+import android.test.ActivityInstrumentationTestCase2;
+
+@RunWith(AndroidJUnit4.class)
+public class CalculatorInstrumentationTest
+        extends ActivityInstrumentationTestCase2&lt;CalculatorActivity&gt; {
+
+    @Before
+    public void setUp() throws Exception {
+        super.setUp();
+
+        // Injecting the Instrumentation instance is required
+        // for your test to run with AndroidJUnitRunner.
+        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+        mActivity = getActivity();
+    }
+
+    @Test
+    public void typeOperandsAndPerformAddOperation() {
+        // Call the CalculatorActivity add() method and pass in some operand values, then
+        // check that the expected value is returned.
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        super.tearDown();
+    }
+}
+</code></pre><h4 id="访问instrumentation-信息"><a href="#访问instrumentation-信息" class="headerlink" title="访问instrumentation 信息"></a>访问instrumentation 信息</h4><p>你可以使用 <a href="https://developer.android.com/reference/android/support/test/InstrumentationRegistry.html" target="_blank" rel="external">InstrumentationRegistry</a> 类来获取和你运行的测试有关的信息。 这个类包含  <a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>  对象、目标App 的 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象、测试App 的<a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a>以及传递到你的测试的命令行参数。 当你使用UI Automator 框架编写依赖于<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 或者 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象的测试用例时，这些信息将会非常有用。</p>
+<h4 id="测试过滤（Test-filtering）"><a href="#测试过滤（Test-filtering）" class="headerlink" title="测试过滤（Test filtering）"></a>测试过滤（Test filtering）</h4><p>在你的JUnit 4.x 的测试中，你可以使用一些注解来配置运行的测试。 这些功能可以最大限度的减少你往测试代码中添加模板和条件代码的工作量。 在标准的JUnit 4 注解之外，AndroidJUnitTestRunner 还支持以下Android特有的注解：</p>
+<ul>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/RequiresDevice.html" target="_blank" rel="external">@RequiresDevice</a>: 指定改测试只在物理设备上运行（而不是模拟器）</li>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/SdkSuppress.html" target="_blank" rel="external">@SdkSupress</a>: 禁止测试在低于给定API 级别的设备上运行。例如，禁止运行在API level低于18 的设备上运行时可以你写 <code>SDKSupress(minSdkVersion=18)</code></li>
+</ul>
+<h4 id="测试分片-Test-sharding"><a href="#测试分片-Test-sharding" class="headerlink" title="测试分片 (Test sharding)"></a>测试分片 (Test sharding)</h4><p>AndroidJUnitTestRunner 支持将一个测试套件（test suite） 分割成多个测试片，这样你就可以将属于同一个测试片的测试当做一个组一起运行， 当然，这些测试用例必须在同一个<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 实例下面。（，under the same Instumentation）. 每个测试片使用一个数字索引标记。在运行测试时，可以使用 <code>-e numShards</code>  选项来指定要创建多少个测试片，使用 <code>-e shardIndex</code> 选项来指定要运行哪一个片的测试用例。</p>
+<p>例如，为了将测试套件（test suite） 分割成为10片，并且只运行位于第二片的测试，你可以使用一下命令：</p>
+<pre><code>adb shell am instrument -w -e numShards 10 -e shardIndex 2
+</code></pre><p>你可以通过查看 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 来了解更多关于如何使用Android test runner 的信息。</p>
+<h3 id="Espresso-框架"><a href="#Espresso-框架" class="headerlink" title="Espresso 框架"></a>Espresso 框架</h3><p>Espresso 测试框架提供了一系列的APIS 用来构建单个应用内测试用户交互的UI测试用例。 它非常使用来了编写白盒类型的自动化测试用例，因为Espresso测试代码必须了解实现代码的细节。</p>
+<p>Espresso 测试框架的主要特性包括：</p>
+<ul>
+<li>一套丰富的视图和适配器（View and Adapter）匹配API。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-matching" target="_blank" rel="external">View matching</a> 以了解更多信息。</li>
+<li>一套用以进行自动化UI交互的action APIs。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-actions" target="_blank" rel="external">Action APIs</a> 以了解更多。</li>
+<li>用以提高测试可信度 的 UI 线程同步机制，查看  <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-thread-sync" target="_blank" rel="external">UI thread synchronization</a> 以获取更多信息。</li>
+</ul>
+<p>注： 需要Android2.2（API level 8） 或者更高版本</p>
+<h4 id="View-matching"><a href="#View-matching" class="headerlink" title="View matching"></a>View matching</h4><p><a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onView(org.hamcrest.Matcher&lt;android.view.View" target="_blank" rel="external">Espresso.onView()
+</a>)  使得你可以访问目标app 里的UI 组件并且与之交互。 该方法接收一个<a href="http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matcher.html" target="_blank" rel="external">Matcher
+</a> 参数，然后在视图层次树中定位到匹配到的对应的View实例。你可以使用的匹配条件有：</p>
+<ul>
+<li>view 的类名</li>
+<li>view 的 content description</li>
+<li>view 的<code>R.id</code></li>
+<li>view 上显示的文本</li>
+</ul>
+<p>例如，为了定位到一个ID 为 <code>my_button</code> 的按钮，你可以指定如下的matcher：</p>
+<pre><code>onView(withId(R.id.my_button));
+</code></pre><p>如果搜索成功，onView() 方法就会返回该View 的一个引用，然后你就可以执行actions 并且测试是否符合预期</p>
+<h4 id="Adapter-matching-适配器匹配"><a href="#Adapter-matching-适配器匹配" class="headerlink" title="Adapter matching - 适配器匹配"></a>Adapter matching - 适配器匹配</h4><p>在一个 <a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a><br>  的布局中，布局是在运行时动态改变的。如果目标View 位于一个<a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a> 的子类中（如 <a href="https://developer.android.com/reference/android/widget/ListView.html" target="_blank" rel="external">ListView</a><br> 或者 <a href="https://developer.android.com/reference/android/widget/GridView.html" target="_blank" rel="external">GridView</a>），因为当前的视图层次中只加载了一部分布局View，那么onView() 方法将无法工作。</p>
+<p>这时，你就可以使用  <a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onData(org.hamcrest.Matcher&lt;java.lang.Object" target="_blank" rel="external">Espresso.onData()
+</a>) 方法来查找目标View 。该方法会返回AdapterView中的一个元素，然后你可以在该元素上进行 用户操作模拟和断言（assertions）操作。</p>
+<h4 id="Action-APIs"><a href="#Action-APIs" class="headerlink" title="Action APIs"></a>Action APIs</h4><p>一般你都是通过在你的app 的用户界面进行一些操作以测试你的应用。而使用<a href="https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html" target="_blank" rel="external">ViewActions
+</a> API 你将可以非常容易的自动化这些交互操作。 使用这些API 你可以执行的UI操作如下：</p>
+<ul>
+<li>View click = 视图点击</li>
+<li>Swipe = 滑动</li>
+<li>Key and button presses = 按压按键和按钮</li>
+<li>Typing test = 输入文字</li>
+<li>Opeing a link =打开一个链接</li>
+</ul>
+<p>例如，你可以编写一个测试脚本来模拟输入一个字符串并且按下一个按钮来提交输入的值的几个动作。 <a href="https://developer.android.com/reference/android/support/test/espresso/ViewInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">ViewInteraction.perform()
+</a>) 和 <a href="https://developer.android.com/reference/android/support/test/espresso/DataInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">DataInteraction.perform()
+</a>) 接受一个或多个<a href="https://developer.android.com/reference/android/support/test/espresso/ViewAction.html" target="_blank" rel="external">ViewAction
+</a> 参数，并且按照提供他们的次序依次执行这些动作。</p>
+<pre><code>// Type text into an EditText view, then close the soft keyboard
+onView(withId(R.id.editTextUserInput))
+    .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+
+// Press the button to submit the text change
+onView(withId(R.id.changeTextBt)).perform(click());
+</code></pre><h4 id="UI-线程同步"><a href="#UI-线程同步" class="headerlink" title="UI 线程同步"></a>UI 线程同步</h4><p>运行与android设备的测试经常会因为时间问题而随机失败。 这个问题 称之为 <em>test flakiness</em>。 在使用 Espresso之前，解决办法是在测试代码让测试sleep 足够长的时间，或者加入一个足够长的超时时间又或者添加失败时不停尝试的代码。 然而，Espresso 测试框架替你处理了<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>和 UI 线程间的同步问题，这将是你的测试action和测试断言更加具有可信度。<br>学习 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 和 <a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html" target="_blank" rel="external">Testing UI for a Single App</a> 以了解更多.</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<hr>
+<p>原文链接：<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">Android Testing Support</a></p>
+<p><strong>说明</strong>：1. 所有链接指向原始链接； 2 .  部分名词保留英文</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="测试" scheme="http://hanlyjiang.cn/categories/Android/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java注解介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
+<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
+<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
+<p>注解有以下几种用途：</p>
+<ul>
+<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
+<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
+<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
+</ul>
+<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
+<hr>
+<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：</p>
+<pre><code>@Entity
+</code></pre><p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：</p>
+<pre><code>@Override
+void mySuperMethod() {... }
+</code></pre><p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：</p>
+<pre><code>@Author(
+ name = &quot;Benjamin Franklin&quot;,
+ date = &quot;3/27/2003&quot;
+  )
+  class MyClass() { ... }
+</code></pre><p>或者</p>
+<pre><code>@SuppressWarnings(value = &quot;unchecked&quot;)
+ void myMethod() { ... }
+</code></pre><p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：</p>
+<pre><code>@SuppressWarnings(&quot;unchecked&quot;)
+void myMethod() { ... }
+</code></pre><p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
+<p>在一个声明中使用多个注解也是可以的：</p>
+<pre><code>@Author(name = &quot;Jane Doe&quot;)
+@EBook
+class MyClass { ... }
+</code></pre><p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
+<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
+<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
+<p>###注解可以被用在什么地方</p>
+<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
+<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
+<ul>
+<li><p>类实例创建表达式：</p>
+<pre><code>new @Interned MyObject();
+</code></pre></li>
+<li><p>类型转换：</p>
+<pre><code>myString = (@NonNull String) str;
+</code></pre></li>
+<li><p><code>implements</code> 子句：</p>
+<pre><code>  class UnmodifiableList&lt;T&gt; implements 
+@Readonly List&lt;@Readonly T&gt; { ... }
+</code></pre></li>
+<li><p>异常抛出语句：</p>
+<pre><code>void monitorTemperature() throws
+@Critical TemperatureException { ... }
+</code></pre><p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
+</li>
+</ul>
+<hr>
+<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
+<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：</p>
+<pre><code>public class Generation3List extends Generation2List {
+
+   // Author: John Doe
+   // Date: 3/17/2002
+   // Current revision: 6
+   // Last modified: 4/12/2004
+   // By: Jane Doe
+   // Reviewers: Alice, Bill, Cindy
+
+   // class code goes here
+
+}
+</code></pre><p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：</p>
+<pre><code>@interface ClassPreamble {
+   String author();
+   String date();
+   int currentRevision() default 1;
+   String lastModified() default &quot;N/A&quot;;
+   String lastModifiedBy() default &quot;N/A&quot;;
+   // Note use of array
+   String[] reviewers();
+}
+</code></pre><p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
+<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
+<p>在定义了注解类型之后，你就可以使用它了，如：</p>
+<pre><code>@ClassPreamble (
+   author = &quot;John Doe&quot;,
+   date = &quot;3/17/2002&quot;,
+   currentRevision = 6,
+   lastModified = &quot;4/12/2004&quot;,
+   lastModifiedBy = &quot;Jane Doe&quot;,
+   // Note array notation
+   reviewers = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Cindy&quot;}
+)
+public class Generation3List extends Generation2List {
+
+// class code goes here
+
+}
+</code></pre><p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：</p>
+<pre><code>// import this to use @Documented
+import java.lang.annotation.*;
+
+@Documented
+@interface ClassPreamble {
+
+   // Annotation element definitions
+
+}
+</code></pre><h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
+<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
+<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。</p>
+<pre><code>   // Javadoc comment follows
+    /**
+     * @deprecated
+     * explanation of why it was deprecated
+     */
+    @Deprecated
+    static void deprecatedMethod() { }
+}
+</code></pre><p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）</p>
+<pre><code>// mark method as a superclass method
+// that has been overridden
+@Override 
+int overriddenMethod() { }
+</code></pre><p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
+<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。</p>
+<pre><code>// use a deprecated method and tell 
+// compiler not to generate a warning
+@SuppressWarnings(&quot;deprecation&quot;)
+ void useDeprecatedMethod() {
+     // deprecation warning
+     // - suppressed
+     objectOne.deprecatedMethod();
+ }
+</code></pre><p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：</p>
+<pre><code>@SuppressWarnings({&quot;unchecked&quot;, &quot;deprecation&quot;})// 注意其中的&quot;{}&quot;
+</code></pre><p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
+<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
+<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
+<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
+<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
+</ul>
+<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
+<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
+<ul>
+<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
+<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
+<li><code>ElementType.FIELD</code> 类成员或属性</li>
+<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
+<li><code>ElementType.METHOD</code> 方法级别的注解</li>
+<li><code>ElementType.PACKAGE</code> 包声明</li>
+<li><code>ElementType.PARAMETER</code> 方法的参数</li>
+<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
+</ul>
+<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
+<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
+<hr>
+<p>关于<strong>@FunctionalInterface</strong>注解：</p>
+<ul>
+<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a> </li>
+<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
+    
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
+    
+      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
+也遇到符号 “=”
+</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>1 . 项目–&gt; 项目选项</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
+<ul>
+<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
+<ul>
+<li>3 . 导入或者重新同步源码</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
+<li>我使用的EA版本为 12.0</li>
+<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
+也遇到符号 “=”
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Github Pages 写博客</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
+    
+      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试hexo</title>
+    <link href="http://hanlyjiang.cn/2016/12/08/2016-12-08-%E6%B5%8B%E8%AF%95hexo/"/>
+    <id>http://hanlyjiang.cn/2016/12/08/2016-12-08-测试hexo/</id>
+    <published>2016-12-08T08:39:35.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[
+]]></content>
+    
+    <summary type="html">
+    
+      
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Gitbook使用笔记</title>
+    <link href="http://hanlyjiang.cn/2016/08/19/2016-08-19-gitbook%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://hanlyjiang.cn/2016/08/19/2016-08-19-gitbook使用笔记/</id>
+    <published>2016-08-19T03:23:05.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用Gitbook 全程记录<br><a id="more"></a><br>Content:<br><!-- toc --></p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul>
+<li>1.1 安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">NodeJs</a>    </li>
+<li>1.2 Gitbook 命令行工具安装    ,详情参考 &gt;<a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">gitbook 安装配置官方文档</a><br><code>npm install gitbook-cli -g</code>    </li>
+</ul>
+<p><br></p>
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><p>了解下面几点，基本就可以愉快的在本地写书了    </p>
+<h4 id="2-1-命令行基本命令使用"><a href="#2-1-命令行基本命令使用" class="headerlink" title="2.1 命令行基本命令使用"></a>2.1 命令行基本命令使用</h4><ul>
+<li>新建书籍，在目录中执行：<br><code>gitbook init</code>    </li>
+<li>构建预览html文件<br><code>gitbook build</code>    </li>
+<li>开启服务在浏览其中预览<br><code>gitbook serve</code>    </li>
+</ul>
+<blockquote>
+<p>传送门:<br>安装使用：<a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">Setup and Installation of GitBook</a>      </p>
+</blockquote>
+<ul>
+<li>编辑后提交到Git库：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .    </div><div class="line">git commit -m "提交备注"</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-2-了解目录结构"><a href="#2-2-了解目录结构" class="headerlink" title="2.2 了解目录结构"></a>2.2 了解目录结构</h4><p>不累述，直接传送官方说明:</p>
+<blockquote>
+<p>传送门：<br><a href="http://toolchain.gitbook.com/structure.html" target="_blank" rel="external">目录结构</a><br><a href="http://toolchain.gitbook.com/pages.html" target="_blank" rel="external">页面和内容目录</a>    </p>
+</blockquote>
+<h4 id="2-3-了解book-json-配置方法"><a href="#2-3-了解book-json-配置方法" class="headerlink" title="2.3 了解book.json 配置方法"></a>2.3 了解book.json 配置方法</h4><blockquote>
+<p>传送门：<br><a href="http://toolchain.gitbook.com/config.html" target="_blank" rel="external">book.json 配置</a><br><br></p>
+<h3 id="3-插件安装与配置"><a href="#3-插件安装与配置" class="headerlink" title="3. 插件安装与配置"></a>3. 插件安装与配置</h3><p>插件搜索浏览: <a href="https://plugins.gitbook.com/browse" target="_blank" rel="external">GitBook Plugins</a></p>
+<h4 id="3-1-代码高亮"><a href="#3-1-代码高亮" class="headerlink" title="3.1 代码高亮"></a>3.1 代码高亮</h4></blockquote>
+<h5 id="1-prism插件"><a href="#1-prism插件" class="headerlink" title="1) prism插件"></a>1) <a href="https://plugins.gitbook.com/plugin/prism" target="_blank" rel="external">prism插件</a></h5><p>点击上方链接查看如何配置(下同)</p>
+<h4 id="3-2-TOC-Table-of-Content"><a href="#3-2-TOC-Table-of-Content" class="headerlink" title="3.2 TOC(Table of Content)"></a>3.2 TOC(Table of Content)</h4><h5 id="1-页面内-navigator"><a href="#1-页面内-navigator" class="headerlink" title="1) 页面内 -  navigator"></a>1) 页面内 - <a href="https://plugins.gitbook.com/plugin/navigator" target="_blank" rel="external"> navigator</a></h5><p>在标题下方显示目录    </p>
+<h5 id="2-侧边-simple-page-toc"><a href="#2-侧边-simple-page-toc" class="headerlink" title="2) 侧边 -  simple-page-toc"></a>2) 侧边 - <a href="https://plugins.gitbook.com/plugin/simple-page-toc" target="_blank" rel="external"> simple-page-toc</a></h5><ul>
+<li>在右上方显示一个TOC 按钮，点击后显示目录    </li>
+<li>在右上方显示一个Top 按钮，点击后回到文章顶部    </li>
+</ul>
+<p><br></p>
+<h4 id="3-4-目前的配置大集合"><a href="#3-4-目前的配置大集合" class="headerlink" title="3.4 目前的配置大集合"></a>3.4 目前的配置大集合</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"title"</span>: <span class="string">"项目文档记录"</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"项目文档记录"</span>,</div><div class="line">    <span class="attr">"language"</span>: <span class="string">"zh"</span>,</div><div class="line">    <span class="attr">"plugins"</span>: [</div><div class="line">        <span class="string">"prism"</span>,</div><div class="line">        <span class="string">"-highlight"</span>,</div><div class="line">         <span class="string">"simple-page-toc"</span>,</div><div class="line">         <span class="string">"navigator"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</div><div class="line">        <span class="attr">"simple-page-toc"</span>: &#123;</div><div class="line">            <span class="attr">"maxDepth"</span>: <span class="number">3</span>,</div><div class="line">            <span class="attr">"skipFirstH1"</span>: <span class="literal">true</span></div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-使用文档编辑器"><a href="#4-使用文档编辑器" class="headerlink" title="4. 使用文档编辑器"></a>4. 使用文档编辑器</h3><h4 id="GitbookEditor"><a href="#GitbookEditor" class="headerlink" title="GitbookEditor"></a><a href="https://www.gitbook.com/editor/osx" target="_blank" rel="external">GitbookEditor</a></h4><p>GitBook 官方出品 ,下载链接 <a href="https://www.gitbook.com/editor/osx" target="_blank" rel="external">GitbookEditor</a>,如果不熟悉基本的git命令，那么最好使用这个        </p>
+<h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><p>参考：<a href="http://hanlyjiang.site/2015/04/26/write-markdown-using-sublimetext-on-windows/" target="_blank" rel="external">Windows上使用Sublime编辑markdown并预览</a><br>另外提下Sublime 有个<code>Open Folder</code> 功能，可以在左侧显示目录树，更方便的是可以在增加文件目录，重命名文件目录    </p>
+<p>工作流程：<br>Sublime中修改　– <code>gitbook serve</code> 预览 – <code>git add .</code> 及<code>git commit -m &quot;msg&quot;</code> 提交 – <code>git push 推送</code> </p>
+<p><br></p>
+<h3 id="5-编辑-Markdown语法"><a href="#5-编辑-Markdown语法" class="headerlink" title="5. 编辑(Markdown语法)"></a>5. 编辑(Markdown语法)</h3><blockquote>
+<p>传送:<br><a href="http://toolchain.gitbook.com/syntax/markdown.html" target="_blank" rel="external">Markdown</a>    </p>
+</blockquote>
+<ul>
+<li>代码高亮<br>指定代码语言-添加<code>ruby</code> 指定语言为ruby    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">```ruby</div><div class="line">require &apos;redcarpet&apos;</div><div class="line">markdown = Redcarpet.new(&quot;Hello World!&quot;)</div><div class="line">puts markdown.to_html</div><div class="line">```</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-生成Pdf-文件"><a href="#6-生成Pdf-文件" class="headerlink" title="6. 生成Pdf 文件"></a>6. 生成Pdf 文件</h3><ol>
+<li>安装 calibre<br>下载：<a href="http://calibre-ebook.com/download" target="_blank" rel="external">calibre下载页面</a>    </li>
+<li><code>gitbook pdf . output.pdf</code><br>如果失败，删除book.json 文件    <blockquote>
+<p>参考: <a href="http://toolchain.gitbook.com/ebook.html" target="_blank" rel="external">http://toolchain.gitbook.com/ebook.html</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">gitbook 安装配置官方文档</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用Gitbook 全程记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂项记录" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="工具配置" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="工具" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="gitbook" scheme="http://hanlyjiang.cn/tags/gitbook/"/>
+    
+      <category term="markdown" scheme="http://hanlyjiang.cn/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Axure RP添加页面内滚动效果</title>
+    <link href="http://hanlyjiang.cn/2016/08/18/2016-08-18-Axure-RP%E6%B7%BB%E5%8A%A0%E9%A1%B5%E9%9D%A2%E5%86%85%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C/"/>
+    <id>http://hanlyjiang.cn/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/</id>
+    <published>2016-08-18T04:09:11.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Axure中一个页面内使用滚动页面<br><a id="more"></a></p>
+<h2 id="方法一：动态面板"><a href="#方法一：动态面板" class="headerlink" title="方法一：动态面板"></a>方法一：动态面板</h2><ol>
+<li>在当前页面画一个动态面板，单机选中，然后在在Axure右边的部件属性和样式中使用按需显示纵向滚动条。注意动态面板的大小和其中内容的大小。     </li>
+<li>双击动态面板弹出动态面板管理页面，双击state进入新窗口，在新窗口中编辑要实现滚动效果的内容（虚线范围外的内容会通过滚动查看）。     </li>
+</ol>
+<h2 id="方法二：内部框架"><a href="#方法二：内部框架" class="headerlink" title="方法二：内部框架"></a>方法二：内部框架</h2><p>有个“内部框架”组件，英文叫inline frame。 右键-按需显示滚动条。并设置里面的内容，比较长，比较窄，不超过宽度就不显示横向滚动条了，超过高度就显示竖着的滚动条了。     </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Axure中一个页面内使用滚动页面&lt;br&gt;
+    
+    </summary>
+    
+      <category term="产品设计" scheme="http://hanlyjiang.cn/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Axure" scheme="http://hanlyjiang.cn/tags/Axure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Excel横向单元格和纵向单元格切换</title>
+    <link href="http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel%E6%A8%AA%E5%90%91%E5%8D%95%E5%85%83%E6%A0%BC%E5%92%8C%E7%BA%B5%E5%90%91%E5%8D%95%E5%85%83%E6%A0%BC%E5%88%87%E6%8D%A2/"/>
+    <id>http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/</id>
+    <published>2016-08-15T10:03:09.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文内容：<br>使用Excel 编程将横向和竖向的值翻转<br><a id="more"></a></p>
+<ol>
+<li>使用<code>Alt+F11</code>打开VBA 界面</li>
+<li>在 工程-VBAProject 区域右键- 插入 - 模块，然后在模块中编写代码</li>
+<li>代码：<br>其中<code>Sheet7</code> 是我的目标Sheet页，其中没有内容，<code>Sheet6</code> 是数据源所在Sheet页名称，整个流程就是把Sheet6中的数据读出来写到Sheet7中。<br>至于循环中<code>To</code> 后面的 20，是因为我的元数据行列都不足20，所以随便写了一个循环边界。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Sub XY翻转()</div><div class="line">    Dim j As Integer</div><div class="line">        For j = 1 To 20</div><div class="line">            Dim i As Integer</div><div class="line">            For i = 1 To 20</div><div class="line">                Sheets(&quot;Sheet7&quot;).Select</div><div class="line">                Cells(i, j) = Sheets(&quot;Sheet6&quot;).Cells(j, i)</div><div class="line">            Next i</div><div class="line">        Next j</div><div class="line">End Sub</div></pre></td></tr></table></figure>
+<p>点击三角或者按<code>F5</code> 执行代码</p>
+<p><br><br>参考：</p>
+<ol>
+<li><a href="http://jingyan.baidu.com/article/7908e85c6f3456af481ad214.html" target="_blank" rel="external">For 循环</a>  2. <a href="http://wenku.baidu.com/link?url=qrB8HuJ3O_X9L3MH3bsOjjQXVhgIN2eph73Zq0K_MIiFq6KEHQuc9DzFBPM4YAq1jmzIYtYDxW7obHigBLFykMdJzPzUqnaTeqMLbX3bfl_" target="_blank" rel="external">Excel VBA入门</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文内容：&lt;br&gt;使用Excel 编程将横向和竖向的值翻转&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="Excel" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Excel/"/>
+    
+    
+      <category term="Excel" scheme="http://hanlyjiang.cn/tags/Excel/"/>
+    
+      <category term="VBA" scheme="http://hanlyjiang.cn/tags/VBA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android API Guide - 动画资源</title>
+    <link href="http://hanlyjiang.cn/2016/08/15/2016-08-15-Android-%E5%8A%A8%E7%94%BB%E8%B5%84%E6%BA%90-API-Guide/"/>
+    <id>http://hanlyjiang.cn/2016/08/15/2016-08-15-Android-动画资源-API-Guide/</id>
+    <published>2016-08-15T03:21:52.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn" target="_blank" rel="external">原文链接</a></p>
+<h2 id="动画资源"><a href="#动画资源" class="headerlink" title="动画资源"></a>动画资源</h2><p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Property" target="_blank" rel="external"><strong> 属性动画 (Property Animation)</strong> </a><br>    使用<a href="https://developer.android.com/reference/android/animation/Animator.html?hl=zh-cn" target="_blank" rel="external">Animator</a> 在一段时间内不断的改变对象的属性值</p>
+<p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#View" target="_blank" rel="external"><strong> 视图动画（View Animation） </strong></a><br>有两种类型：</p>
+<ul>
+<li><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Tween" title="Tween animation" target="_blank" rel="external">补间动画(Tween)</a>: 在一个单张图片上进行一系列变换，使用<a href="https://developer.android.com/reference/android/view/animation/Animation.html?hl=zh-cn" target="_blank" rel="external">Animation</a> 创建。</li>
+<li><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Frame" title="Frame animation" target="_blank" rel="external">帧动画(Frame)</a>: 显示一系列图片作为动画，使用<a href="https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html?hl=zh-cn" target="_blank" rel="external">AnimationDrawable</a></li>
+</ul>
+<h3 id="1-属性动画"><a href="#1-属性动画" class="headerlink" title="1. 属性动画"></a>1. 属性动画</h3><p>使用XML定义如何改变目标对象的属性，如 背景色、透明度，并指定变换时间</p>
+<ul>
+<li><p>文件路径<br>  <code>res/animator/filename.xml</code> 文件名会被用作资源ID</p>
+</li>
+<li><p>编辑后对于资源数据类型：<br>  <a href="https://developer.android.com/reference/android/animation/ValueAnimator.html?hl=zh-cn" target="_blank" rel="external">ValueAnimator</a>,<a href="https://developer.android.com/reference/android/animation/ObjectAnimator.html?hl=zh-cn" target="_blank" rel="external">ObjectAnimator</a>,<a href="https://developer.android.com/reference/android/animation/AnimatorSet.html?hl=zh-cn" target="_blank" rel="external">AnimatorSet</a></p>
+</li>
+<li>资源引用方式：<ul>
+<li>Java : <code>R.animator.filename</code></li>
+<li>XML: <code>@[package:]animator/filename</code></li>
+</ul>
+</li>
+<li>格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;set</div><div class="line">	android:ordering=[&quot;together&quot; | &quot;sequentially&quot;]&gt;</div><div class="line">	&lt;objectAnimator</div><div class="line">		android:propertyName=&quot;string&quot;</div><div class="line">		android:duration=&quot;int&quot;</div><div class="line">		android:valueFrom=&quot;float | int | color&quot;</div><div class="line">		android:valueTo=&quot;float | int | color&quot;</div><div class="line">		android:startOffset=&quot;int&quot;</div><div class="line">		android:repeatCount=&quot;int&quot;</div><div class="line">		android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">		android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line">	&lt;animator</div><div class="line">		android:duration=&quot;int&quot;</div><div class="line">		android:valueFrom=&quot;float | int | color&quot;</div><div class="line">		android:valueTo=&quot;float | int | color&quot;</div><div class="line">		android:startOffset=&quot;int&quot;</div><div class="line">		android:repeatCount=&quot;int&quot;</div><div class="line">		android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">		android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line">	&lt;set&gt;</div><div class="line">	...</div><div class="line">	&lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+<h3 id="2-视图动画"><a href="#2-视图动画" class="headerlink" title="2. 视图动画"></a>2. 视图动画</h3><h4 id="2-1-补间动画"><a href="#2-1-补间动画" class="headerlink" title="2.1  补间动画"></a>2.1  补间动画</h4><ul>
+<li><p>文件路径：<br><code>res/anim/filename.xml</code></p>
+</li>
+<li><p>编译后资源对于数据类型：<br><a href="https://developer.android.com/reference/android/view/animation/Animation.html?hl=zh-cn" target="_blank" rel="external"><code>Animation</code></a></p>
+</li>
+<li><p>引用资源：<br>Java : <code>R.anim.filename</code><br>XML: <code>@[package:]anim/filename</code></p>
+</li>
+<li><p>格式：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">	android:interpolator=&quot;@[package:]anim/interpolator_resource&quot;</div><div class="line">	android:shareInterpolator=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">	&lt;alpha</div><div class="line">		android:fromAlpha=&quot;float&quot;</div><div class="line">		android:toAlpha=&quot;float&quot; /&gt;</div><div class="line">	&lt;scale</div><div class="line">		android:fromXScale=&quot;float&quot;</div><div class="line">		android:toXScale=&quot;float&quot;</div><div class="line">		android:fromYScale=&quot;float&quot;</div><div class="line">		android:toYScale=&quot;float&quot;</div><div class="line">		android:pivotX=&quot;float&quot;</div><div class="line">		android:pivotY=&quot;float&quot; /&gt;</div><div class="line">	&lt;translate</div><div class="line">		android:fromXDelta=&quot;float&quot;</div><div class="line">		android:toXDelta=&quot;float&quot;</div><div class="line">		android:fromYDelta=&quot;float&quot;</div><div class="line">		android:toYDelta=&quot;float&quot; /&gt;</div><div class="line">	&lt;rotate</div><div class="line">		android:fromDegrees=&quot;float&quot;</div><div class="line">		android:toDegrees=&quot;float&quot;</div><div class="line">		android:pivotX=&quot;float&quot;</div><div class="line">		android:pivotY=&quot;float&quot; /&gt;</div><div class="line">	&lt;set&gt;</div><div class="line">		...</div><div class="line">	&lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+<h5 id="2-1-1-插值器（Interpolators）"><a href="#2-1-1-插值器（Interpolators）" class="headerlink" title="2.1.1 插值器（Interpolators）"></a>2.1.1 插值器（Interpolators）</h5><h4 id="2-1-2-自定义插值器"><a href="#2-1-2-自定义插值器" class="headerlink" title="2.1.2 自定义插值器"></a>2.1.2 自定义插值器</h4><ul>
+<li>略</li>
+</ul>
+<h4 id="2-2-帧动画"><a href="#2-2-帧动画" class="headerlink" title="2.2 帧动画"></a>2.2 帧动画</h4><p>按顺序显示一系列图片</p>
+<ul>
+<li>文件路径<br>  <code>res/drawable/filename.xml</code></li>
+<li>编译后对应资源类型：<br>  <a href="https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html?hl=zh-cn" target="_blank" rel="external">AnimationDrawable</a></li>
+<li>引用方式：<br>Java: <code>R.drawable.filename</code><br>XML: <code>@[package:]drawable.filename</code></li>
+<li><p>格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">	android:oneshot=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">	&lt;item</div><div class="line">		android:drawable=&quot;@[package:]drawable/drawable_resource_name&quot;</div><div class="line">		android:duration=&quot;integer&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=&quot;false&quot;&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust1&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust2&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust3&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div><div class="line">//------- Java 代码</div><div class="line">ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);</div><div class="line">rocketImage.setBackgroundResource(R.drawable.rocket_thrust);</div><div class="line">rocketAnimation = (AnimationDrawable) rocketImage.getBackground();</div><div class="line">rocketAnimation.start();</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文链接&lt;/a&gt;&lt;/
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="API_Guide" scheme="http://hanlyjiang.cn/categories/Android/API-Guide/"/>
+    
+    
+      <category term="动画" scheme="http://hanlyjiang.cn/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SVN使用笔记</title>
+    <link href="http://hanlyjiang.cn/2016/08/12/2016-08-12-SVN%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://hanlyjiang.cn/2016/08/12/2016-08-12-SVN使用笔记/</id>
+    <published>2016-08-12T02:29:33.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>SVN 命令行使用方法</p>
+<a id="more"></a>
+<!-- toc -->
+<h3 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a><strong>checkout</strong></h3><pre><code>// 使用用户名tom checkout 出仓库
+svn checkout http://svn.server.com/svn/project_repo --username=tom
+</code></pre><h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a><strong>修改文件</strong></h3><pre><code>svn add test.java
+</code></pre><h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a><strong>忽略文件</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">export SVN_EDITOR=vim  // 设置编辑器</div><div class="line">// svn delete --keep-local [目录] 要删除的文件</div><div class="line">svn propedit svn:ignore [目录]  // 编辑某个目录下面的忽略规则</div><div class="line">// 在编辑器中编辑忽略规则</div><div class="line">svn st // 查看状态</div><div class="line">svn commit -m &quot;忽略 [目录] &quot;</div><div class="line">svn update</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>忽略规则：</strong><br> <code>*</code> 匹配任何字符串，包括空串(没有字符)<br> <code>?</code> 匹配任何单字符<br> <code>[...]</code> 匹配任何单在方括号[]内的单字符，在方括号内，一对字符被“-”分隔，匹配任何词汇表(lexically)上在他们中间的字符。例如[AGm-p]匹配任何单个的A,G,m,n,o或者p。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SVN 命令行使用方法&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="版本控制" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+      <category term="SVN" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/SVN/"/>
+    
+    
+      <category term="svn" scheme="http://hanlyjiang.cn/tags/svn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>柏杨-西窗随笔(1)</title>
+    <link href="http://hanlyjiang.cn/2016/08/09/%E8%A5%BF%E7%AA%97%E9%9A%8F%E7%AC%94/"/>
+    <id>http://hanlyjiang.cn/2016/08/09/西窗随笔/</id>
+    <published>2016-08-09T01:16:52.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.rain8.com/article/class4/201210/11888.htm" target="_blank" rel="external">原文地址</a></p>
+<p><img src="boyang_xichuansuibi_book_page.jpg" alt="西窗随笔封面" title="西窗随笔封面"></p>
+<h1 id="穷是致命伤"><a href="#穷是致命伤" class="headerlink" title="穷是致命伤"></a>穷是致命伤</h1><p>穷是男人的致命伤，一个穷小子，想讨一个普普通通的老婆，比上吊都难，至于进一步想讨如花似玉，那更是乱做春梦。但穷艺术家、穷作家，却往往能娶到一位，神恩浩荡，不服气不行也。也就是说，穷并不是不可救药，穷而有两下子，照样有辉煌前程。盖天下女人，在某一个角度上，似乎可以分为三型，一曰见钱眼开型，一曰艺术气质型，一曰不求甚解型。<br><a id="more"></a></p>
+<p>　　见钱眼开，固然很多是先天的，但大多数都是后天的培养。一个小女人，活着活着，忽然发现了银子这玩艺，真是绝妙之物。柏杨先生家乡有句俗话云：「钱是活宝，花到哪里，哪里好。」只要有了钱，想汽车就坐汽车，想去美国就美国，想看忠贞嘴脸就有忠贞嘴脸，想听赞扬她德配天地，才色兼俱，就有人赞扬她德配天地，才色兼俱。而最大的舒服还是，只要有钱，就自然而然的产生摇尾系统，追随左右，无论走到哪里，有在前打头站的，有在后押阵脚的，有在眼前屁后陪笑承欢的，真能使她飘飘欲仙。呜呼，嫁给一个穷小子，连电风扇都买不起，而嫁给一个百万富翁，只要把钞票往窗子上一丢，就会冒出一个冷气机。嫁给一个穷小子，天天吃白水炖豆腐，而嫁给一个富翁，照样把钞票往桌上一丢，就也照样冒出一席山珍海味。一旦有此发现。于是乎她就立刻变成了天鹅肉，而穷小子也就立刻变成了癞虾蟆。</p>
+<p>　　穷小子常常有一种观念，认为凡是百万富翁，都铁定的脑满肠肥，庸俗不堪。过去的土财主，和用不尊严手段达到尊严地位的人，固然低级的多，高级的少。但社会逐渐进步，正当的企业家和正当的商人，却往往也有高尚的情操和情趣。君读过《卡尼基传》乎，当时美国和智利之间，情势紧张，眼看就要开战，卡尼基先生劝总统忍耐，总统是谁，已忘记矣，当时就大怒曰：「你阁下是个商人，只知道商业利益，不知道国家尊严？」卡尼基先生曰：「总统先生，那你就错啦，我经营的钢铁工业，一旦开战，只有发财。」工商业越发展，这种富翁也将越多，这种富翁越多，国家也就越富越强。</p>
+<p>　　其实即令所有的百万富翁都十分庸俗不堪，听他三句话都能使人闭气而亡，也没关系。盖一个见钱眼开型，她本身也绝不会雅到哪里去也。幸福的婚姻建筑在两个人的价值标准相同上，价值标准相同，看法和感受才能一致。一个百万富翁献上了女儿而弄了一笔钱，他太太如果是一个艺术气质型，恐怕不会赞成，至少她会瞧他不起。但他太太如果是一个见钱眼开，那就不一样啦，准夸奖他手段高明。嗟夫，见钱眼开型是上帝特别为百万富翁或俗不可耐储备的女人。只有他们配在一起，才能快乐。</p>
+<p>　　艺术气质型则恰恰相反，这不是说这一型的太太小姐都是仙女下凡，对世俗的享受毫不在乎。普天之下，包括孔丘先生以及柏杨先生在内，恐怕没有一个人不是有汽车就不坐鸡公车，能吃肉就不吃糠的也。但她们对钱的要求却是适可而止，犹如见钱眼开型的太太小姐，对性灵的要求也是适可而止一样。见钱眼开的太太小姐事实上并不一定连毛孔都俗不可耐，不过，她们对性灵的追求和吸收，有一定的极限，一旦性灵和钱摆到眼前要她选择，她就只看见钱矣。所以一百个前途辉煌，才华四溢的画家焉、作家焉、音乐家焉，纵然再加上一千斤沉香没药，也抵不上一个在纽约开茶馆不识之无的大肚子老板。</p>
+<p>　　同样道理，艺术气质较重的太太小姐，她有她的境界，到美国去落户生子，当然求之不得，但该丈夫必须是个学者专家，风流潇洒之类，才能对劲，即便稍微穷一点，也没有太大关系。否则的话，就是嫁给了该茶馆大肚子老板，连茶盃都是用美钞糊的，她也会觉得缺少点什么。小说也好，真实故事也好，凡是看上了穷叮当小子，硬是非爱之，甚至非嫁之不可的，差不多都属于这类型的女孩。柏杨先生那位世侄，就是在这种际遇之下娶了一位如花似玉的，这就得全凭运气了矣。就在结婚喜筵的那一天，隔壁桌上有几位呆头鹅，在那里唉声叹气，其中一位忽然问其邻座曰：「你跟林小姐泡了四五年啦，从她高中毕业一直泡到大学堂，啥时吃你的喜酒？」邻座茫然曰：「不知道。」问话的人曰：「胡说胡说，怎能不知道。」邻座曰：「确实不知道。」原来该邻座是一位音乐硕士──在某学堂任教，在音乐界颇有点名气，他有一次费了两个月工夫谱出一曲，献给他的女友，该女友拿在玉手之中，眺望了半天，他以为她会欢欣若狂，马上拧他一下，以示感谢哩。谁知道她眺望了半天之后，了了草草塞到皮包里，就要他陪她逛委托行。呜呼，君知道陪女朋友逛委托行的真实意义是啥？那就是说，她要敲他啦，他必须在口袋中装满了钞票，以便她看中了某一种贵得要命之物时，他就满面含笑的买而送之。他阁下一肚子气，再加上时值月尾，正闹饥荒，不愿跟她去，提议去看电影，她就摇摇屁股，走啦。</p>
+<p>　　虽然两桌之间，有相当距离，而我又不认识该小子，但我一听就知道他们的恋爱要砸锅。不过，话又说回来，结不了婚，该小子固然发疯，还算他祖宗有德，如果一旦结了婚，穷艺术家娶了一位见钱眼开，那比娶了一颗原子弹还要糟。不要说爆炸啦，爆炸啦当然要粉身碎骨，不在话下。即令一直没有爆炸，那种放射线也能把他烤得皮破血流，毛发全脱。</p>
+<h1 id="什么人配什么人"><a href="#什么人配什么人" class="headerlink" title="什么人配什么人"></a>什么人配什么人</h1><p>见钱眼开型女人天生的要嫁给老板经理，和小开富翁，这种婚姻才是百年好合，盖他只要一天有钱，她就服服帖帖。即令若干年后，他的钱光啦，但她也老啦，耍不出新花样。而穷艺术家一旦红鸾星动，结识了见钱眼开，那可是霉运当头。常有些写稿的作家朋友，写起小说也好，散文也好，动不动就冒出来一位美艳绝伦的女士，两人一旦交谈，互通了尊名大姓，该女士一定尖叫曰：「原来你就是谁谁谁呀，我常看你的大作呀，写得好，写得妙，我以认识你为荣呀。」作者照例自己谦虚一番，有的还藉机说上一段使读者背皮发紧的话，然后二人就爱上啦，爱得难舍难分。</p>
+<p>　　写这种小说的作家，即令不是头脑简单，也是一厢情愿，认为只要有两篇大作出笼，就会有一打以上的千娇百媚，争着往他怀里跳。呜呼，艺术家固有娶漂亮太太的特权，但这特权要靠上帝的恩典和他自己的真实本领，不是说浮浮飘飘两本小说就能使女孩子心神动摇。不要说别的，只说一点吧，如果遇到的小姐是见钱眼开型，恐怕不要说只写过两本啦，就是写过两箩筐都没有用。唯英雄惜英雄，惟惺惺惜惺惺，唯艺术气质的女孩子，才有爱上艺术家的可能性。</p>
+<p>　　艺术气质，是一种不图近利的气质，而见钱眼开则是一种短视眼，别看她美目盼兮，巧笑倩兮，却是除了钱啥都看不见。而且只看见眼皮底下的钱，连三公尺外的钱都看不见，深信只有钱才是万能。艺术气质型不同的是，认为「才」才是万能，基本观念既然不一样，恋爱也好，婚姻也好，就也不一样。</p>
+<p>　　《聊斋》上有一文，曰〈姐妹易嫁〉，为这两型的女孩子描绘出两种脸谱。书上曰：毛先生者，山东掖县人，官做到宰相之职。而他小的时候，父亲却是一个放牛的，穷得一清二白。同县有一位张先生，乃当地百万富翁，看他聪明可爱，前途不可限量，就把他收留在家里读书，当作子女一样看待。又把长女许配给他为妻，毛先生的母亲一听，百万富翁的女儿要下嫁给她的儿子，当时就吓了一跳，这一跳我想是难免的，盖贫富相差太远啦。</p>
+<p>　　问题就出在长女身上，她听说把她许配给一个放牛的儿子，禁不住羞愧难当，气冲斗牛。偶尔有人向她提及她的婆家，她就把耳朵一掩，号曰：「我宁死也不嫁那穷光蛋。」等到结婚那天，毛先生兴兴头头，前来迎娶，在客厅里恭候，可是新娘坐在墙角却一味猛哭，连妆都不化，更别说上轿啦。</p>
+<p>　　大小姐越是痛哭流涕，如丧考妣，被「如丧」的两位考妣，越是急得抽筋。执事进来传话，新郎要告辞啦，告辞啦者，就是催新娘快点上轿。老头连忙出来，扯谎曰：「小女正在梳妆，请稍停稍停。」扯罢尊谎，又回来规劝女儿。呜呼，这真是一个伟大场面，写在书上，还没啥热闹，如果搬到电影上，就热闹矣。百万富翁之家，大喜之日，张灯结彩，车马盈门，人声喧腾，穷新郎战战兢兢，枯坐在客厅之中，左等右等，不见新娘上轿。不要说有人向他咬耳朵传情报矣，就是察颜观色，也会看出有点不对劲。而新娘身为大学堂毕业生，天天盼望去菲律宾嫁给华侨，如今被老头异想天开，逼着嫁给一个其穷无比的小子，那股委屈之劲，足够使观众落泪矣。该老头自找烦恼，惹火上身，一会跑到新郎那里，叫曰：「我女儿正在描眉，马上就好啦。」一会儿跑到新娘那里，叫曰：「乖女儿，那小子目前虽贫，但将来前途无穷，为父的岂能坑你。」跳跃之状，不忍卒睹。</p>
+<p>　　可是无论怎样拖延，新娘不上轿总无法结束这个镜头。老头情急，一迭连声吩咐用人去买麻绳，要吊死在女儿面前。闹成这种样子，就更下不了台。二女儿看不过去，也去劝她姐姐，劝了些啥话，书上没有交代，不外是说姓毛的那小子有出息，为人不可只看「钱」而不看「才」等等。大小姐一听，好呀，你也逼我往井里跳，瞧我的笑话呀，大怒曰：「他既然那么好，你怎么不嫁他？」二小姐曰：「爸爸当初没有把我许配给他，如果把我许配给他，用不着谁劝，我自然会嫁。」老头一听二女儿之言，灵机一动，就跟她商量，结果由她代替姐姐，梳妆上轿。</p>
+<p>　　这个故事最后的结局是八股的，全在意料之中。穷小子后来成了宰相大人，而大小姐嫁了一位百万富翁，后来家破人亡，她阁下只好去尼姑庵里苟延残喘。对于这种结局，我们不以为有其必然性，婚姻不是赌博赛马，找个穷小子押上一注，就一定可押中，盖穷小子不一定将来必富，而百万富翁也不一定将来必穷，即令穷，也不一定穷到尼姑庵也。不过我们要从这故事说明的是，姐妹二人，正是两个极端，大小姐见钱眼开，而二小姐却有艺术气质，在乱七八糟，丢人献宝的浪潮中，毅然挑起重担，仅这一点，普通人就不容易办到。当然，如果二小姐不肯嫁国王时，大小姐准也可挺身而出，「你不嫁我嫁」。但天下不肯嫁穷小子的女人多，不肯嫁国王的女人少也。</p>
+<h1 id="择肥而噬"><a href="#择肥而噬" class="headerlink" title="择肥而噬"></a>择肥而噬</h1><p>〈姐妹易嫁〉给我们的另一启示是：世界上逼女儿嫁百万富翁的父母，多如牛毛，盖少女们正值绮丽年华，吃喝玩乐，只要向老头老太太一伸玉手就行啦。就是父母不给钱，也会有臭男人勇猛奉献。想当年柏杨先生的令嫒从开始社交文定，一直到结婚大典，就从没有花过一文。我乃知事明理之人，当然不会不给她钱，每次她有约会，我都塞一点碎银子到她荷包里，以备不时之需。可是她简直花不出去，有若干次她表示表示，请那些前呼后拥吃点消夜，可是还没等她动手，小子们已跑到柜台上打架啦。</p>
+<p>　　富贵之家的少女们似乎啥都不缺，独缺爱情，一旦到了「女心向外」之年，简直用铁链都锁不住。普通一点的，唯年轻英俊是视，只要该小子长得帅，会跳舞，会唱歌，在大庭广众中惹人肃然起敬就行。高级一点的则只要能写两篇小说，能说两句英文，她就五体投地，认为别瞧他目前固穷，二十年后，准一条好汉，届时名震世界，莎士比亚先生给他提鞋都不配。可是作父母的却难得有这种想法，盖二十年是一个漫长的日子，到时候莎士比亚给他提鞋都不配，当然很好，万一弄砸了锅，成了他给莎士比亚提鞋都不配的局面，该如何是好乎哉？故远的不如现的，期票不如本票，眼里瞧的不如口袋里装的，文化人──尤其是尚未成名的文化人，遂不值一个屁；「有经济基础的人」，才是上等女婿。君看过《梵谷传》乎？梵谷先生向老头求婚，老头整人为快乐之本，曰：「你把你的手指烧掉，我女儿就嫁你。」梵谷先生一听，烧掉就烧掉，当场就烧，烧得皮肉嗤嗤，双目流泪，可是老头仍不答应，不答应固然可以说老头心狠如狼，但普天之下，大多数老头老太太都是见钱眼开的。即以柏杨先生而论，道德学问，真没啥可说，可是我选女婿时，就是只看他的金银财宝。我的小女儿在美国第一次恋爱，对象是个学文史的，也就是现在大专联考乙组那类小子，我连夜打出长途电话，严厉禁止。呜呼，她如果嫁给一个作家，每月怎能给我两老寄三百元美金乎；现任女婿乃一洋大人，在波城绿意斯镇开五金杂货店，小女儿只要顺手牵一把锅铲寄来，就够我吃一个月矣。</p>
+<p>　　说了这么多，只是说父母往往逼女儿嫁百万富翁，而女儿往往坚持嫁穷小子，这当然不是全体如此，有些千金小姐身上天生的流着见钱眼开的血液，跟老头老太太的意见不谋而合，择肥而噬，不但一团和气，也一帆风顺。不过一旦女儿是艺术气质型，就不得不热闹起来，掀起家庭革命。夫家庭革命者，一句话可说完，那就是，艺术气质型反抗见钱眼开型。这种革命是常见的，只有〈姐妹易嫁〉这种革命，却是见钱眼开型反抗艺术气质型，乃属绝对少数。老头老太太竟然主张放长线约大鱼，女儿却认为穷小子不可靠。世界之大，可谓无奇不有。不过这种场面，如凤毛麟角，不是女儿凤毛麟角，而是老头老太太凤毛麟角。</p>
+<p>　　心理学家把人类分为内向型和外向型，曰内向型如何，曰外向型如何，振振有词，好像言之有物，结果发现人类没有绝对的外向，也没有绝对的内向，大多数都是混合物。在某一种场合，外向两下子，在另一种场合，内向两下子。我们把太太小姐哇啦哇啦乱分，也同样结局，芸芸女士，很少是绝对见钱眼开，也很少是彻头彻尾艺术气质的也。绝对的见钱眼开，其庸其俗，其无心肝，没有人可以忍耐。绝对的艺术气质，也照样糟糕，活在一种不切实际的幻想世界，见解和感情，一辈子都不成熟。娶了一位纯粹艺术气质型，等于娶了一个玻璃娃娃，麻烦可大啦。</p>
+<p>　　大多数太太小姐似乎都不求甚解，马马虎虎，混混沌沌。呜呼，婚姻乃终身大事，尤其对一个女孩子，婚姻好像是再次出生，三分之二的生命交付给一个素昧平生的臭男人手里，真是世界最大的一桩冒险。按说应该小心又小心，慎重又慎重才对，事实上却往往是大而化之的多，左挑右挑，看得准，拿得稳的少。我认识一个女孩子，是我侄女的同学，漂亮得不像话，属于见钱眼开型，这一型的最大困难就是无法教臭男人填具一张资产负债表。只好在他衣食住行的规模上判断，结果嫁了一位半大老头，当初人人都以为他有几文的，结果发现他比柏杨先生还穷，不过场面阔绰罢啦，把她阁下气了个半死。</p>
+<p>　　这困难对艺术气质型小姐也会产生，臭男人的「才」，和他的「钱」一样，也往往无法预先确知，有些「小有才，未闻君子之大道」，或「小时了了，大未必佳」的年轻人，二三十岁时候，看起来前途不可限量。咦，说到这里，特地提醒一点，哪一个没有出息的老头，年轻时不是被人认为「前途不可限量」乎哉？即以柏杨先生而论，弱冠之时，面如美玉，意气高昂，着实风靡三秦，父老皆曰：「此子才华盖众，前途不可卜也。」结果何如，阁下已知，敝前途只不过两公尺就完啦。我是过来人，故对后生小子的前途，实在没有把握。君看过一篇小说乎，名曰〈乔治的书〉，乔治先生是女主角的丈夫，结婚之前，他扬言要写一本全世界都要震动的名着，每个细节都想好啦，只等一结婚就哗啦哗啦动手，女主角听到入神之处，就让他握着她的玉手，然后望着他那前途不可限量的尊脸，玉眼中露着崇拜骄傲的光辉。</p>
+<p>　　结了婚之后，连蜜月都没有度，为的是乔治先生急于要写他的书，女主怀着兴奋的心情，把笔墨纸砚都准备好，然后把丈夫送到书房。该乔治先生一会要咖啡，一会抱怨太太打断了他的灵感，一会这个，一会那个，俨然莎士比亚二世。半个月之后，新娘子数了数稿纸，竟少了三十页，芳心大喜。</p>
+<h1 id="芳心大喜"><a href="#芳心大喜" class="headerlink" title="芳心大喜"></a>芳心大喜</h1><p>女主角所以芳心大喜，盖依她的判断，那些稿纸一定写得满满的矣，谁晓得事情有点大谬不然，她竟在最底层抽屉里发现了它，不但没有写得满满的，而是连一个字都没有写。原来乔治先生恐怕太太翻他的稿纸，故意弄的玄虚也。这一气非同小可，她就和他大闹，依照常情，该丈夫准满脸通红，无地自容；谁晓得他不但不满脸通红，无地自容，还跳高哩，一面跳高一面吼曰：「你一点都不心疼我，日夜不断逼我写，我难道不能休息一下哉？」娇妻哭丧脸答曰：「你当然可以休息，但你根本没有写呀。」该丈夫急啦。宣称冬天太冷，手脚都僵，等春天时一定写。春天来啦，百花齐放，使人心身都懒。还是等夏天吧，夏天不写就是王八蛋。可是到了夏天，蚊子又多，天气又热，汗流浃背，挂到绞架上都绞不出灵感，想起来还是冬天好。</p>
+<p>　　这篇文章的结局是一段话，女主角叹曰：「到了现在，我们结婚已二十年，他还在天天发誓说，下个月就要写他的书。」</p>
+<p>　　乔治先生当然是经过戏剧化了的人物，不过也正可说明世界上这种臭男人实在太多，多得连小说家都提出了典型。呜呼，青年人最大的毛病是志大而才疏，几个小伙子聚在一起，瞧他们前途光明吧，不一定是瞎吹的，而实在是都怀着强烈的自信。记不得是哪个洋大人写的文章，描写两个穷画家的故事，在房东太太把他们撵走的前夕，两块活宝在房子里大骂该房东太太庸俗恶劣，不知艺术为何物，然后灌了两口黄汤，甲恭维乙是毕加索，乙恭维甲是雷诺尔，甲说他的计画，乙说他的抱负，说到得意之处，好像眼看就要成大名而发大财。这时房东小姐一个人默坐在楼梯上，双手紧握，倾听他们信口雌黄，心跳如捣。一会工夫，其中一个走啦，另一个送客归来，女儿撞上去，把他抱住，吻他，说她相信他将来不得了，要他带她远走高飞，她可以为他洗衣做饭，管家务，整理画架，使他无后顾之忧，而安心作画。艺术家本来已自我沉醉，一听有人如此崇拜，就更信以为真，架子马上端了起来，说他不能娶她，因艺术家都是只过爱情生活，而不过婚姻生活的。他需要自由，有自由才能发挥天才。主要的还是她不漂亮，如果漂亮就好啦。一面说一面向楼下的房东太太开骂，骂她是「巫婆」，只知道钱钱钱钱钱钱钱，不知道他是人才。</p>
+<p>　　这故事似乎颇有教育意义。夫「财」「才」均难发现，看着好像是那么回事，等到嫁了过去，生米煮成熟饭，可能竟不是那么回事。</p>
+<p>　　我想，天下最伤心的莫过于见钱眼开型嫁给一个穷措大，而艺术气质型嫁给一头俗猪。</p>
+<p>　　见钱眼开小姐满心以为嫁的是一位部长兼富翁，出门有汽车，家里有冷气，巴西有橡园，美国有房产，想不到蜜月一过，原来他不但啥都不是，而且还啥都没有。汽车是租车行的，房产固然有，早于五年前就卖啦。一场春梦，化为泡影，忽冬一声，跌到万丈深渊。而艺术气质小姐亦然，她本来以为她的丈夫能成为名作家，名画家，或能成为学人专家，至少也能成为一个博士硕士的。更相信他的气质和见解，不同凡品，两人情投意合，即令过粗茶淡饭日子，也都十分开心。想不到嫁了才三天，竟发现他原来是一个下三滥，照样会痛不欲生。</p>
+<p>　　问题是，严重的程度却不一样，见钱眼开型万一瞎了尊眼，嫁了个穷措大，固然倒楣，但一旦时来运转，说不定仍可发上一笔。只有「才」这玩艺，没有就是没有，一旦把乌鸦当成了凤凰，那才是走入绝路。盖穷措大可能有平地一声雷的一天，而乌鸦却怎么变，都变不成凤凰也。人类的情操都是向上的，守财奴哭他丢了钱，听的人不但不会同情他，恐怕还要大笑一场，以资庆祝。一个如花似玉哭她遇人不淑，恐怕人人都会陪着她落泪，这种错把乌鸦当凤凰的结局，最最惨不忍睹，因其很难挽救，别人也帮不上忙也。</p>
+<p>　　君看过《聊斋》上的〈嘉平公子〉乎？该公子堂堂皇皇，一表人才。有一位漂亮绝伦的小姐，爱他爱得天昏地暗，他当然也爱她爱得天昏地暗。后来虽然发现她竟然是一个女鬼，但仍爱她如故，盖她奇美，一见她就连心都化了也。他回家后，女鬼也跟着他回家。老爹老娘用尽了方法，除了向警察局报案外，还请高僧老道，念经捉妖，搞了个人仰马翻，结果该女鬼连毫毛都没有动，依然故我。</p>
+<p>　　可是，终于那一天来啦，该公子写了一张字条，放到桌上，该纸条白字连篇，「椒」写成「菽」，「姜」写成「江」，「可恨」写成「可浪」。女鬼看见，在背后批曰：「何事可浪，花菽生江，有婿若此，不如为娼。」题罢，化作一阵清风而去。</p>
+<p>　　咦，连高僧老道都木法度，几个白字却能把她轰走，庸俗愚劣之不可耐，稍微有点灵性的人，都受不了也。这是才女们最大的困惑，谢道韫女士的丈夫是王凝之先生，王家是四世纪时中国最最高级的名门，可是王凝之先生却是一个嘉平公子──即令不是嘉平公子，大概差劲得也够瞧啦。谢女士不像那位女鬼，女鬼伤心之余，可以化成一道清风，脱离苦海，谢女士却不得不守着该俗猪一辈子。有一次回娘家，忍不住曰：「想不到天地之间，竟有王凝之这种东西？」呜呼。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.rain8.com/article/class4/201210/11888.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;boyang_xichuansuibi_book_page.jpg&quot; alt=&quot;西窗随笔封面&quot; title=&quot;西窗随笔封面&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;穷是致命伤&quot;&gt;&lt;a href=&quot;#穷是致命伤&quot; class=&quot;headerlink&quot; title=&quot;穷是致命伤&quot;&gt;&lt;/a&gt;穷是致命伤&lt;/h1&gt;&lt;p&gt;穷是男人的致命伤，一个穷小子，想讨一个普普通通的老婆，比上吊都难，至于进一步想讨如花似玉，那更是乱做春梦。但穷艺术家、穷作家，却往往能娶到一位，神恩浩荡，不服气不行也。也就是说，穷并不是不可救药，穷而有两下子，照样有辉煌前程。盖天下女人，在某一个角度上，似乎可以分为三型，一曰见钱眼开型，一曰艺术气质型，一曰不求甚解型。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="文摘" scheme="http://hanlyjiang.cn/categories/%E6%96%87%E6%91%98/"/>
+    
+      <category term="柏杨" scheme="http://hanlyjiang.cn/categories/%E6%96%87%E6%91%98/%E6%9F%8F%E6%9D%A8/"/>
+    
+    
+      <category term="柏杨" scheme="http://hanlyjiang.cn/tags/%E6%9F%8F%E6%9D%A8/"/>
+    
+      <category term="婚姻" scheme="http://hanlyjiang.cn/tags/%E5%A9%9A%E5%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 使用笔记</title>
+    <link href="http://hanlyjiang.cn/2016/08/08/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://hanlyjiang.cn/2016/08/08/hexo使用笔记/</id>
+    <published>2016-08-08T02:57:45.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo 使用过程中的一些笔记，使用小技巧等等<br><a id="more"></a></p>
+<p>参考： <a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">官方文档</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">NodeJs</a>    </li>
+<li>运行    <code>npm install -g hexo-cli</code> 安装    </li>
+</ol>
+<h2 id="基本命令-点击跳转到官方中文说明"><a href="#基本命令-点击跳转到官方中文说明" class="headerlink" title="基本命令-点击跳转到官方中文说明"></a><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">基本命令-点击跳转到官方中文说明</a></h2><ul>
+<li><p>开启服务： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server [-i 192.168.24.124] [-l] [-o] [-p 4003] [-s]</div><div class="line">hexo server -p 4003</div></pre></td></tr></table></figure>
+</li>
+<li><p>部署到服务器    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>官方页面: <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo 主题</a></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>博客迁徙<br>  在新的PC环境下clone下github上的项目时，运行<code>hexo</code> 命令时提示如下错误： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR Local hexo not found in E:\blog</div><div class="line">ERROR Try running: 'npm install hexo --save'</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此时在该目录下执行’npm install 即可’，原因是：.gitignore文件里面忽略了node_modules文件夹，所以这个文件夹没有更新上去。所以用npm重新安装即可。    </p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p>使用 <code>&lt;!--more--&gt;</code> 可以显示摘要,<code>&lt;!--more--&gt;</code>以上部分会显示为摘要</p>
+</li>
+<li><p>在hexo 中使用本地图片: <a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">在 hexo 中无痛使用本地图片</a></p>
+</li>
+<li><p><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown 语法中文版</a></p>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo 中文文档</a></p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo 使用过程中的一些笔记，使用小技巧等等&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="http://hanlyjiang.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Testing Support Library (2)- 配置测试环境</title>
+    <link href="http://hanlyjiang.cn/2016/08/08/2016-08-08-Android-Testing-Support-Library-2/"/>
+    <id>http://hanlyjiang.cn/2016/08/08/2016-08-08-Android-Testing-Support-Library-2/</id>
+    <published>2016-08-08T02:01:59.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文内容：在Gradle 构建系统中使用Android Testing Support Library<br><a id="more"></a></p>
+<h2 id="在Gradle-构建系统中使用Android-Testing-Support-Library"><a href="#在Gradle-构建系统中使用Android-Testing-Support-Library" class="headerlink" title="在Gradle 构建系统中使用Android Testing Support Library"></a>在Gradle 构建系统中使用Android Testing Support Library</h2><p>在Android SDK Manager 中选择 <strong> Android Support Repository </strong> 条目，并下载安装,在Android Studio 中位置如下如图：</p>
+<p><img src="android_support_library_download.png" alt="Android Studio中下载方式"></p>
+<p>下载完成后文件位于：<sdk>/extras/android/m2repository 目录下，而Android 测试支持库位于包 android.support.test下。</sdk></p>
+<p>在Gradle 构建系统中使用Android 测试支持库时，你需要在build.gradle 文件中添加以下内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  androidTestCompile &apos;com.android.support.test:runner:0.4&apos;</div><div class="line">  // 使用 JUnit 4 rules 需要</div><div class="line">  androidTestCompile &apos;com.android.support.test:rules:0.4&apos;</div><div class="line">  // 使用 Espresso tests 需要</div><div class="line">  androidTestCompile &apos;com.android.support.test.espresso:espresso-core:2.2.1&apos;</div><div class="line">  // 使用 UI Automator tests 需要</div><div class="line">  androidTestCompile &apos;com.android.support.test.uiautomator:uiautomator-v18:2.1.2&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在Gradle 构建系统中指定<a href="https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html" target="_blank" rel="external">AndroidJUnitRunner</a> 为默认的测试Runner，在build.gradle 中defaultConfig 配置段中添加以下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">    defaultConfig &#123;</div><div class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文内容：在Gradle 构建系统中使用Android Testing Support Library&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="测试" scheme="http://hanlyjiang.cn/categories/Android/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/tags/Android/"/>
+    
+      <category term="Android 测试" scheme="http://hanlyjiang.cn/tags/Android-%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 上使用WebView 和Echart 展示图表数据</title>
+    <link href="http://hanlyjiang.cn/2016/08/07/2016-08-07-Android-%E4%B8%8A%E4%BD%BF%E7%94%A8Echart-js/"/>
+    <id>http://hanlyjiang.cn/2016/08/07/2016-08-07-Android-上使用Echart-js/</id>
+    <published>2016-08-07T06:19:13.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前在项目中使用过MPAndroidChart 显示过数据图表，现在需要使用HTML + Echart 来显示，写了一个Demo,DEMO中实现了线图，饼图，还有柱状图。</p>
+<p>示例代码地址:<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs" title="示例代码" target="_blank" rel="external">点击跳转到github</a></p>
+<h2 id="使用到的开源项目"><a href="#使用到的开源项目" class="headerlink" title="使用到的开源项目"></a>使用到的开源项目</h2><ul>
+<li><a href="http://echarts.baidu.com/" target="_blank" rel="external">EChart 库 -js</a><ul>
+<li>版本：2.2.7</li>
+</ul>
+</li>
+<li><a href="http://git.oschina.net/free/ECharts" target="_blank" rel="external">EChart java 对象库</a> 这是一个针对ECharts3.x(2.x)版本的Java类库，实现了所有ECharts中的Json结构对应的Java对象，并且可以很方便的创建Option。这个库引用了Gson，所以build.gradle 中也要加入GSON 的依赖。<ul>
+<li>版本 2.2.7 </li>
+</ul>
+</li>
+</ul>
+<h2 id="JS-和-html-编写"><a href="#JS-和-html-编写" class="headerlink" title="JS 和 html 编写"></a>JS 和 html 编写</h2><p>为方便测试，html页面和js代码放置于项目的assets 目录中，Android代码访问路径为：file:///android_asset/jsWeb/echart.html</p>
+<h3 id="html-页面编写"><a href="#html-页面编写" class="headerlink" title="html 页面编写"></a>html 页面编写</h3><ol>
+<li><p>在head中引入 js 脚本，主要代码如下：(<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external">点击查看全部代码：<em>echart.html</em></a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;!-- 导入script --&gt;</div><div class="line">&lt;script src=&quot;http://echarts.baidu.com/echarts2/doc/example/www/js/echarts.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;./android.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>body中请求需要的EChart脚本，并添加对应控件,主要代码如下: (<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external"> 点击查看全部代码：<em>echart.html</em></a>) 。   我在其中添加了一个js中指定数据的EChart 表格用于测试   </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;main&quot; style=&quot;height:400px&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        // 路径配置</div><div class="line">        require.config(&#123;</div><div class="line">          paths: &#123;</div><div class="line">            echarts: &apos;http://echarts.baidu.com/echarts2/doc/example/www/js&apos;</div><div class="line">            //echarts: &apos;./www/js&apos;</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">        // 使用</div><div class="line">        require(</div><div class="line">          [</div><div class="line">            &apos;echarts&apos;,</div><div class="line">            &apos;echarts/chart/line&apos;, // 使用柱状图就加载line模块，按需加载</div><div class="line">            &apos;echarts/chart/bar&apos;, // 使用柱状图就加载bar模块，按需加载</div><div class="line">            &apos;echarts/chart/pie&apos;, // 使用柱状图就加载pie模块，按需加载</div><div class="line">          ],</div><div class="line">          function (ec) &#123;</div><div class="line">            // 基于准备好的dom，初始化echarts图表</div><div class="line">            var myChart = ec.init(document.getElementById(&apos;main&apos;));</div><div class="line">            //设置数据</div><div class="line">            var option = &#123;</div><div class="line">            // .... 数据部分</div><div class="line">        &#125;;</div><div class="line">            // 为echarts对象加载数据</div><div class="line">            myChart.setOption(option);</div><div class="line">          &#125;</div><div class="line">        )</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;hr/&gt;</div><div class="line">&lt;p&gt;</div><div class="line">&lt;b&gt;从Android 代码中获取数据绘制图表&lt;/b&gt;&lt;br/&gt;</div><div class="line">&lt;button onClick=&quot;loadALineChart()&quot; style=&quot;height:40px&quot;&gt;线状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(2)&quot; style=&quot;height:40px&quot;&gt;饼状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(1)&quot; style=&quot;height:40px&quot;&gt;柱状图&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;textcontent&quot;&gt;没有内容&lt;/p&gt;</div><div class="line">&lt;div id=&quot;chart2&quot; style=&quot;height:400px&quot;/&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="JS-脚本"><a href="#JS-脚本" class="headerlink" title="JS 脚本"></a>JS 脚本</h3><p>这里有一点要注意：Android WebView 提供的接口返回String 类型的json option 字符串，而JS 端接受到字符串后需要用JSON.parse 方法转化成js的Object 对象，只有转换成对象之后才可以传入到Echart的setOption 方法中显示出来。<br>主要代码如下，<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/android.js" target="_blank" rel="external">点击查看全部代码</a></p>
+<pre><code>function toast(msg){
+Android.showToast(msg);
+}
+
+function loadALineChart(){
+    // 必须加JOSN.parse 转换数据类型
+    var option = JSON.parse(Android.getLineChartOptions());
+
+    var chart2Doc = document.getElementById(&apos;chart2&apos;);
+    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
+
+    myChart2.setOption(option);
+    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
+    toast(option);
+}
+
+/**
+type :  1 - 饼状图
+        2 - 柱状图
+*/
+function loadAChart(type){
+    // 必须用JSON.parse() 转换一下，才可以显示，否则数据类型会不对
+    var option = JSON.parse(Android.getPieChartOptions(type));
+    var chart2Doc = document.getElementById(&apos;chart2&apos;);
+    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
+
+    myChart2.setOption(option);
+    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
+}
+</code></pre><h2 id="Android-代码编写"><a href="#Android-代码编写" class="headerlink" title="Android 代码编写"></a>Android 代码编写</h2><h3 id="1-WebAppInterface-定义和实现"><a href="#1-WebAppInterface-定义和实现" class="headerlink" title="1. WebAppInterface 定义和实现"></a>1. WebAppInterface 定义和实现</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 注入到JS里的对象接口</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WebAppInterface</span> </span>&#123;</div><div class="line">    Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WebAppInterface</span><span class="params">(Context c)</span> </span>&#123;</div><div class="line">        mContext = c;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 获取</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLineChartOptions</span><span class="params">()</span> </span>&#123;</div><div class="line">        GsonOption option = markLineChartOptions();</div><div class="line">        LogUtils.d(option.toString());</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showToast</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * PieChart 或者柱状图数据示例</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> type 1 - 饼状图数据； 2 - 柱状图数据</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPieChartOptions</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line"></div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                showDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.currentThread().sleep(<span class="number">1000</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//地址：http://echarts.baidu.com/doc/example/pie7.html</span></div><div class="line">        GsonOption option = <span class="keyword">new</span> GsonOption();</div><div class="line">        <span class="comment">// 设置标题</span></div><div class="line">        option.title(<span class="keyword">new</span> Title().text(<span class="string">"某站点用户访问来源"</span>).subtext(<span class="string">"纯属虚构"</span>).x(X.center));</div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>) &#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125; (&#123;d&#125;%)"</span>);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type == <span class="number">1</span>)&#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125;"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 设置图例</span></div><div class="line">        option.legend().data(<span class="string">"直接访问"</span>, <span class="string">"邮件营销"</span>, <span class="string">"联盟广告"</span>, <span class="string">"视频广告"</span>, <span class="string">"搜索引擎"</span>).orient(Orient.vertical).x(X.left);</div><div class="line"></div><div class="line">        <span class="comment">// 是否可以拖动以计算</span></div><div class="line">        option.calculable(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>)&#123;</div><div class="line">            <span class="comment">// 构造数据</span></div><div class="line">            Pie  pie1 = <span class="keyword">new</span> Pie(<span class="string">"访问来源"</span>);</div><div class="line">            pie1.type(SeriesType.pie).radius(<span class="string">"45%"</span>).center(<span class="string">"50%"</span>,<span class="string">"60%"</span>);</div><div class="line">            pie1.data(<span class="keyword">new</span> Data(<span class="string">"直接访问"</span>,<span class="number">335</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"邮件营销"</span>,<span class="number">310</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"联盟广告"</span>,<span class="number">234</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"视频广告"</span>,<span class="number">135</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"搜索引擎"</span>,<span class="number">1548</span>)</div><div class="line">            );</div><div class="line">            option.series(pie1);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type ==<span class="number">1</span>) &#123;</div><div class="line">            <span class="comment">// 构建柱状数据</span></div><div class="line">            option.xAxis(<span class="keyword">new</span> CategoryAxis().name(<span class="string">"访问来源"</span>).data(<span class="string">"视频广告"</span>,<span class="string">"搜索引擎"</span>,<span class="string">"联盟广告"</span>,<span class="string">"邮件营销"</span>,<span class="string">"直接访问"</span>));</div><div class="line">            option.yAxis(<span class="keyword">new</span> ValueAxis());</div><div class="line"></div><div class="line">            Bar bar = <span class="keyword">new</span> Bar(<span class="string">"访问来源"</span>);</div><div class="line">            bar.data(<span class="number">11</span>,<span class="number">4</span>,<span class="number">14</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">88</span>);</div><div class="line">            option.series(bar);</div><div class="line">        &#125;</div><div class="line">        Log.d(<span class="string">"TAG"</span>,option.toString());</div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                dismissDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<pre><code>    @JavascriptInterface
+    public GsonOption markLineChartOptions() {
+        GsonOption option = new GsonOption();
+        option.legend(&quot;高度(km)与气温(°C)变化关系&quot;);
+
+        option.toolbox().show(true).feature(Tool.mark, Tool.dataView, new MagicType(Magic.line, Magic.bar), Tool.restore, Tool.saveAsImage);
+
+        option.calculable(true);
+        option.tooltip().trigger(Trigger.axis).formatter(&quot;Temperature : &lt;br/&gt;{b}km : {c}°C&quot;);
+
+        ValueAxis valueAxis = new ValueAxis();
+        valueAxis.axisLabel().formatter(&quot;{value} °C&quot;);
+        option.xAxis(valueAxis);
+
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.axisLine().onZero(false);
+        categoryAxis.axisLabel().formatter(&quot;{value} km&quot;);
+        categoryAxis.boundaryGap(false);
+        categoryAxis.data(0, 10, 20, 30, 40, 50, 60, 70, 80);
+        option.yAxis(categoryAxis);
+
+        Line line = new Line();
+        line.smooth(true).name(&quot;高度(km)与气温(°C)变化关系&quot;).data(15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5).itemStyle().normal().lineStyle().shadowColor(&quot;rgba(0,0,0,0.4)&quot;);
+        option.series(line);
+        return option;
+    }
+}
+</code></pre><h3 id="2-WebView-上启用JavaScript-并注入Java对象："><a href="#2-WebView-上启用JavaScript-并注入Java对象：" class="headerlink" title="2. WebView 上启用JavaScript 并注入Java对象："></a>2. WebView 上启用JavaScript 并注入Java对象：</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a></p>
+<pre><code>webSettings.setJavaScriptEnabled(true);
+mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在项目中使用过MPAndroidChart 显示过数据图表，现在需要使用HTML + Echart 来显示，写了一个Demo,DEMO中实现了线图，饼图，还有柱状图。&lt;/p&gt;
+&lt;p&gt;示例代码地址:&lt;a href=&quot;https://github.com/hanlyjian
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/tags/Android/"/>
+    
+      <category term="EChart" scheme="http://hanlyjiang.cn/tags/EChart/"/>
+    
+      <category term="JS" scheme="http://hanlyjiang.cn/tags/JS/"/>
+    
+      <category term="Webview" scheme="http://hanlyjiang.cn/tags/Webview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用kindle pc 阅读本地书籍</title>
+    <link href="http://hanlyjiang.cn/2016/08/05/2016-08-05-%E4%BD%BF%E7%94%A8kindle-pc-%E9%98%85%E8%AF%BB%E6%9C%AC%E5%9C%B0%E4%B9%A6%E7%B1%8D/"/>
+    <id>http://hanlyjiang.cn/2016/08/05/2016-08-05-使用kindle-pc-阅读本地书籍/</id>
+    <published>2016-08-05T06:28:51.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="相关信息："><a href="#相关信息：" class="headerlink" title="相关信息："></a>相关信息：</h3><ul>
+<li>系统： windows</li>
+<li>kindle 版本： 1.16.0</li>
+</ul>
+<h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><ol>
+<li>打开Kindle pc，菜单–&gt;工具–&gt;选项–&gt;内容：</li>
+<li>查看 <em>本地内容存储位置</em> 一般是：<br> C:\Users[用户名]\Documents\My Kindle Content</li>
+<li>将下载的本地mobi 书籍文件放入此文件夹内</li>
+<li>重新启动kindle pc</li>
+<li>在 <em>图书馆</em> 的 <em>已下载</em> 中可以看见刚才复制进去的书籍</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;相关信息：&quot;&gt;&lt;a href=&quot;#相关信息：&quot; class=&quot;headerlink&quot; title=&quot;相关信息：&quot;&gt;&lt;/a&gt;相关信息：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;系统： windows&lt;/li&gt;
+&lt;li&gt;kindle 版本： 1.16.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="kindle" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/kindle/"/>
+    
+    
+      <category term="kindle" scheme="http://hanlyjiang.cn/tags/kindle/"/>
+    
+      <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多个Github仓库合并到一个作为分支存在</title>
+    <link href="http://hanlyjiang.cn/2016/01/11/%E5%A4%9A%E4%B8%AAGithub%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%BA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8/"/>
+    <id>http://hanlyjiang.cn/2016/01/11/多个Github仓库合并到一个作为分支存在/</id>
+    <published>2016-01-11T02:12:50.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>目的： 将github上多个仓库合并到一个里面，保留提交记录</p>
+<pre><code>git clone https://github.com/hanlyjiang/AndroidLearning.git
+cd AndroidLearning
+
+# 合并第一个仓库
+git remote add RepoA https://github.com/hanlyjiang/AndroidUtils.git
+git pull RepoA
+git checkout -b android_utils_master RepoA/master
+git push origin android_utils_master
+git checkout -b android_utils_gh_pages RepoA/gh-pages
+git push origin android_utils_gh_pages
+
+# 合并第二个仓库
+git remote add RepoA https://github.com/hanlyjiang/AndroidDemos.git
+git pull RepoB
+git checkout -b android_demos_master RepoB/master
+</code></pre><p>然后再访问<a href="https://github.com/hanlyjiang/AndroidLearning" target="_blank" rel="external">https://github.com/hanlyjiang/AndroidLearning</a> 即可看到仓库都作为分支被推送过去了，接着在github上删掉被合并的两个仓库</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目的： 将github上多个仓库合并到一个里面，保留提交记录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/hanlyjiang/AndroidLearning.git
+cd AndroidLearning
+
+# 合并第一个仓库
+g
+    
+    </summary>
+    
+      <category term="版本控制" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+      <category term="GIT" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/GIT/"/>
+    
+    
+      <category term="git" scheme="http://hanlyjiang.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用工具下载链接</title>
+    <link href="http://hanlyjiang.cn/2011/11/11/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/"/>
+    <id>http://hanlyjiang.cn/2011/11/11/常用工具下载链接/</id>
+    <published>2011-11-10T17:11:11.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="版本控制工具："><a href="#版本控制工具：" class="headerlink" title="版本控制工具："></a>版本控制工具：</h2><ul>
+<li><a href="http://subversion.apache.org/packages.html#windows" title="svn windows 下载" target="_blank" rel="external">Subversion</a></li>
+</ul>
+<ul>
+<li><a href="http://www.sourceinsight.com/down35.html" title="source insight 下载" target="_blank" rel="external">Source Insight</a></li>
+<li><a href="http://www.sourceinsight.com.cn/support.htm" title="si 文档" target="_blank" rel="external">Source Insight 文档</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;版本控制工具：&quot;&gt;&lt;a href=&quot;#版本控制工具：&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具：&quot;&gt;&lt;/a&gt;版本控制工具：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://subversion.apache.org/packag
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="工具" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+</feed>
