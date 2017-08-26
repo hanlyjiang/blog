@@ -69,72 +69,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2014-06-30-build-blog-with-github-pages-using-bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" class="article-date">
-  <time datetime="2017-08-26T02:44:38.000Z" itemprop="datePublished">2017-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/杂项/">杂项</a>►<a class="article-category-link" href="/categories/杂项/博客/">博客</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
-</ol>
-<ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
-</ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" data-id="cj6sy7xx80000zr70ozyt080r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-2015-04-26-write-markdown-using-sublimetext-on-windows" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/" class="article-date">
@@ -198,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/" data-id="cj6sy7xxj0001zr70lgf03r76" class="article-share-link">Share</a>
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/" data-id="cj6sx5r8b0001k87084539jfv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -210,14 +144,14 @@
 
 
   
-    <article id="post-2016-08-03-Android测试支持库01" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2014-06-30-build-blog-with-github-pages-using-bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/08/26/2016-08-03-Android测试支持库01/" class="article-date">
+    <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" class="article-date">
   <time datetime="2017-08-26T02:44:38.000Z" itemprop="datePublished">2017-08-26</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>►<a class="article-category-link" href="/categories/Android/测试/">测试</a>
+    <a class="article-category-link" href="/categories/杂项/">杂项</a>►<a class="article-category-link" href="/categories/杂项/博客/">博客</a>
   </div>
 
   </div>
@@ -228,7 +162,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+      <a class="article-title" href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
     </h1>
   
 
@@ -236,19 +170,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/08/26/2016-08-03-Android测试支持库01/#more">Read More</a>
-          </p>
-        
+        <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/" data-id="cj6sy7xxq0004zr70egbq2wft" class="article-share-link">Share</a>
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" data-id="cj6sx5r8g0005k870ak6jxzlj" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android测试/">Android测试</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li></ul>
 
     </footer>
   </div>
@@ -292,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/" data-id="cj6sy7xxt0005zr70ylqy3sms" class="article-share-link">Share</a>
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/" data-id="cj6sx5r8i0006k8707r6f007c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java注解/">Java注解</a></li></ul>
@@ -352,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/" data-id="cj6sy7xxv0006zr70m1noxjs2" class="article-share-link">Share</a>
+      <a data-url="http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/" data-id="cj6sx5r9v000zk870et0msdzl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
@@ -364,7 +317,324 @@
 
 
   
+    <article id="post-2016-08-03-Android测试支持库01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/26/2016-08-03-Android测试支持库01/" class="article-date">
+  <time datetime="2017-08-26T02:44:38.000Z" itemprop="datePublished">2017-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>►<a class="article-category-link" href="/categories/Android/测试/">测试</a>
+  </div>
 
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/26/2016-08-03-Android测试支持库01/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/" data-id="cj6sx5r8d0002k870bz26pjcv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android测试/">Android测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-12-08-测试hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/08/2016-12-08-测试hexo/" class="article-date">
+  <time datetime="2016-12-08T08:39:35.000Z" itemprop="datePublished">2016-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/08/2016-12-08-测试hexo/">测试hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/12/08/2016-12-08-测试hexo/" data-id="cj6sx5r9j000rk870qsyt93kp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-08-19-gitbook使用笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/19/2016-08-19-gitbook使用笔记/" class="article-date">
+  <time datetime="2016-08-19T03:23:05.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/杂项记录/">杂项记录</a>►<a class="article-category-link" href="/categories/杂项记录/工具配置/">工具配置</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/19/2016-08-19-gitbook使用笔记/">Gitbook使用笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用Gitbook 全程记录<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/19/2016-08-19-gitbook使用笔记/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/08/19/2016-08-19-gitbook使用笔记/" data-id="cj6sx5r9e000pk870n1j6dth8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-08-18-Axure-RP添加页面内滚动效果" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/" class="article-date">
+  <time datetime="2016-08-18T04:09:11.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/产品设计/">产品设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/">Axure RP添加页面内滚动效果</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Axure中一个页面内使用滚动页面<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/" data-id="cj6sx5r95000lk870dt4adprx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Axure/">Axure</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-08-15-Excel横向单元格和纵向单元格切换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/" class="article-date">
+  <time datetime="2016-08-15T10:03:09.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/杂项/">杂项</a>►<a class="article-category-link" href="/categories/杂项/Excel/">Excel</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/">Excel横向单元格和纵向单元格切换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文内容：<br>使用Excel 编程将横向和竖向的值翻转<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/" data-id="cj6sx5r97000mk8704h6ubo39" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VBA/">VBA</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-08-15-Android-动画资源-API-Guide" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/15/2016-08-15-Android-动画资源-API-Guide/" class="article-date">
+  <time datetime="2016-08-15T03:21:52.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>►<a class="article-category-link" href="/categories/Android/API-Guide/">API_Guide</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/15/2016-08-15-Android-动画资源-API-Guide/">Android API Guide - 动画资源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn" target="_blank" rel="external">原文链接</a></p>
+<h2 id="动画资源"><a href="#动画资源" class="headerlink" title="动画资源"></a>动画资源</h2><p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Property" target="_blank" rel="external"><strong> 属性动画 (Property Animation)</strong> </a><br>    使用<a href="https://developer.android.com/reference/android/animation/Animator.html?hl=zh-cn" target="_blank" rel="external">Animator</a> 在一段时间内不断的改变对象的属性值</p>
+<p><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#View" target="_blank" rel="external"><strong> 视图动画（View Animation） </strong></a><br>有两种类型：</p>
+<ul>
+<li><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Tween" title="Tween animation" target="_blank" rel="external">补间动画(Tween)</a>: 在一个单张图片上进行一系列变换，使用<a href="https://developer.android.com/reference/android/view/animation/Animation.html?hl=zh-cn" target="_blank" rel="external">Animation</a> 创建。</li>
+<li><a href="https://developer.android.com/guide/topics/resources/animation-resource.html?hl=zh-cn#Frame" title="Frame animation" target="_blank" rel="external">帧动画(Frame)</a>: 显示一系列图片作为动画，使用<a href="https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html?hl=zh-cn" target="_blank" rel="external">AnimationDrawable</a></li>
+</ul>
+<h3 id="1-属性动画"><a href="#1-属性动画" class="headerlink" title="1. 属性动画"></a>1. 属性动画</h3><p>使用XML定义如何改变目标对象的属性，如 背景色、透明度，并指定变换时间</p>
+<ul>
+<li><p>文件路径<br>  <code>res/animator/filename.xml</code> 文件名会被用作资源ID</p>
+</li>
+<li><p>编辑后对于资源数据类型：<br>  <a href="https://developer.android.com/reference/android/animation/ValueAnimator.html?hl=zh-cn" target="_blank" rel="external">ValueAnimator</a>,<a href="https://developer.android.com/reference/android/animation/ObjectAnimator.html?hl=zh-cn" target="_blank" rel="external">ObjectAnimator</a>,<a href="https://developer.android.com/reference/android/animation/AnimatorSet.html?hl=zh-cn" target="_blank" rel="external">AnimatorSet</a></p>
+</li>
+<li>资源引用方式：<ul>
+<li>Java : <code>R.animator.filename</code></li>
+<li>XML: <code>@[package:]animator/filename</code></li>
+</ul>
+</li>
+<li>格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;set</div><div class="line">	android:ordering=[&quot;together&quot; | &quot;sequentially&quot;]&gt;</div><div class="line">	&lt;objectAnimator</div><div class="line">		android:propertyName=&quot;string&quot;</div><div class="line">		android:duration=&quot;int&quot;</div><div class="line">		android:valueFrom=&quot;float | int | color&quot;</div><div class="line">		android:valueTo=&quot;float | int | color&quot;</div><div class="line">		android:startOffset=&quot;int&quot;</div><div class="line">		android:repeatCount=&quot;int&quot;</div><div class="line">		android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">		android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line">	&lt;animator</div><div class="line">		android:duration=&quot;int&quot;</div><div class="line">		android:valueFrom=&quot;float | int | color&quot;</div><div class="line">		android:valueTo=&quot;float | int | color&quot;</div><div class="line">		android:startOffset=&quot;int&quot;</div><div class="line">		android:repeatCount=&quot;int&quot;</div><div class="line">		android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">		android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line">	&lt;set&gt;</div><div class="line">	...</div><div class="line">	&lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+<h3 id="2-视图动画"><a href="#2-视图动画" class="headerlink" title="2. 视图动画"></a>2. 视图动画</h3><h4 id="2-1-补间动画"><a href="#2-1-补间动画" class="headerlink" title="2.1  补间动画"></a>2.1  补间动画</h4><ul>
+<li><p>文件路径：<br><code>res/anim/filename.xml</code></p>
+</li>
+<li><p>编译后资源对于数据类型：<br><a href="https://developer.android.com/reference/android/view/animation/Animation.html?hl=zh-cn" target="_blank" rel="external"><code>Animation</code></a></p>
+</li>
+<li><p>引用资源：<br>Java : <code>R.anim.filename</code><br>XML: <code>@[package:]anim/filename</code></p>
+</li>
+<li><p>格式：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">	android:interpolator=&quot;@[package:]anim/interpolator_resource&quot;</div><div class="line">	android:shareInterpolator=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">	&lt;alpha</div><div class="line">		android:fromAlpha=&quot;float&quot;</div><div class="line">		android:toAlpha=&quot;float&quot; /&gt;</div><div class="line">	&lt;scale</div><div class="line">		android:fromXScale=&quot;float&quot;</div><div class="line">		android:toXScale=&quot;float&quot;</div><div class="line">		android:fromYScale=&quot;float&quot;</div><div class="line">		android:toYScale=&quot;float&quot;</div><div class="line">		android:pivotX=&quot;float&quot;</div><div class="line">		android:pivotY=&quot;float&quot; /&gt;</div><div class="line">	&lt;translate</div><div class="line">		android:fromXDelta=&quot;float&quot;</div><div class="line">		android:toXDelta=&quot;float&quot;</div><div class="line">		android:fromYDelta=&quot;float&quot;</div><div class="line">		android:toYDelta=&quot;float&quot; /&gt;</div><div class="line">	&lt;rotate</div><div class="line">		android:fromDegrees=&quot;float&quot;</div><div class="line">		android:toDegrees=&quot;float&quot;</div><div class="line">		android:pivotX=&quot;float&quot;</div><div class="line">		android:pivotY=&quot;float&quot; /&gt;</div><div class="line">	&lt;set&gt;</div><div class="line">		...</div><div class="line">	&lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+<h5 id="2-1-1-插值器（Interpolators）"><a href="#2-1-1-插值器（Interpolators）" class="headerlink" title="2.1.1 插值器（Interpolators）"></a>2.1.1 插值器（Interpolators）</h5><h4 id="2-1-2-自定义插值器"><a href="#2-1-2-自定义插值器" class="headerlink" title="2.1.2 自定义插值器"></a>2.1.2 自定义插值器</h4><ul>
+<li>略</li>
+</ul>
+<h4 id="2-2-帧动画"><a href="#2-2-帧动画" class="headerlink" title="2.2 帧动画"></a>2.2 帧动画</h4><p>按顺序显示一系列图片</p>
+<ul>
+<li>文件路径<br>  <code>res/drawable/filename.xml</code></li>
+<li>编译后对应资源类型：<br>  <a href="https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html?hl=zh-cn" target="_blank" rel="external">AnimationDrawable</a></li>
+<li>引用方式：<br>Java: <code>R.drawable.filename</code><br>XML: <code>@[package:]drawable.filename</code></li>
+<li><p>格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">	android:oneshot=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">	&lt;item</div><div class="line">		android:drawable=&quot;@[package:]drawable/drawable_resource_name&quot;</div><div class="line">		android:duration=&quot;integer&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=&quot;false&quot;&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust1&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust2&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust3&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div><div class="line">//------- Java 代码</div><div class="line">ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);</div><div class="line">rocketImage.setBackgroundResource(R.drawable.rocket_thrust);</div><div class="line">rocketAnimation = (AnimationDrawable) rocketImage.getBackground();</div><div class="line">rocketAnimation.start();</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/08/15/2016-08-15-Android-动画资源-API-Guide/" data-id="cj6sx5r90000hk870926z0tah" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -373,7 +643,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/测试/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/EA使用教程/">EA使用教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/博客/">博客</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/API-Guide/">API_Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/测试/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/EA使用教程/">EA使用教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品设计/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/">文摘</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/柏杨/">柏杨</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/kindle/">kindle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/博客/">博客</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/">杂项记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/工具配置/">工具配置</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/SVN/">SVN</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -383,7 +653,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android测试/">Android测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java注解/">Java注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-测试/">Android 测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android测试/">Android测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Axure/">Axure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EChart/">EChart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java注解/">Java注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kindle/">kindle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/婚姻/">婚姻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柏杨/">柏杨</a></li></ul>
     </div>
   </div>
 
@@ -393,7 +663,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android测试/" style="font-size: 10px;">Android测试</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java注解/" style="font-size: 10px;">Java注解</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a>
+      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-测试/" style="font-size: 10px;">Android 测试</a> <a href="/tags/Android测试/" style="font-size: 10px;">Android测试</a> <a href="/tags/Axure/" style="font-size: 10px;">Axure</a> <a href="/tags/EChart/" style="font-size: 10px;">EChart</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java注解/" style="font-size: 10px;">Java注解</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/Webview/" style="font-size: 10px;">Webview</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitbook/" style="font-size: 10px;">gitbook</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/婚姻/" style="font-size: 10px;">婚姻</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/工具使用/" style="font-size: 10px;">工具使用</a> <a href="/tags/柏杨/" style="font-size: 10px;">柏杨</a>
     </div>
   </div>
 
@@ -402,7 +672,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li></ul>
     </div>
   </div>
 
@@ -415,15 +685,11 @@
       <ul>
         
           <li>
-            <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
-          </li>
-        
-          <li>
             <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/">使用SublimeText 编辑Markdown 文件并预览</a>
           </li>
         
           <li>
-            <a href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+            <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
           </li>
         
           <li>
@@ -432,6 +698,10 @@
         
           <li>
             <a href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/">【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
           </li>
         
       </ul>

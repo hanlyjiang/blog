@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gitbook使用笔记 | 装睡的人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用Gitbook 全程记录">
+<meta name="keywords" content="工具,gitbook,markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gitbook使用笔记">
+<meta property="og:url" content="http://hanlyjiang.cn/2016/08/19/2016-08-19-gitbook使用笔记/index.html">
+<meta property="og:site_name" content="装睡的人">
+<meta property="og:description" content="使用Gitbook 全程记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2017-08-26T02:44:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gitbook使用笔记">
+<meta name="twitter:description" content="使用Gitbook 全程记录">
+  
+    <link rel="alternate" href="/atom.xml" title="装睡的人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">装睡的人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你永远叫不醒一个装睡的人</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hanlyjiang.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-08-19-gitbook使用笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/19/2016-08-19-gitbook使用笔记/" class="article-date">
+  <time datetime="2016-08-19T03:23:05.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/杂项记录/">杂项记录</a>►<a class="article-category-link" href="/categories/杂项记录/工具配置/">工具配置</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gitbook使用笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用Gitbook 全程记录<br><a id="more"></a><br>Content:<br><!-- toc --></p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul>
+<li>1.1 安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">NodeJs</a>    </li>
+<li>1.2 Gitbook 命令行工具安装    ,详情参考 &gt;<a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">gitbook 安装配置官方文档</a><br><code>npm install gitbook-cli -g</code>    </li>
+</ul>
+<p><br></p>
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><p>了解下面几点，基本就可以愉快的在本地写书了    </p>
+<h4 id="2-1-命令行基本命令使用"><a href="#2-1-命令行基本命令使用" class="headerlink" title="2.1 命令行基本命令使用"></a>2.1 命令行基本命令使用</h4><ul>
+<li>新建书籍，在目录中执行：<br><code>gitbook init</code>    </li>
+<li>构建预览html文件<br><code>gitbook build</code>    </li>
+<li>开启服务在浏览其中预览<br><code>gitbook serve</code>    </li>
+</ul>
+<blockquote>
+<p>传送门:<br>安装使用：<a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">Setup and Installation of GitBook</a>      </p>
+</blockquote>
+<ul>
+<li>编辑后提交到Git库：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .    </div><div class="line">git commit -m "提交备注"</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-2-了解目录结构"><a href="#2-2-了解目录结构" class="headerlink" title="2.2 了解目录结构"></a>2.2 了解目录结构</h4><p>不累述，直接传送官方说明:</p>
+<blockquote>
+<p>传送门：<br><a href="http://toolchain.gitbook.com/structure.html" target="_blank" rel="external">目录结构</a><br><a href="http://toolchain.gitbook.com/pages.html" target="_blank" rel="external">页面和内容目录</a>    </p>
+</blockquote>
+<h4 id="2-3-了解book-json-配置方法"><a href="#2-3-了解book-json-配置方法" class="headerlink" title="2.3 了解book.json 配置方法"></a>2.3 了解book.json 配置方法</h4><blockquote>
+<p>传送门：<br><a href="http://toolchain.gitbook.com/config.html" target="_blank" rel="external">book.json 配置</a><br><br></p>
+<h3 id="3-插件安装与配置"><a href="#3-插件安装与配置" class="headerlink" title="3. 插件安装与配置"></a>3. 插件安装与配置</h3><p>插件搜索浏览: <a href="https://plugins.gitbook.com/browse" target="_blank" rel="external">GitBook Plugins</a></p>
+<h4 id="3-1-代码高亮"><a href="#3-1-代码高亮" class="headerlink" title="3.1 代码高亮"></a>3.1 代码高亮</h4></blockquote>
+<h5 id="1-prism插件"><a href="#1-prism插件" class="headerlink" title="1) prism插件"></a>1) <a href="https://plugins.gitbook.com/plugin/prism" target="_blank" rel="external">prism插件</a></h5><p>点击上方链接查看如何配置(下同)</p>
+<h4 id="3-2-TOC-Table-of-Content"><a href="#3-2-TOC-Table-of-Content" class="headerlink" title="3.2 TOC(Table of Content)"></a>3.2 TOC(Table of Content)</h4><h5 id="1-页面内-navigator"><a href="#1-页面内-navigator" class="headerlink" title="1) 页面内 -  navigator"></a>1) 页面内 - <a href="https://plugins.gitbook.com/plugin/navigator" target="_blank" rel="external"> navigator</a></h5><p>在标题下方显示目录    </p>
+<h5 id="2-侧边-simple-page-toc"><a href="#2-侧边-simple-page-toc" class="headerlink" title="2) 侧边 -  simple-page-toc"></a>2) 侧边 - <a href="https://plugins.gitbook.com/plugin/simple-page-toc" target="_blank" rel="external"> simple-page-toc</a></h5><ul>
+<li>在右上方显示一个TOC 按钮，点击后显示目录    </li>
+<li>在右上方显示一个Top 按钮，点击后回到文章顶部    </li>
+</ul>
+<p><br></p>
+<h4 id="3-4-目前的配置大集合"><a href="#3-4-目前的配置大集合" class="headerlink" title="3.4 目前的配置大集合"></a>3.4 目前的配置大集合</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"title"</span>: <span class="string">"项目文档记录"</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"项目文档记录"</span>,</div><div class="line">    <span class="attr">"language"</span>: <span class="string">"zh"</span>,</div><div class="line">    <span class="attr">"plugins"</span>: [</div><div class="line">        <span class="string">"prism"</span>,</div><div class="line">        <span class="string">"-highlight"</span>,</div><div class="line">         <span class="string">"simple-page-toc"</span>,</div><div class="line">         <span class="string">"navigator"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</div><div class="line">        <span class="attr">"simple-page-toc"</span>: &#123;</div><div class="line">            <span class="attr">"maxDepth"</span>: <span class="number">3</span>,</div><div class="line">            <span class="attr">"skipFirstH1"</span>: <span class="literal">true</span></div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-使用文档编辑器"><a href="#4-使用文档编辑器" class="headerlink" title="4. 使用文档编辑器"></a>4. 使用文档编辑器</h3><h4 id="GitbookEditor"><a href="#GitbookEditor" class="headerlink" title="GitbookEditor"></a><a href="https://www.gitbook.com/editor/osx" target="_blank" rel="external">GitbookEditor</a></h4><p>GitBook 官方出品 ,下载链接 <a href="https://www.gitbook.com/editor/osx" target="_blank" rel="external">GitbookEditor</a>,如果不熟悉基本的git命令，那么最好使用这个        </p>
+<h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><p>参考：<a href="http://hanlyjiang.site/2015/04/26/write-markdown-using-sublimetext-on-windows/" target="_blank" rel="external">Windows上使用Sublime编辑markdown并预览</a><br>另外提下Sublime 有个<code>Open Folder</code> 功能，可以在左侧显示目录树，更方便的是可以在增加文件目录，重命名文件目录    </p>
+<p>工作流程：<br>Sublime中修改　– <code>gitbook serve</code> 预览 – <code>git add .</code> 及<code>git commit -m &quot;msg&quot;</code> 提交 – <code>git push 推送</code> </p>
+<p><br></p>
+<h3 id="5-编辑-Markdown语法"><a href="#5-编辑-Markdown语法" class="headerlink" title="5. 编辑(Markdown语法)"></a>5. 编辑(Markdown语法)</h3><blockquote>
+<p>传送:<br><a href="http://toolchain.gitbook.com/syntax/markdown.html" target="_blank" rel="external">Markdown</a>    </p>
+</blockquote>
+<ul>
+<li>代码高亮<br>指定代码语言-添加<code>ruby</code> 指定语言为ruby    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">```ruby</div><div class="line">require &apos;redcarpet&apos;</div><div class="line">markdown = Redcarpet.new(&quot;Hello World!&quot;)</div><div class="line">puts markdown.to_html</div><div class="line">```</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-生成Pdf-文件"><a href="#6-生成Pdf-文件" class="headerlink" title="6. 生成Pdf 文件"></a>6. 生成Pdf 文件</h3><ol>
+<li>安装 calibre<br>下载：<a href="http://calibre-ebook.com/download" target="_blank" rel="external">calibre下载页面</a>    </li>
+<li><code>gitbook pdf . output.pdf</code><br>如果失败，删除book.json 文件    <blockquote>
+<p>参考: <a href="http://toolchain.gitbook.com/ebook.html" target="_blank" rel="external">http://toolchain.gitbook.com/ebook.html</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://toolchain.gitbook.com/setup.html" target="_blank" rel="external">gitbook 安装配置官方文档</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hanlyjiang.cn/2016/08/19/2016-08-19-gitbook使用笔记/" data-id="cj6sx5r9e000pk870n1j6dth8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/08/2016-12-08-测试hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          测试hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Axure RP添加页面内滚动效果</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/API-Guide/">API_Guide</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/测试/">测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/EA使用教程/">EA使用教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品设计/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/">文摘</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文摘/柏杨/">柏杨</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/kindle/">kindle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/博客/">博客</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/">杂项记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项记录/工具配置/">工具配置</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/SVN/">SVN</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-测试/">Android 测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android测试/">Android测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Axure/">Axure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EChart/">EChart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java注解/">Java注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kindle/">kindle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/婚姻/">婚姻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柏杨/">柏杨</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-测试/" style="font-size: 10px;">Android 测试</a> <a href="/tags/Android测试/" style="font-size: 10px;">Android测试</a> <a href="/tags/Axure/" style="font-size: 10px;">Axure</a> <a href="/tags/EChart/" style="font-size: 10px;">EChart</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java注解/" style="font-size: 10px;">Java注解</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/Webview/" style="font-size: 10px;">Webview</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitbook/" style="font-size: 10px;">gitbook</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/婚姻/" style="font-size: 10px;">婚姻</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/工具使用/" style="font-size: 10px;">工具使用</a> <a href="/tags/柏杨/" style="font-size: 10px;">柏杨</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/">使用SublimeText 编辑Markdown 文件并预览</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">使用Github Pages 写博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Java注解介绍/">Java注解介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/">【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/2016-08-03-Android测试支持库01/">Android 测试支持库介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
