@@ -5,6 +5,74 @@ tags: Gson, Json解析
 category: Java
 ---
 
+##【2017-08-27日更新】可以更改为更加简单的实现方式
+### 1. 数据结构更改为如下形式
+```java
+public class Dataset {
+
+    String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    private Map<String, String> child = new LinkedHashMap<>();
+
+    public Map<String, String> getChild() {
+        return child;
+    }
+
+    public void setChild(Map<String, String> child) {
+        this.child = child;
+    }
+}
+```
+### 2. 直接使用默认的Gson对象解析
+
+### 3. 测试代码
+```java
+
+   String datasetJson = "{\n" +
+            "  \"title\":\"这是标题\",\n" +
+            "  \"child\":{\n" +
+            "    \"name\":\"小宝宝\",\n" +
+            "    \"age\":\"1\",\n" +
+            "    \"gender\":null\n" +
+            "  }\n" +
+            "}";
+
+    String datasetJson2 = "{\n" +
+            "  \"title\":\"这是标题\",\n" +
+            "  \"child\":null\n" +
+            "}";
+    @Test
+    public void test_不自定义TypeAdapter() {
+        Gson gson = new GsonBuilder().create();
+        Dataset2 dataset = gson.fromJson(datasetJson,Dataset2.class);
+        Assert.assertEquals("这是标题",dataset.getTitle());
+        Assert.assertEquals(3,dataset.getChild().size());
+        Assert.assertEquals("小宝宝",dataset.getChild().get("name"));
+        Assert.assertEquals("1",dataset.getChild().get("age"));
+        Assert.assertNull(dataset.getChild().get("gender"));
+        System.out.println(dataset.getTitle());
+    }
+
+    @Test
+    public void test_不自定义TypeAdapter无数据() {
+        Gson gson = new GsonBuilder().create();
+        Dataset2 dataset = gson.fromJson(datasetJson2,Dataset2.class);
+        Assert.assertEquals("这是标题",dataset.getTitle());
+        Assert.assertNull(dataset.getChild());
+        System.out.println(dataset.getTitle());
+    }
+```
+
+
+
 ## 需求：将一个Json对象解析过程中平展为Map对象
 * 目标格式如下：
 ```json
