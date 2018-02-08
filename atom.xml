@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-02-08T03:42:21.490Z</updated>
+  <updated>2018-02-08T04:18:08.847Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -14,48 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>使用 Gitlab 管理项目代码</title>
-    <link href="http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Gitlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"/>
-    <id>http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Gitlab基础使用/</id>
-    <published>2018-02-08T03:24:56.631Z</published>
-    <updated>2018-02-08T03:42:21.490Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文目录：<br><!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:1 --></p>
-<pre><code>1. [前言](#前言)
-2. [介绍](#介绍)
-3. [服务搭建](#服务搭建)
-    1. [搭建Gitlab服务](#搭建gitlab服务)
-        1. [普通版本](#普通版本)
-        2. [Docker 版本](#docker-版本)
-4. [备份及恢复](#备份及恢复)
-    1. [普通版本](#普通版本)
-    2. [Docker 版本](#docker-版本)
-5. [日常使用](#日常使用)
-6. [参考链接](#参考链接)
-</code></pre><!-- /TOC -->
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><hr>
-<h2 id="服务搭建"><a href="#服务搭建" class="headerlink" title="服务搭建"></a>服务搭建</h2><h3 id="搭建Gitlab服务"><a href="#搭建Gitlab服务" class="headerlink" title="搭建Gitlab服务"></a>搭建Gitlab服务</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><h4 id="Docker-版本"><a href="#Docker-版本" class="headerlink" title="Docker 版本"></a>Docker 版本</h4><h2 id="备份及恢复"><a href="#备份及恢复" class="headerlink" title="备份及恢复"></a>备份及恢复</h2><h3 id="普通版本-1"><a href="#普通版本-1" class="headerlink" title="普通版本"></a>普通版本</h3><h3 id="Docker-版本-1"><a href="#Docker-版本-1" class="headerlink" title="Docker 版本"></a>Docker 版本</h3><hr>
-<h2 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文目录：&lt;br&gt;&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:1 --&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. [前言](#前言)
-2. [介绍](#介绍)
-3. [服务搭建](#
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-      <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-      <category term="版本控制" scheme="http://hanlyjiang.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    
-  </entry>
   
   <entry>
     <title>Zip 命令打包时过滤掉指定文件</title>
@@ -85,49 +43,6 @@
       <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
       <category term="Linux" scheme="http://hanlyjiang.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://hanlyjiang.cn/2017/10/19/Android%E7%AB%AFPDF%20Word%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B/"/>
-    <id>http://hanlyjiang.cn/2017/10/19/Android端PDF Word文件查看/</id>
-    <published>2017-10-19T04:12:28.610Z</published>
-    <updated>2017-10-19T10:12:58.574Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Android-端Word-PDF查看"><a href="#Android-端Word-PDF查看" class="headerlink" title="Android 端Word PDF查看"></a>Android 端Word PDF查看</h1><h2 id="腾讯浏览服务"><a href="#腾讯浏览服务" class="headerlink" title="腾讯浏览服务"></a>腾讯浏览服务</h2><p><a href="https://x5.tencent.com/tbs/guide/demo.html#" target="_blank" rel="external">https://x5.tencent.com/tbs/guide/demo.html#</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">openFileReader</span><span class="params">(Context context, String filePath, HashMap&lt;String, String&gt; extraParams,ValueCallback&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<h3 id="【接口说明】"><a href="#【接口说明】" class="headerlink" title="【接口说明】"></a>【接口说明】</h3><ol>
-<li>此方法在 Qbsdk 类下</li>
-<li>调用之后，优先调起 QQ 浏览器打开文件。如果没有安装 QQ 浏览器，在 X5 内核下调起简版 QB 打开文 件。如果使用的系统内核，则调起文件阅读器弹框。</li>
-<li>此方法暂时只支持本地文件打开，在线文件后期完善   </li>
-</ol>
-<h3 id="【参数定义】"><a href="#【参数定义】" class="headerlink" title="【参数定义】"></a>【参数定义】</h3><p><code>context</code>: 调起 miniqb 的 Activity 的 context。此参数只能是 activity 类型的 context，不能设置为 Application的 context。  </p>
-<p><code>filePath</code>: 文件路径。格式为 android 本地存储路径格式，例如: <code>/sdcard/Download/xxx.doc</code>. 不支持 <code>file:///</code> 格式。暂不支持在线文件。</p>
-<p><code>extraParams</code>:miniqb 的扩展功能。为非必填项，可传入 null 使用默认设置。其格式是一个 key 对应一个 value。在文件查看器的产品形态中，当前支持 的 key 包括:</p>
-<ul>
-<li><code>local</code>: “true”表示是进入文件查看器，如果不设置或设置为“false”，则进入 miniqb 浏览器模式。不是必须设置项。</li>
-<li><code>style</code>: “0”表示文件查看器使用默认的 UI 样式。“1”表示文件查看器使用微信的 UI 样式。不设置此 key或设置错误值，则为默认 UI 样式。</li>
-<li><code>topBarBgColor</code>: 定制文件查看器的顶部栏背景色。格式为“#xxxxxx”，例“#2CFC47”;不设置此 key 或设置错误值，则为默认 UI 样式。</li>
-<li><p><code>menuData</code>: 该参数用来定制文件右上角弹出菜单，可传入菜单项的 icon 的文本，用户点击菜单项后，sdk会通过 startActivity+intent 的方式回调。menuData 是 jsonObject 类型，结构格式如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String jsondata =</div><div class="line">    <span class="string">"&#123;</span></div><div class="line"><span class="string">    pkgName:\"com.example.thirdfile\", "</span></div><div class="line">    + <span class="string">"className:\"com.example.thirdfile.IntentActivity\","</span></div><div class="line">    + <span class="string">"thirdCtx: &#123;pp:123&#125;,"</span></div><div class="line">    + <span class="string">"menuItems:"</span></div><div class="line">    + <span class="string">"["</span></div><div class="line">    + <span class="string">"&#123;id:0,iconResId:"</span>+ R.drawable.ic_launcher +<span class="string">",text:\"menu0\"&#125;,</span></div><div class="line"><span class="string">    &#123;id:1,iconResId:"</span> + R.drawable.bookmark_edit_icon + <span class="string">",text:\"menu1\"&#125;, &#123;id:2,iconResId:"</span>+ R.drawable.bookmark_folder_icon +<span class="string">",text:\"菜单2\"&#125;"</span> + <span class="string">"]"</span></div><div class="line">    +<span class="string">"</span></div><div class="line"><span class="string">    &#125;"</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>pkgName</code> 和 className 是回调时的包名和类名。thirdCtx 是三方参数，需要是 jsonObject 类型，sdk 不会处理该参数，只是在菜单点击事件发生的时候原样 回传给调用方。menuItems 是 json 数组，表示菜单中的每一项。</p>
-</li>
-<li><p><code>ValueCallback</code>:提供 miniqb 打开/关闭时给调用方回调通知,以便应用层做相应处理。 在单独进程打开文件的场景中，回调参数出现如下字符时，表示可以关闭当前进程，避免内存占用。<br>openFileReader open in QB<br>  filepath error<br>  TbsReaderDialogClosed<br>  default browser:<br>  filepath error<br>  fileReaderClosed</p>
-</li>
-</ul>
-<h3 id="【返回说明】"><a href="#【返回说明】" class="headerlink" title="【返回说明】"></a>【返回说明】</h3><p>1:用 QQ 浏览器打开<br>2:用 MiniQB 打开<br>3:调起阅读器弹框<br>1:filePath 为空 打开失败</p>
-<p>###【使用实例】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//params 为定制参数 非必须选项 可以传 null 为默认设置 public static final Stringjsondata = "&#123;</span></div><div class="line">pkgName:\<span class="string">"com.example.thirdfile\", "</span></div><div class="line">+ <span class="string">"className:\"com.example.thirdfile.IntentActivity\","</span></div><div class="line">+ <span class="string">"thirdCtx: &#123;pp:123&#125;,"</span></div><div class="line">+ <span class="string">"menuItems:"</span></div><div class="line">+ <span class="string">"["</span></div><div class="line">+ <span class="string">"&#123;id:0,iconResId:"</span>+ R.drawable.ic_launcher +<span class="string">",text:\"menu0\"&#125;,</span></div><div class="line"><span class="string">&#123;id:1,iconResId:"</span> + R.drawable.bookmark_edit_icon + <span class="string">",text:\"menu1\"&#125;, &#123;id:2,iconResId:"</span>+ R.drawable.bookmark_folder_icon +<span class="string">",text:\"菜单 2\"&#125;"</span></div><div class="line">+ <span class="string">"]"</span> + <span class="string">" &#125;"</span>;</div><div class="line">HashMap&lt;String, String&gt; params = <span class="keyword">new</span> HashMap&lt;String, String&gt;(); params.put(<span class="string">"style"</span>, <span class="string">"1"</span>);</div><div class="line">params.put(<span class="string">"local"</span>, <span class="string">"true"</span>);</div><div class="line">params.put(<span class="string">"memuData"</span>, jsondata);</div><div class="line">QbSdk.openFileReader(ctx,”/sdcard/xxx.doc”, params,callback);</div></pre></td></tr></table></figure></p>
-<p>public static final String packageName = “\”com.geostar.tbsdemo\””;<br>public static final String activityName = “\”com.geostar.tbsdemo.FileActivity\””;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Android-端Word-PDF查看&quot;&gt;&lt;a href=&quot;#Android-端Word-PDF查看&quot; class=&quot;headerlink&quot; title=&quot;Android 端Word PDF查看&quot;&gt;&lt;/a&gt;Android 端Word PDF查看&lt;/h1&gt;&lt;h2 i
-    
-    </summary>
-    
     
   </entry>
   
@@ -191,247 +106,6 @@
     
     
       <category term="Gson, Json解析" scheme="http://hanlyjiang.cn/tags/Gson-Json%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用SublimeText 编辑Markdown 文件并预览</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<!-- toc -->
-<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
-<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
-<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
-<ul>
-<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
-</ul>
-<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
-</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
-<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
-<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
-<li><p>修改配置：         </p>
-<ul>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
-<li><p>修改以下三项       </p>
-<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
-&quot;file_path_conversions&quot;: &quot;relative&quot;,   
-&quot;image_path_conversion&quot;: &quot;relative&quot;,   
-</code></pre></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
-</ul>
-<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
-<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
-<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
-<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
-<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      使用SublimeText 编辑Markdown 文件并预览
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
-    
-    
-      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 测试支持库介绍</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
-<a id="more"></a>
-<p>获取： 通过Android SDK Manager （<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#setup" target="_blank" rel="external">Testing Support Library Setup</a>）</p>
-<p>这篇文章的主要内容：</p>
-<ul>
-<li>说明了Android Testing Support Library 提供了哪些工具用以测试</li>
-<li>如何在你的测试环境中使用AndroidTestRunner</li>
-<li>关于支持库的发布信息</li>
-</ul>
-<h2 id="测试支持库-的-特性说明"><a href="#测试支持库-的-特性说明" class="headerlink" title="测试支持库 的 特性说明"></a>测试支持库 的 特性说明</h2><p>Android 测试支持库包含以下自动化测试工具：</p>
-<ul>
-<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">AndroidJUnitRunner</a></strong>: Android 上使用的兼容Junit4 的Test Runner</li>
-<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a></strong>: UI测试框架；适用于应用内功能性UI测试（functional UI testing）</li>
-<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a></strong>: UI测试框架；适用于跨APP 的功能性UI测试，跨越的APP既可以是第三方APP，也可以是系统APP</li>
-</ul>
-<p>###AndroidJUnitRunner    </p>
-<p> <a href="https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html" target="_blank" rel="external">AndroidJUnitRunner
-</a> 类是一个 <a href="http://junit.org/" target="_blank" rel="external">JUnit</a> 测试Runner，它允许你在Android 设备上运行JUnit4 或JUnit3 风格的测试类，这些测试类同时也包含那些使用<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a> 和 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a>  测试框架建立的测试类。 AndroidJUnitTestRunner 能安装测试包和被测APP 到设备，并且运行测试，报告测试结果。现在AndroidJUnitTestRunner  已经取代了只支持Junit3测试的<a href="https://developer.android.com/reference/android/test/InstrumentationTestRunner.html" target="_blank" rel="external">InstrumentationTestRunner</a> 的测试类。</p>
-<p>AndroidJUnitTestRunner的主要功能包括：</p>
-<ul>
-<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-junit" target="_blank" rel="external">JUnit support - Junit支持</a></li>
-<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-instrumentation" target="_blank" rel="external">Access to instrumentation information - 获取 Instrumention信息</a></li>
-<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-filtering" target="_blank" rel="external">Test filtering - 测试过滤</a></li>
-<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-sharding" target="_blank" rel="external">Test sharding - 测试分片</a></li>
-</ul>
-<p>注： AndroidJUnitTestRunner 要求Android2.2（API level 8） 或者更高级别</p>
-<h4 id="JUnit-支持"><a href="#JUnit-支持" class="headerlink" title="JUnit 支持"></a>JUnit 支持</h4><p>AndroidJUnitTestRunner兼容JUnit3和JUnit4测试（最高支持到4.10）。但是，你最好避免将JUnit3 和 JUnit4 的测试代码放在同一个包下面，这将会导致不可预期的结果。<strong>注意</strong>如果你正在创建一个Instrumented JUnit4 测试类，那么你必须在测试类上使用<code>@RunWith(AndroidJUnit4.class)</code>注解。</p>
-<p>下面的代码片段展示了一个使用JUnit4 风格的Instrumented 测试来验证CalculatorActivity 的 <em>add</em> 方法是否正常运行。</p>
-<pre><code>import android.support.test.runner.AndroidJUnit4;
-import android.support.test.runner.AndroidJUnitRunner;
-import android.test.ActivityInstrumentationTestCase2;
-
-@RunWith(AndroidJUnit4.class)
-public class CalculatorInstrumentationTest
-        extends ActivityInstrumentationTestCase2&lt;CalculatorActivity&gt; {
-
-    @Before
-    public void setUp() throws Exception {
-        super.setUp();
-
-        // Injecting the Instrumentation instance is required
-        // for your test to run with AndroidJUnitRunner.
-        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
-        mActivity = getActivity();
-    }
-
-    @Test
-    public void typeOperandsAndPerformAddOperation() {
-        // Call the CalculatorActivity add() method and pass in some operand values, then
-        // check that the expected value is returned.
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        super.tearDown();
-    }
-}
-</code></pre><h4 id="访问instrumentation-信息"><a href="#访问instrumentation-信息" class="headerlink" title="访问instrumentation 信息"></a>访问instrumentation 信息</h4><p>你可以使用 <a href="https://developer.android.com/reference/android/support/test/InstrumentationRegistry.html" target="_blank" rel="external">InstrumentationRegistry</a> 类来获取和你运行的测试有关的信息。 这个类包含  <a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>  对象、目标App 的 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象、测试App 的<a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a>以及传递到你的测试的命令行参数。 当你使用UI Automator 框架编写依赖于<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 或者 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象的测试用例时，这些信息将会非常有用。</p>
-<h4 id="测试过滤（Test-filtering）"><a href="#测试过滤（Test-filtering）" class="headerlink" title="测试过滤（Test filtering）"></a>测试过滤（Test filtering）</h4><p>在你的JUnit 4.x 的测试中，你可以使用一些注解来配置运行的测试。 这些功能可以最大限度的减少你往测试代码中添加模板和条件代码的工作量。 在标准的JUnit 4 注解之外，AndroidJUnitTestRunner 还支持以下Android特有的注解：</p>
-<ul>
-<li><a href="https://developer.android.com/reference/android/support/test/filters/RequiresDevice.html" target="_blank" rel="external">@RequiresDevice</a>: 指定改测试只在物理设备上运行（而不是模拟器）</li>
-<li><a href="https://developer.android.com/reference/android/support/test/filters/SdkSuppress.html" target="_blank" rel="external">@SdkSupress</a>: 禁止测试在低于给定API 级别的设备上运行。例如，禁止运行在API level低于18 的设备上运行时可以你写 <code>SDKSupress(minSdkVersion=18)</code></li>
-</ul>
-<h4 id="测试分片-Test-sharding"><a href="#测试分片-Test-sharding" class="headerlink" title="测试分片 (Test sharding)"></a>测试分片 (Test sharding)</h4><p>AndroidJUnitTestRunner 支持将一个测试套件（test suite） 分割成多个测试片，这样你就可以将属于同一个测试片的测试当做一个组一起运行， 当然，这些测试用例必须在同一个<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 实例下面。（，under the same Instumentation）. 每个测试片使用一个数字索引标记。在运行测试时，可以使用 <code>-e numShards</code>  选项来指定要创建多少个测试片，使用 <code>-e shardIndex</code> 选项来指定要运行哪一个片的测试用例。</p>
-<p>例如，为了将测试套件（test suite） 分割成为10片，并且只运行位于第二片的测试，你可以使用一下命令：</p>
-<pre><code>adb shell am instrument -w -e numShards 10 -e shardIndex 2
-</code></pre><p>你可以通过查看 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 来了解更多关于如何使用Android test runner 的信息。</p>
-<h3 id="Espresso-框架"><a href="#Espresso-框架" class="headerlink" title="Espresso 框架"></a>Espresso 框架</h3><p>Espresso 测试框架提供了一系列的APIS 用来构建单个应用内测试用户交互的UI测试用例。 它非常使用来了编写白盒类型的自动化测试用例，因为Espresso测试代码必须了解实现代码的细节。</p>
-<p>Espresso 测试框架的主要特性包括：</p>
-<ul>
-<li>一套丰富的视图和适配器（View and Adapter）匹配API。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-matching" target="_blank" rel="external">View matching</a> 以了解更多信息。</li>
-<li>一套用以进行自动化UI交互的action APIs。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-actions" target="_blank" rel="external">Action APIs</a> 以了解更多。</li>
-<li>用以提高测试可信度 的 UI 线程同步机制，查看  <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-thread-sync" target="_blank" rel="external">UI thread synchronization</a> 以获取更多信息。</li>
-</ul>
-<p>注： 需要Android2.2（API level 8） 或者更高版本</p>
-<h4 id="View-matching"><a href="#View-matching" class="headerlink" title="View matching"></a>View matching</h4><p><a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onView(org.hamcrest.Matcher&lt;android.view.View" target="_blank" rel="external">Espresso.onView()
-</a>)  使得你可以访问目标app 里的UI 组件并且与之交互。 该方法接收一个<a href="http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matcher.html" target="_blank" rel="external">Matcher
-</a> 参数，然后在视图层次树中定位到匹配到的对应的View实例。你可以使用的匹配条件有：</p>
-<ul>
-<li>view 的类名</li>
-<li>view 的 content description</li>
-<li>view 的<code>R.id</code></li>
-<li>view 上显示的文本</li>
-</ul>
-<p>例如，为了定位到一个ID 为 <code>my_button</code> 的按钮，你可以指定如下的matcher：</p>
-<pre><code>onView(withId(R.id.my_button));
-</code></pre><p>如果搜索成功，onView() 方法就会返回该View 的一个引用，然后你就可以执行actions 并且测试是否符合预期</p>
-<h4 id="Adapter-matching-适配器匹配"><a href="#Adapter-matching-适配器匹配" class="headerlink" title="Adapter matching - 适配器匹配"></a>Adapter matching - 适配器匹配</h4><p>在一个 <a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a><br>  的布局中，布局是在运行时动态改变的。如果目标View 位于一个<a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a> 的子类中（如 <a href="https://developer.android.com/reference/android/widget/ListView.html" target="_blank" rel="external">ListView</a><br> 或者 <a href="https://developer.android.com/reference/android/widget/GridView.html" target="_blank" rel="external">GridView</a>），因为当前的视图层次中只加载了一部分布局View，那么onView() 方法将无法工作。</p>
-<p>这时，你就可以使用  <a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onData(org.hamcrest.Matcher&lt;java.lang.Object" target="_blank" rel="external">Espresso.onData()
-</a>) 方法来查找目标View 。该方法会返回AdapterView中的一个元素，然后你可以在该元素上进行 用户操作模拟和断言（assertions）操作。</p>
-<h4 id="Action-APIs"><a href="#Action-APIs" class="headerlink" title="Action APIs"></a>Action APIs</h4><p>一般你都是通过在你的app 的用户界面进行一些操作以测试你的应用。而使用<a href="https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html" target="_blank" rel="external">ViewActions
-</a> API 你将可以非常容易的自动化这些交互操作。 使用这些API 你可以执行的UI操作如下：</p>
-<ul>
-<li>View click = 视图点击</li>
-<li>Swipe = 滑动</li>
-<li>Key and button presses = 按压按键和按钮</li>
-<li>Typing test = 输入文字</li>
-<li>Opeing a link =打开一个链接</li>
-</ul>
-<p>例如，你可以编写一个测试脚本来模拟输入一个字符串并且按下一个按钮来提交输入的值的几个动作。 <a href="https://developer.android.com/reference/android/support/test/espresso/ViewInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">ViewInteraction.perform()
-</a>) 和 <a href="https://developer.android.com/reference/android/support/test/espresso/DataInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">DataInteraction.perform()
-</a>) 接受一个或多个<a href="https://developer.android.com/reference/android/support/test/espresso/ViewAction.html" target="_blank" rel="external">ViewAction
-</a> 参数，并且按照提供他们的次序依次执行这些动作。</p>
-<pre><code>// Type text into an EditText view, then close the soft keyboard
-onView(withId(R.id.editTextUserInput))
-    .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
-
-// Press the button to submit the text change
-onView(withId(R.id.changeTextBt)).perform(click());
-</code></pre><h4 id="UI-线程同步"><a href="#UI-线程同步" class="headerlink" title="UI 线程同步"></a>UI 线程同步</h4><p>运行与android设备的测试经常会因为时间问题而随机失败。 这个问题 称之为 <em>test flakiness</em>。 在使用 Espresso之前，解决办法是在测试代码让测试sleep 足够长的时间，或者加入一个足够长的超时时间又或者添加失败时不停尝试的代码。 然而，Espresso 测试框架替你处理了<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>和 UI 线程间的同步问题，这将是你的测试action和测试断言更加具有可信度。<br>学习 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 和 <a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html" target="_blank" rel="external">Testing UI for a Single App</a> 以了解更多.</p>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-</ul>
-<hr>
-<p>原文链接：<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">Android Testing Support</a></p>
-<p><strong>说明</strong>：1. 所有链接指向原始链接； 2 .  部分名词保留英文</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
-    
-      <category term="测试" scheme="http://hanlyjiang.cn/categories/Android/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
-也遇到符号 “=”
-</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>1 . 项目–&gt; 项目选项</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
-<ul>
-<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
-<ul>
-<li>3 . 导入或者重新同步源码</li>
-</ul>
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
-<li>我使用的EA版本为 12.0</li>
-<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
-也遇到符号 “=”
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
-    
-    </summary>
-    
-      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
     
   </entry>
   
@@ -614,6 +288,48 @@ int overriddenMethod() { }
   </entry>
   
   <entry>
+    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
+也遇到符号 “=”
+</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>1 . 项目–&gt; 项目选项</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
+<ul>
+<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
+<ul>
+<li>3 . 导入或者重新同步源码</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
+<li>我使用的EA版本为 12.0</li>
+<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
+也遇到符号 “=”
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用Github Pages 写博客</title>
     <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
     <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
@@ -660,6 +376,205 @@ int overriddenMethod() { }
       <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
     
       <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 测试支持库介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
+<a id="more"></a>
+<p>获取： 通过Android SDK Manager （<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#setup" target="_blank" rel="external">Testing Support Library Setup</a>）</p>
+<p>这篇文章的主要内容：</p>
+<ul>
+<li>说明了Android Testing Support Library 提供了哪些工具用以测试</li>
+<li>如何在你的测试环境中使用AndroidTestRunner</li>
+<li>关于支持库的发布信息</li>
+</ul>
+<h2 id="测试支持库-的-特性说明"><a href="#测试支持库-的-特性说明" class="headerlink" title="测试支持库 的 特性说明"></a>测试支持库 的 特性说明</h2><p>Android 测试支持库包含以下自动化测试工具：</p>
+<ul>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">AndroidJUnitRunner</a></strong>: Android 上使用的兼容Junit4 的Test Runner</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a></strong>: UI测试框架；适用于应用内功能性UI测试（functional UI testing）</li>
+<li><strong><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a></strong>: UI测试框架；适用于跨APP 的功能性UI测试，跨越的APP既可以是第三方APP，也可以是系统APP</li>
+</ul>
+<p>###AndroidJUnitRunner    </p>
+<p> <a href="https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner.html" target="_blank" rel="external">AndroidJUnitRunner
+</a> 类是一个 <a href="http://junit.org/" target="_blank" rel="external">JUnit</a> 测试Runner，它允许你在Android 设备上运行JUnit4 或JUnit3 风格的测试类，这些测试类同时也包含那些使用<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso" target="_blank" rel="external">Espresso</a> 和 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator" target="_blank" rel="external">UI Automator</a>  测试框架建立的测试类。 AndroidJUnitTestRunner 能安装测试包和被测APP 到设备，并且运行测试，报告测试结果。现在AndroidJUnitTestRunner  已经取代了只支持Junit3测试的<a href="https://developer.android.com/reference/android/test/InstrumentationTestRunner.html" target="_blank" rel="external">InstrumentationTestRunner</a> 的测试类。</p>
+<p>AndroidJUnitTestRunner的主要功能包括：</p>
+<ul>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-junit" target="_blank" rel="external">JUnit support - Junit支持</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-instrumentation" target="_blank" rel="external">Access to instrumentation information - 获取 Instrumention信息</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-filtering" target="_blank" rel="external">Test filtering - 测试过滤</a></li>
+<li><a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-sharding" target="_blank" rel="external">Test sharding - 测试分片</a></li>
+</ul>
+<p>注： AndroidJUnitTestRunner 要求Android2.2（API level 8） 或者更高级别</p>
+<h4 id="JUnit-支持"><a href="#JUnit-支持" class="headerlink" title="JUnit 支持"></a>JUnit 支持</h4><p>AndroidJUnitTestRunner兼容JUnit3和JUnit4测试（最高支持到4.10）。但是，你最好避免将JUnit3 和 JUnit4 的测试代码放在同一个包下面，这将会导致不可预期的结果。<strong>注意</strong>如果你正在创建一个Instrumented JUnit4 测试类，那么你必须在测试类上使用<code>@RunWith(AndroidJUnit4.class)</code>注解。</p>
+<p>下面的代码片段展示了一个使用JUnit4 风格的Instrumented 测试来验证CalculatorActivity 的 <em>add</em> 方法是否正常运行。</p>
+<pre><code>import android.support.test.runner.AndroidJUnit4;
+import android.support.test.runner.AndroidJUnitRunner;
+import android.test.ActivityInstrumentationTestCase2;
+
+@RunWith(AndroidJUnit4.class)
+public class CalculatorInstrumentationTest
+        extends ActivityInstrumentationTestCase2&lt;CalculatorActivity&gt; {
+
+    @Before
+    public void setUp() throws Exception {
+        super.setUp();
+
+        // Injecting the Instrumentation instance is required
+        // for your test to run with AndroidJUnitRunner.
+        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+        mActivity = getActivity();
+    }
+
+    @Test
+    public void typeOperandsAndPerformAddOperation() {
+        // Call the CalculatorActivity add() method and pass in some operand values, then
+        // check that the expected value is returned.
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        super.tearDown();
+    }
+}
+</code></pre><h4 id="访问instrumentation-信息"><a href="#访问instrumentation-信息" class="headerlink" title="访问instrumentation 信息"></a>访问instrumentation 信息</h4><p>你可以使用 <a href="https://developer.android.com/reference/android/support/test/InstrumentationRegistry.html" target="_blank" rel="external">InstrumentationRegistry</a> 类来获取和你运行的测试有关的信息。 这个类包含  <a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>  对象、目标App 的 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象、测试App 的<a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a>以及传递到你的测试的命令行参数。 当你使用UI Automator 框架编写依赖于<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 或者 <a href="https://developer.android.com/reference/android/content/Context.html" title="Context" target="_blank" rel="external">Context</a> 对象的测试用例时，这些信息将会非常有用。</p>
+<h4 id="测试过滤（Test-filtering）"><a href="#测试过滤（Test-filtering）" class="headerlink" title="测试过滤（Test filtering）"></a>测试过滤（Test filtering）</h4><p>在你的JUnit 4.x 的测试中，你可以使用一些注解来配置运行的测试。 这些功能可以最大限度的减少你往测试代码中添加模板和条件代码的工作量。 在标准的JUnit 4 注解之外，AndroidJUnitTestRunner 还支持以下Android特有的注解：</p>
+<ul>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/RequiresDevice.html" target="_blank" rel="external">@RequiresDevice</a>: 指定改测试只在物理设备上运行（而不是模拟器）</li>
+<li><a href="https://developer.android.com/reference/android/support/test/filters/SdkSuppress.html" target="_blank" rel="external">@SdkSupress</a>: 禁止测试在低于给定API 级别的设备上运行。例如，禁止运行在API level低于18 的设备上运行时可以你写 <code>SDKSupress(minSdkVersion=18)</code></li>
+</ul>
+<h4 id="测试分片-Test-sharding"><a href="#测试分片-Test-sharding" class="headerlink" title="测试分片 (Test sharding)"></a>测试分片 (Test sharding)</h4><p>AndroidJUnitTestRunner 支持将一个测试套件（test suite） 分割成多个测试片，这样你就可以将属于同一个测试片的测试当做一个组一起运行， 当然，这些测试用例必须在同一个<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a> 实例下面。（，under the same Instumentation）. 每个测试片使用一个数字索引标记。在运行测试时，可以使用 <code>-e numShards</code>  选项来指定要创建多少个测试片，使用 <code>-e shardIndex</code> 选项来指定要运行哪一个片的测试用例。</p>
+<p>例如，为了将测试套件（test suite） 分割成为10片，并且只运行位于第二片的测试，你可以使用一下命令：</p>
+<pre><code>adb shell am instrument -w -e numShards 10 -e shardIndex 2
+</code></pre><p>你可以通过查看 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 来了解更多关于如何使用Android test runner 的信息。</p>
+<h3 id="Espresso-框架"><a href="#Espresso-框架" class="headerlink" title="Espresso 框架"></a>Espresso 框架</h3><p>Espresso 测试框架提供了一系列的APIS 用来构建单个应用内测试用户交互的UI测试用例。 它非常使用来了编写白盒类型的自动化测试用例，因为Espresso测试代码必须了解实现代码的细节。</p>
+<p>Espresso 测试框架的主要特性包括：</p>
+<ul>
+<li>一套丰富的视图和适配器（View and Adapter）匹配API。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-matching" target="_blank" rel="external">View matching</a> 以了解更多信息。</li>
+<li>一套用以进行自动化UI交互的action APIs。 查看 <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-actions" target="_blank" rel="external">Action APIs</a> 以了解更多。</li>
+<li>用以提高测试可信度 的 UI 线程同步机制，查看  <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#espresso-thread-sync" target="_blank" rel="external">UI thread synchronization</a> 以获取更多信息。</li>
+</ul>
+<p>注： 需要Android2.2（API level 8） 或者更高版本</p>
+<h4 id="View-matching"><a href="#View-matching" class="headerlink" title="View matching"></a>View matching</h4><p><a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onView(org.hamcrest.Matcher&lt;android.view.View" target="_blank" rel="external">Espresso.onView()
+</a>)  使得你可以访问目标app 里的UI 组件并且与之交互。 该方法接收一个<a href="http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matcher.html" target="_blank" rel="external">Matcher
+</a> 参数，然后在视图层次树中定位到匹配到的对应的View实例。你可以使用的匹配条件有：</p>
+<ul>
+<li>view 的类名</li>
+<li>view 的 content description</li>
+<li>view 的<code>R.id</code></li>
+<li>view 上显示的文本</li>
+</ul>
+<p>例如，为了定位到一个ID 为 <code>my_button</code> 的按钮，你可以指定如下的matcher：</p>
+<pre><code>onView(withId(R.id.my_button));
+</code></pre><p>如果搜索成功，onView() 方法就会返回该View 的一个引用，然后你就可以执行actions 并且测试是否符合预期</p>
+<h4 id="Adapter-matching-适配器匹配"><a href="#Adapter-matching-适配器匹配" class="headerlink" title="Adapter matching - 适配器匹配"></a>Adapter matching - 适配器匹配</h4><p>在一个 <a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a><br>  的布局中，布局是在运行时动态改变的。如果目标View 位于一个<a href="https://developer.android.com/reference/android/widget/AdapterView.html" target="_blank" rel="external">AdapterView</a> 的子类中（如 <a href="https://developer.android.com/reference/android/widget/ListView.html" target="_blank" rel="external">ListView</a><br> 或者 <a href="https://developer.android.com/reference/android/widget/GridView.html" target="_blank" rel="external">GridView</a>），因为当前的视图层次中只加载了一部分布局View，那么onView() 方法将无法工作。</p>
+<p>这时，你就可以使用  <a href="https://developer.android.com/reference/android/support/test/espresso/Espresso.html#onData(org.hamcrest.Matcher&lt;java.lang.Object" target="_blank" rel="external">Espresso.onData()
+</a>) 方法来查找目标View 。该方法会返回AdapterView中的一个元素，然后你可以在该元素上进行 用户操作模拟和断言（assertions）操作。</p>
+<h4 id="Action-APIs"><a href="#Action-APIs" class="headerlink" title="Action APIs"></a>Action APIs</h4><p>一般你都是通过在你的app 的用户界面进行一些操作以测试你的应用。而使用<a href="https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html" target="_blank" rel="external">ViewActions
+</a> API 你将可以非常容易的自动化这些交互操作。 使用这些API 你可以执行的UI操作如下：</p>
+<ul>
+<li>View click = 视图点击</li>
+<li>Swipe = 滑动</li>
+<li>Key and button presses = 按压按键和按钮</li>
+<li>Typing test = 输入文字</li>
+<li>Opeing a link =打开一个链接</li>
+</ul>
+<p>例如，你可以编写一个测试脚本来模拟输入一个字符串并且按下一个按钮来提交输入的值的几个动作。 <a href="https://developer.android.com/reference/android/support/test/espresso/ViewInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">ViewInteraction.perform()
+</a>) 和 <a href="https://developer.android.com/reference/android/support/test/espresso/DataInteraction.html#perform(android.support.test.espresso.ViewAction..." target="_blank" rel="external">DataInteraction.perform()
+</a>) 接受一个或多个<a href="https://developer.android.com/reference/android/support/test/espresso/ViewAction.html" target="_blank" rel="external">ViewAction
+</a> 参数，并且按照提供他们的次序依次执行这些动作。</p>
+<pre><code>// Type text into an EditText view, then close the soft keyboard
+onView(withId(R.id.editTextUserInput))
+    .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+
+// Press the button to submit the text change
+onView(withId(R.id.changeTextBt)).perform(click());
+</code></pre><h4 id="UI-线程同步"><a href="#UI-线程同步" class="headerlink" title="UI 线程同步"></a>UI 线程同步</h4><p>运行与android设备的测试经常会因为时间问题而随机失败。 这个问题 称之为 <em>test flakiness</em>。 在使用 Espresso之前，解决办法是在测试代码让测试sleep 足够长的时间，或者加入一个足够长的超时时间又或者添加失败时不停尝试的代码。 然而，Espresso 测试框架替你处理了<a href="https://developer.android.com/reference/android/app/Instrumentation.html" target="_blank" rel="external">Instrumentation</a><br>和 UI 线程间的同步问题，这将是你的测试action和测试断言更加具有可信度。<br>学习 <a href="https://developer.android.com/reference/android/support/test/package-summary.html" target="_blank" rel="external">API reference</a> 和 <a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html" target="_blank" rel="external">Testing UI for a Single App</a> 以了解更多.</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<hr>
+<p>原文链接：<a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#AndroidJUnitRunner" target="_blank" rel="external">Android Testing Support</a></p>
+<p><strong>说明</strong>：1. 所有链接指向原始链接； 2 .  部分名词保留英文</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="测试" scheme="http://hanlyjiang.cn/categories/Android/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用SublimeText 编辑Markdown 文件并预览</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc -->
+<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
+<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
+<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
+<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
+<ul>
+<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
+</ul>
+<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
+</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
+<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
+<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
+<li><p>修改配置：         </p>
+<ul>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
+<li><p>修改以下三项       </p>
+<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
+&quot;file_path_conversions&quot;: &quot;relative&quot;,   
+&quot;image_path_conversion&quot;: &quot;relative&quot;,   
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
+</ul>
+<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
+<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
+<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
+<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
+<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      使用SublimeText 编辑Markdown 文件并预览
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
+    
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
     
   </entry>
   
@@ -1213,6 +1128,82 @@ mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
       <category term="kindle" scheme="http://hanlyjiang.cn/tags/kindle/"/>
     
       <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多个Github仓库合并到一个作为分支存在</title>
+    <link href="http://hanlyjiang.cn/2016/01/11/%E5%A4%9A%E4%B8%AAGithub%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%BA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8/"/>
+    <id>http://hanlyjiang.cn/2016/01/11/多个Github仓库合并到一个作为分支存在/</id>
+    <published>2016-01-11T02:12:50.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>目的： 将github上多个仓库合并到一个里面，保留提交记录</p>
+<pre><code>git clone https://github.com/hanlyjiang/AndroidLearning.git
+cd AndroidLearning
+
+# 合并第一个仓库
+git remote add RepoA https://github.com/hanlyjiang/AndroidUtils.git
+git pull RepoA
+git checkout -b android_utils_master RepoA/master
+git push origin android_utils_master
+git checkout -b android_utils_gh_pages RepoA/gh-pages
+git push origin android_utils_gh_pages
+
+# 合并第二个仓库
+git remote add RepoA https://github.com/hanlyjiang/AndroidDemos.git
+git pull RepoB
+git checkout -b android_demos_master RepoB/master
+</code></pre><p>然后再访问<a href="https://github.com/hanlyjiang/AndroidLearning" target="_blank" rel="external">https://github.com/hanlyjiang/AndroidLearning</a> 即可看到仓库都作为分支被推送过去了，接着在github上删掉被合并的两个仓库</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目的： 将github上多个仓库合并到一个里面，保留提交记录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/hanlyjiang/AndroidLearning.git
+cd AndroidLearning
+
+# 合并第一个仓库
+g
+    
+    </summary>
+    
+      <category term="版本控制" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+      <category term="GIT" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/GIT/"/>
+    
+    
+      <category term="git" scheme="http://hanlyjiang.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用工具下载链接</title>
+    <link href="http://hanlyjiang.cn/2011/11/11/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/"/>
+    <id>http://hanlyjiang.cn/2011/11/11/常用工具下载链接/</id>
+    <published>2011-11-10T17:11:11.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="版本控制工具："><a href="#版本控制工具：" class="headerlink" title="版本控制工具："></a>版本控制工具：</h2><ul>
+<li><a href="http://subversion.apache.org/packages.html#windows" title="svn windows 下载" target="_blank" rel="external">Subversion</a></li>
+</ul>
+<ul>
+<li><a href="http://www.sourceinsight.com/down35.html" title="source insight 下载" target="_blank" rel="external">Source Insight</a></li>
+<li><a href="http://www.sourceinsight.com.cn/support.htm" title="si 文档" target="_blank" rel="external">Source Insight 文档</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;版本控制工具：&quot;&gt;&lt;a href=&quot;#版本控制工具：&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具：&quot;&gt;&lt;/a&gt;版本控制工具：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://subversion.apache.org/packag
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="工具" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
