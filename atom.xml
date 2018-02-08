@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2017-09-26T13:13:29.000Z</updated>
+  <updated>2018-02-08T03:42:21.490Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -16,11 +16,127 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 Gitlab 管理项目代码</title>
+    <link href="http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Gitlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"/>
+    <id>http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Gitlab基础使用/</id>
+    <published>2018-02-08T03:24:56.631Z</published>
+    <updated>2018-02-08T03:42:21.490Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文目录：<br><!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:1 --></p>
+<pre><code>1. [前言](#前言)
+2. [介绍](#介绍)
+3. [服务搭建](#服务搭建)
+    1. [搭建Gitlab服务](#搭建gitlab服务)
+        1. [普通版本](#普通版本)
+        2. [Docker 版本](#docker-版本)
+4. [备份及恢复](#备份及恢复)
+    1. [普通版本](#普通版本)
+    2. [Docker 版本](#docker-版本)
+5. [日常使用](#日常使用)
+6. [参考链接](#参考链接)
+</code></pre><!-- /TOC -->
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><hr>
+<h2 id="服务搭建"><a href="#服务搭建" class="headerlink" title="服务搭建"></a>服务搭建</h2><h3 id="搭建Gitlab服务"><a href="#搭建Gitlab服务" class="headerlink" title="搭建Gitlab服务"></a>搭建Gitlab服务</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><h4 id="Docker-版本"><a href="#Docker-版本" class="headerlink" title="Docker 版本"></a>Docker 版本</h4><h2 id="备份及恢复"><a href="#备份及恢复" class="headerlink" title="备份及恢复"></a>备份及恢复</h2><h3 id="普通版本-1"><a href="#普通版本-1" class="headerlink" title="普通版本"></a>普通版本</h3><h3 id="Docker-版本-1"><a href="#Docker-版本-1" class="headerlink" title="Docker 版本"></a>Docker 版本</h3><hr>
+<h2 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文目录：&lt;br&gt;&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:1 --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. [前言](#前言)
+2. [介绍](#介绍)
+3. [服务搭建](#
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+      <category term="版本控制" scheme="http://hanlyjiang.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zip 命令打包时过滤掉指定文件</title>
+    <link href="http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Zip%E6%89%93%E5%8C%85%E8%BF%87%E6%BB%A4%E6%96%87%E4%BB%B6/"/>
+    <id>http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Zip打包过滤文件/</id>
+    <published>2018-02-08T03:20:54.686Z</published>
+    <updated>2018-02-08T04:18:08.847Z</updated>
+    
+    <content type="html"><![CDATA[<p>zip 压缩命令：<br><code>zip -r AndroidProject.zip AndroidProject/ -x@exclude.lst</code></p>
+<blockquote>
+<p>将 AndroidProject 文件夹打包成 AndroidProject.zip，打包过程中过滤 exclude.lst 文件中指定的文件或目录 </p>
+</blockquote>
+<p><code>exclude.lst</code> 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>目录过滤</div><div class="line"><span class="meta">#</span> 直接目录，如 .git</div><div class="line">.git/*</div><div class="line"><span class="meta">#</span> 嵌套目录 如 Project/.git Project/test/.git</div><div class="line">*/.git/*</div><div class="line"></div><div class="line">*/bin/*</div><div class="line">bin/*</div><div class="line"></div><div class="line">gen/*</div><div class="line">*/gen/*</div><div class="line"></div><div class="line">build/*</div><div class="line">*/build/*</div><div class="line"></div><div class="line">.gradle/*</div><div class="line">*/.gradle/*</div><div class="line"></div><div class="line">.idea/*</div><div class="line">*/.idea/*</div><div class="line"></div><div class="line">*/obj/*</div><div class="line"></div><div class="line"><span class="meta">#</span> 文件类型过滤</div><div class="line">*.DS_Store</div><div class="line">*.apk</div><div class="line">*.a</div><div class="line">*.o</div><div class="line">*.iml</div><div class="line"><span class="meta">#</span>*.so</div><div class="line"></div><div class="line">*/jni-code/*</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;zip 压缩命令：&lt;br&gt;&lt;code&gt;zip -r AndroidProject.zip AndroidProject/ -x@exclude.lst&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将 AndroidProject 文件夹打包成 AndroidPro
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+      <category term="Linux" scheme="http://hanlyjiang.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://hanlyjiang.cn/2017/10/19/Android%E7%AB%AFPDF%20Word%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B/"/>
+    <id>http://hanlyjiang.cn/2017/10/19/Android端PDF Word文件查看/</id>
+    <published>2017-10-19T04:12:28.610Z</published>
+    <updated>2017-10-19T10:12:58.574Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Android-端Word-PDF查看"><a href="#Android-端Word-PDF查看" class="headerlink" title="Android 端Word PDF查看"></a>Android 端Word PDF查看</h1><h2 id="腾讯浏览服务"><a href="#腾讯浏览服务" class="headerlink" title="腾讯浏览服务"></a>腾讯浏览服务</h2><p><a href="https://x5.tencent.com/tbs/guide/demo.html#" target="_blank" rel="external">https://x5.tencent.com/tbs/guide/demo.html#</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">openFileReader</span><span class="params">(Context context, String filePath, HashMap&lt;String, String&gt; extraParams,ValueCallback&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
+<h3 id="【接口说明】"><a href="#【接口说明】" class="headerlink" title="【接口说明】"></a>【接口说明】</h3><ol>
+<li>此方法在 Qbsdk 类下</li>
+<li>调用之后，优先调起 QQ 浏览器打开文件。如果没有安装 QQ 浏览器，在 X5 内核下调起简版 QB 打开文 件。如果使用的系统内核，则调起文件阅读器弹框。</li>
+<li>此方法暂时只支持本地文件打开，在线文件后期完善   </li>
+</ol>
+<h3 id="【参数定义】"><a href="#【参数定义】" class="headerlink" title="【参数定义】"></a>【参数定义】</h3><p><code>context</code>: 调起 miniqb 的 Activity 的 context。此参数只能是 activity 类型的 context，不能设置为 Application的 context。  </p>
+<p><code>filePath</code>: 文件路径。格式为 android 本地存储路径格式，例如: <code>/sdcard/Download/xxx.doc</code>. 不支持 <code>file:///</code> 格式。暂不支持在线文件。</p>
+<p><code>extraParams</code>:miniqb 的扩展功能。为非必填项，可传入 null 使用默认设置。其格式是一个 key 对应一个 value。在文件查看器的产品形态中，当前支持 的 key 包括:</p>
+<ul>
+<li><code>local</code>: “true”表示是进入文件查看器，如果不设置或设置为“false”，则进入 miniqb 浏览器模式。不是必须设置项。</li>
+<li><code>style</code>: “0”表示文件查看器使用默认的 UI 样式。“1”表示文件查看器使用微信的 UI 样式。不设置此 key或设置错误值，则为默认 UI 样式。</li>
+<li><code>topBarBgColor</code>: 定制文件查看器的顶部栏背景色。格式为“#xxxxxx”，例“#2CFC47”;不设置此 key 或设置错误值，则为默认 UI 样式。</li>
+<li><p><code>menuData</code>: 该参数用来定制文件右上角弹出菜单，可传入菜单项的 icon 的文本，用户点击菜单项后，sdk会通过 startActivity+intent 的方式回调。menuData 是 jsonObject 类型，结构格式如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String jsondata =</div><div class="line">    <span class="string">"&#123;</span></div><div class="line"><span class="string">    pkgName:\"com.example.thirdfile\", "</span></div><div class="line">    + <span class="string">"className:\"com.example.thirdfile.IntentActivity\","</span></div><div class="line">    + <span class="string">"thirdCtx: &#123;pp:123&#125;,"</span></div><div class="line">    + <span class="string">"menuItems:"</span></div><div class="line">    + <span class="string">"["</span></div><div class="line">    + <span class="string">"&#123;id:0,iconResId:"</span>+ R.drawable.ic_launcher +<span class="string">",text:\"menu0\"&#125;,</span></div><div class="line"><span class="string">    &#123;id:1,iconResId:"</span> + R.drawable.bookmark_edit_icon + <span class="string">",text:\"menu1\"&#125;, &#123;id:2,iconResId:"</span>+ R.drawable.bookmark_folder_icon +<span class="string">",text:\"菜单2\"&#125;"</span> + <span class="string">"]"</span></div><div class="line">    +<span class="string">"</span></div><div class="line"><span class="string">    &#125;"</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>pkgName</code> 和 className 是回调时的包名和类名。thirdCtx 是三方参数，需要是 jsonObject 类型，sdk 不会处理该参数，只是在菜单点击事件发生的时候原样 回传给调用方。menuItems 是 json 数组，表示菜单中的每一项。</p>
+</li>
+<li><p><code>ValueCallback</code>:提供 miniqb 打开/关闭时给调用方回调通知,以便应用层做相应处理。 在单独进程打开文件的场景中，回调参数出现如下字符时，表示可以关闭当前进程，避免内存占用。<br>openFileReader open in QB<br>  filepath error<br>  TbsReaderDialogClosed<br>  default browser:<br>  filepath error<br>  fileReaderClosed</p>
+</li>
+</ul>
+<h3 id="【返回说明】"><a href="#【返回说明】" class="headerlink" title="【返回说明】"></a>【返回说明】</h3><p>1:用 QQ 浏览器打开<br>2:用 MiniQB 打开<br>3:调起阅读器弹框<br>1:filePath 为空 打开失败</p>
+<p>###【使用实例】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//params 为定制参数 非必须选项 可以传 null 为默认设置 public static final Stringjsondata = "&#123;</span></div><div class="line">pkgName:\<span class="string">"com.example.thirdfile\", "</span></div><div class="line">+ <span class="string">"className:\"com.example.thirdfile.IntentActivity\","</span></div><div class="line">+ <span class="string">"thirdCtx: &#123;pp:123&#125;,"</span></div><div class="line">+ <span class="string">"menuItems:"</span></div><div class="line">+ <span class="string">"["</span></div><div class="line">+ <span class="string">"&#123;id:0,iconResId:"</span>+ R.drawable.ic_launcher +<span class="string">",text:\"menu0\"&#125;,</span></div><div class="line"><span class="string">&#123;id:1,iconResId:"</span> + R.drawable.bookmark_edit_icon + <span class="string">",text:\"menu1\"&#125;, &#123;id:2,iconResId:"</span>+ R.drawable.bookmark_folder_icon +<span class="string">",text:\"菜单 2\"&#125;"</span></div><div class="line">+ <span class="string">"]"</span> + <span class="string">" &#125;"</span>;</div><div class="line">HashMap&lt;String, String&gt; params = <span class="keyword">new</span> HashMap&lt;String, String&gt;(); params.put(<span class="string">"style"</span>, <span class="string">"1"</span>);</div><div class="line">params.put(<span class="string">"local"</span>, <span class="string">"true"</span>);</div><div class="line">params.put(<span class="string">"memuData"</span>, jsondata);</div><div class="line">QbSdk.openFileReader(ctx,”/sdcard/xxx.doc”, params,callback);</div></pre></td></tr></table></figure></p>
+<p>public static final String packageName = “\”com.geostar.tbsdemo\””;<br>public static final String activityName = “\”com.geostar.tbsdemo.FileActivity\””;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Android-端Word-PDF查看&quot;&gt;&lt;a href=&quot;#Android-端Word-PDF查看&quot; class=&quot;headerlink&quot; title=&quot;Android 端Word PDF查看&quot;&gt;&lt;/a&gt;Android 端Word PDF查看&lt;/h1&gt;&lt;h2 i
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>IOS开发学习资源</title>
     <link href="http://hanlyjiang.cn/2017/09/26/IOS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
     <id>http://hanlyjiang.cn/2017/09/26/IOS开发学习资源/</id>
     <published>2017-09-26T13:08:34.000Z</published>
-    <updated>2017-09-26T13:13:29.000Z</updated>
+    <updated>2017-10-19T03:48:49.447Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在线课程"><a href="#在线课程" class="headerlink" title="在线课程"></a>在线课程</h2><ul>
 <li><a href="https://classroom.udacity.com/courses/ud585" title="Intro to iOS App Development with Swift" target="_blank" rel="external">优达学城</a></li>
@@ -79,230 +195,59 @@
   </entry>
   
   <entry>
-    <title>使用Github Pages 写博客</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <title>使用SublimeText 编辑Markdown 文件并预览</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
     <published>2017-08-26T02:44:38.000Z</published>
     <updated>2017-08-26T02:44:38.000Z</updated>
     
-    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+    <content type="html"><![CDATA[<!-- toc -->
+<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
+<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
+<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
+<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
+<ul>
+<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
+</ul>
+<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
+</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
+<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
+<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
+<li><p>修改配置：         </p>
+<ul>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
+<li><p>修改以下三项       </p>
+<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
+&quot;file_path_conversions&quot;: &quot;relative&quot;,   
+&quot;image_path_conversion&quot;: &quot;relative&quot;,   
+</code></pre></li>
+</ul>
+</li>
 </ol>
 <ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
+<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
 </ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
+<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
+<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
+<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
+<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
+<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
+      使用SublimeText 编辑Markdown 文件并预览
     
     </summary>
     
       <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
-      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
     
     
-      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
-    
-      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java注解介绍</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T17:20:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
-<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
-<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
-<p>注解有以下几种用途：</p>
-<ul>
-<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
-<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
-<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
-</ul>
-<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
-<hr>
-<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：</p>
-<pre><code>@Entity
-</code></pre><p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：</p>
-<pre><code>@Override
-void mySuperMethod() {... }
-</code></pre><p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：</p>
-<pre><code>@Author(
- name = &quot;Benjamin Franklin&quot;,
- date = &quot;3/27/2003&quot;
-  )
-  class MyClass() { ... }
-</code></pre><p>或者</p>
-<pre><code>@SuppressWarnings(value = &quot;unchecked&quot;)
- void myMethod() { ... }
-</code></pre><p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：</p>
-<pre><code>@SuppressWarnings(&quot;unchecked&quot;)
-void myMethod() { ... }
-</code></pre><p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
-<p>在一个声明中使用多个注解也是可以的：</p>
-<pre><code>@Author(name = &quot;Jane Doe&quot;)
-@EBook
-class MyClass { ... }
-</code></pre><p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
-<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
-<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
-<p>###注解可以被用在什么地方</p>
-<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
-<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
-<ul>
-<li><p>类实例创建表达式：</p>
-<pre><code>new @Interned MyObject();
-</code></pre></li>
-<li><p>类型转换：</p>
-<pre><code>myString = (@NonNull String) str;
-</code></pre></li>
-<li><p><code>implements</code> 子句：</p>
-<pre><code>  class UnmodifiableList&lt;T&gt; implements 
-@Readonly List&lt;@Readonly T&gt; { ... }
-</code></pre></li>
-<li><p>异常抛出语句：</p>
-<pre><code>void monitorTemperature() throws
-@Critical TemperatureException { ... }
-</code></pre><p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
-</li>
-</ul>
-<hr>
-<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
-<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：</p>
-<pre><code>@interface ClassPreamble {
-   String author();
-   String date();
-   int currentRevision() default 1;
-   String lastModified() default &quot;N/A&quot;;
-   String lastModifiedBy() default &quot;N/A&quot;;
-   // Note use of array
-   String[] reviewers();
-}
-</code></pre><p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
-<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
-<p>在定义了注解类型之后，你就可以使用它了，如：</p>
-<pre><code>@ClassPreamble (
-   author = &quot;John Doe&quot;,
-   date = &quot;3/17/2002&quot;,
-   currentRevision = 6,
-   lastModified = &quot;4/12/2004&quot;,
-   lastModifiedBy = &quot;Jane Doe&quot;,
-   // Note array notation
-   reviewers = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Cindy&quot;}
-)
-public class Generation3List extends Generation2List {
-
-// class code goes here
-
-}
-</code></pre><p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：</p>
-<pre><code>// import this to use @Documented
-import java.lang.annotation.*;
-
-@Documented
-@interface ClassPreamble {
-
-   // Annotation element definitions
-
-}
-</code></pre><h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
-<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
-<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。</p>
-<pre><code>   // Javadoc comment follows
-    /**
-     * @deprecated
-     * explanation of why it was deprecated
-     */
-    @Deprecated
-    static void deprecatedMethod() { }
-}
-</code></pre><p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）</p>
-<pre><code>// mark method as a superclass method
-// that has been overridden
-@Override 
-int overriddenMethod() { }
-</code></pre><p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
-<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。</p>
-<pre><code>// use a deprecated method and tell 
-// compiler not to generate a warning
-@SuppressWarnings(&quot;deprecation&quot;)
- void useDeprecatedMethod() {
-     // deprecation warning
-     // - suppressed
-     objectOne.deprecatedMethod();
- }
-</code></pre><p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：</p>
-<pre><code>@SuppressWarnings({&quot;unchecked&quot;, &quot;deprecation&quot;})// 注意其中的&quot;{}&quot;
-</code></pre><p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
-<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
-<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
-<ul>
-<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
-<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
-<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
-</ul>
-<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
-<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
-<ul>
-<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
-<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
-<li><code>ElementType.FIELD</code> 类成员或属性</li>
-<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
-<li><code>ElementType.METHOD</code> 方法级别的注解</li>
-<li><code>ElementType.PACKAGE</code> 包声明</li>
-<li><code>ElementType.PARAMETER</code> 方法的参数</li>
-<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
-</ul>
-<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
-<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
-<hr>
-<p>关于<strong>@FunctionalInterface</strong>注解：</p>
-<ul>
-<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a> </li>
-<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
-    
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
-    
-      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
     
   </entry>
   
@@ -491,79 +436,230 @@ onView(withId(R.id.changeTextBt)).perform(click());
   </entry>
   
   <entry>
-    <title>使用SublimeText 编辑Markdown 文件并预览</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
+    <title>Java注解介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
     <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
+    <updated>2017-08-26T17:20:58.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
-<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
-<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
-<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
+    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
+<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
+<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
+<p>注解有以下几种用途：</p>
 <ul>
-<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
+<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
+<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
+<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
 </ul>
-<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
-</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
-<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
-<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
-<li><p>修改配置：         </p>
+<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
+<hr>
+<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：</p>
+<pre><code>@Entity
+</code></pre><p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：</p>
+<pre><code>@Override
+void mySuperMethod() {... }
+</code></pre><p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：</p>
+<pre><code>@Author(
+ name = &quot;Benjamin Franklin&quot;,
+ date = &quot;3/27/2003&quot;
+  )
+  class MyClass() { ... }
+</code></pre><p>或者</p>
+<pre><code>@SuppressWarnings(value = &quot;unchecked&quot;)
+ void myMethod() { ... }
+</code></pre><p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：</p>
+<pre><code>@SuppressWarnings(&quot;unchecked&quot;)
+void myMethod() { ... }
+</code></pre><p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
+<p>在一个声明中使用多个注解也是可以的：</p>
+<pre><code>@Author(name = &quot;Jane Doe&quot;)
+@EBook
+class MyClass { ... }
+</code></pre><p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
+<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
+<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
+<p>###注解可以被用在什么地方</p>
+<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
+<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
 <ul>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
-<li><p>修改以下三项       </p>
-<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
-&quot;file_path_conversions&quot;: &quot;relative&quot;,   
-&quot;image_path_conversion&quot;: &quot;relative&quot;,   
+<li><p>类实例创建表达式：</p>
+<pre><code>new @Interned MyObject();
 </code></pre></li>
-</ul>
+<li><p>类型转换：</p>
+<pre><code>myString = (@NonNull String) str;
+</code></pre></li>
+<li><p><code>implements</code> 子句：</p>
+<pre><code>  class UnmodifiableList&lt;T&gt; implements 
+@Readonly List&lt;@Readonly T&gt; { ... }
+</code></pre></li>
+<li><p>异常抛出语句：</p>
+<pre><code>void monitorTemperature() throws
+@Critical TemperatureException { ... }
+</code></pre><p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
 </li>
-</ol>
-<ul>
-<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
 </ul>
-<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
-<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
-<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
-<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
-<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
+<hr>
+<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
+<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：</p>
+<pre><code>@interface ClassPreamble {
+   String author();
+   String date();
+   int currentRevision() default 1;
+   String lastModified() default &quot;N/A&quot;;
+   String lastModifiedBy() default &quot;N/A&quot;;
+   // Note use of array
+   String[] reviewers();
+}
+</code></pre><p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
+<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
+<p>在定义了注解类型之后，你就可以使用它了，如：</p>
+<pre><code>@ClassPreamble (
+   author = &quot;John Doe&quot;,
+   date = &quot;3/17/2002&quot;,
+   currentRevision = 6,
+   lastModified = &quot;4/12/2004&quot;,
+   lastModifiedBy = &quot;Jane Doe&quot;,
+   // Note array notation
+   reviewers = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Cindy&quot;}
+)
+public class Generation3List extends Generation2List {
+
+// class code goes here
+
+}
+</code></pre><p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：</p>
+<pre><code>// import this to use @Documented
+import java.lang.annotation.*;
+
+@Documented
+@interface ClassPreamble {
+
+   // Annotation element definitions
+
+}
+</code></pre><h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
+<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
+<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。</p>
+<pre><code>   // Javadoc comment follows
+    /**
+     * @deprecated
+     * explanation of why it was deprecated
+     */
+    @Deprecated
+    static void deprecatedMethod() { }
+}
+</code></pre><p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）</p>
+<pre><code>// mark method as a superclass method
+// that has been overridden
+@Override 
+int overriddenMethod() { }
+</code></pre><p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
+<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。</p>
+<pre><code>// use a deprecated method and tell 
+// compiler not to generate a warning
+@SuppressWarnings(&quot;deprecation&quot;)
+ void useDeprecatedMethod() {
+     // deprecation warning
+     // - suppressed
+     objectOne.deprecatedMethod();
+ }
+</code></pre><p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：</p>
+<pre><code>@SuppressWarnings({&quot;unchecked&quot;, &quot;deprecation&quot;})// 注意其中的&quot;{}&quot;
+</code></pre><p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
+<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
+<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
+<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
+<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
+</ul>
+<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
+<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
+<ul>
+<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
+<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
+<li><code>ElementType.FIELD</code> 类成员或属性</li>
+<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
+<li><code>ElementType.METHOD</code> 方法级别的注解</li>
+<li><code>ElementType.PACKAGE</code> 包声明</li>
+<li><code>ElementType.PARAMETER</code> 方法的参数</li>
+<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
+</ul>
+<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
+<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
+<hr>
+<p>关于<strong>@FunctionalInterface</strong>注解：</p>
+<ul>
+<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a> </li>
+<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      使用SublimeText 编辑Markdown 文件并预览
+      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
+    
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
+    
+      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Github Pages 写博客</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
     
     </summary>
     
       <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
-      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
+      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
     
-  </entry>
-  
-  <entry>
-    <title>测试hexo</title>
-    <link href="http://hanlyjiang.cn/2016/12/08/2016-12-08-%E6%B5%8B%E8%AF%95hexo/"/>
-    <id>http://hanlyjiang.cn/2016/12/08/2016-12-08-测试hexo/</id>
-    <published>2016-12-08T08:39:35.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[
-]]></content>
-    
-    <summary type="html">
-    
-      
-
-    
-    </summary>
-    
+      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
@@ -790,7 +886,7 @@ onView(withId(R.id.changeTextBt)).perform(click());
     <link href="http://hanlyjiang.cn/2016/08/12/2016-08-12-SVN%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://hanlyjiang.cn/2016/08/12/2016-08-12-SVN使用笔记/</id>
     <published>2016-08-12T02:29:33.000Z</published>
-    <updated>2017-09-26T13:07:27.000Z</updated>
+    <updated>2017-10-19T10:56:34.247Z</updated>
     
     <content type="html"><![CDATA[<p>SVN 命令行使用方法</p>
 <a id="more"></a>
@@ -1117,82 +1213,6 @@ mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
       <category term="kindle" scheme="http://hanlyjiang.cn/tags/kindle/"/>
     
       <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多个Github仓库合并到一个作为分支存在</title>
-    <link href="http://hanlyjiang.cn/2016/01/11/%E5%A4%9A%E4%B8%AAGithub%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%BA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8/"/>
-    <id>http://hanlyjiang.cn/2016/01/11/多个Github仓库合并到一个作为分支存在/</id>
-    <published>2016-01-11T02:12:50.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>目的： 将github上多个仓库合并到一个里面，保留提交记录</p>
-<pre><code>git clone https://github.com/hanlyjiang/AndroidLearning.git
-cd AndroidLearning
-
-# 合并第一个仓库
-git remote add RepoA https://github.com/hanlyjiang/AndroidUtils.git
-git pull RepoA
-git checkout -b android_utils_master RepoA/master
-git push origin android_utils_master
-git checkout -b android_utils_gh_pages RepoA/gh-pages
-git push origin android_utils_gh_pages
-
-# 合并第二个仓库
-git remote add RepoA https://github.com/hanlyjiang/AndroidDemos.git
-git pull RepoB
-git checkout -b android_demos_master RepoB/master
-</code></pre><p>然后再访问<a href="https://github.com/hanlyjiang/AndroidLearning" target="_blank" rel="external">https://github.com/hanlyjiang/AndroidLearning</a> 即可看到仓库都作为分支被推送过去了，接着在github上删掉被合并的两个仓库</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;目的： 将github上多个仓库合并到一个里面，保留提交记录&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/hanlyjiang/AndroidLearning.git
-cd AndroidLearning
-
-# 合并第一个仓库
-g
-    
-    </summary>
-    
-      <category term="版本控制" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    
-      <category term="GIT" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/GIT/"/>
-    
-    
-      <category term="git" scheme="http://hanlyjiang.cn/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用工具下载链接</title>
-    <link href="http://hanlyjiang.cn/2011/11/11/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/"/>
-    <id>http://hanlyjiang.cn/2011/11/11/常用工具下载链接/</id>
-    <published>2011-11-10T17:11:11.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="版本控制工具："><a href="#版本控制工具：" class="headerlink" title="版本控制工具："></a>版本控制工具：</h2><ul>
-<li><a href="http://subversion.apache.org/packages.html#windows" title="svn windows 下载" target="_blank" rel="external">Subversion</a></li>
-</ul>
-<ul>
-<li><a href="http://www.sourceinsight.com/down35.html" title="source insight 下载" target="_blank" rel="external">Source Insight</a></li>
-<li><a href="http://www.sourceinsight.com.cn/support.htm" title="si 文档" target="_blank" rel="external">Source Insight 文档</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;版本控制工具：&quot;&gt;&lt;a href=&quot;#版本控制工具：&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具：&quot;&gt;&lt;/a&gt;版本控制工具：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://subversion.apache.org/packag
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-      <category term="工具" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
