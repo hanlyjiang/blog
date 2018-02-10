@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Excel,VBA," />
+  <meta name="keywords" content="Android, Java" />
 
 
 
@@ -95,18 +95,16 @@
 
 
 
-<meta name="description" content="本文内容：使用Excel 编程将横向和竖向的值翻转">
-<meta name="keywords" content="Excel,VBA">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Excel横向单元格和纵向单元格切换">
-<meta property="og:url" content="http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/index.html">
+<meta name="description" content="Android 开发，程序员">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HanlyJiang">
+<meta property="og:url" content="http://hanlyjiang.cn/page/3/index.html">
 <meta property="og:site_name" content="HanlyJiang">
-<meta property="og:description" content="本文内容：使用Excel 编程将横向和竖向的值翻转">
+<meta property="og:description" content="Android 开发，程序员">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-26T02:44:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Excel横向单元格和纵向单元格切换">
-<meta name="twitter:description" content="本文内容：使用Excel 编程将横向和竖向的值翻转">
+<meta name="twitter:title" content="HanlyJiang">
+<meta name="twitter:description" content="Android 开发，程序员">
 
 
 
@@ -136,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/"/>
+  <link rel="canonical" href="http://hanlyjiang.cn/page/3/"/>
 
 
 
 
 
-  <title>Excel横向单元格和纵向单元格切换 | HanlyJiang</title>
+  <title>HanlyJiang - 千里之行，始于足下</title>
   
 
 
@@ -161,7 +159,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -279,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2016/08/15/2016-08-15-Excel横向单元格和纵向单元格切换/">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2011/11/11/常用工具下载链接/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hanly Jiang">
@@ -296,7 +295,9 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Excel横向单元格和纵向单元格切换</h2>
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2011/11/11/常用工具下载链接/" itemprop="url">常用工具下载链接</a></h2>
         
 
         <div class="post-meta">
@@ -308,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-15T18:03:09+08:00">
-                2016-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-11-11T01:11:11+08:00">
+                2011-11-11
               </time>
             
 
@@ -333,17 +334,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/杂项/" itemprop="url" rel="index">
                     <span itemprop="name">杂项</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂项/Excel/" itemprop="url" rel="index">
-                    <span itemprop="name">Excel</span>
                   </a>
                 </span>
 
@@ -379,19 +369,18 @@
       
 
       
-        <p>本文内容：<br>使用Excel 编程将横向和竖向的值翻转<br><a id="more"></a></p>
-<ol>
-<li>使用<code>Alt+F11</code>打开VBA 界面</li>
-<li>在 工程-VBAProject 区域右键- 插入 - 模块，然后在模块中编写代码</li>
-<li>代码：<br>其中<code>Sheet7</code> 是我的目标Sheet页，其中没有内容，<code>Sheet6</code> 是数据源所在Sheet页名称，整个流程就是把Sheet6中的数据读出来写到Sheet7中。<br>至于循环中<code>To</code> 后面的 20，是因为我的元数据行列都不足20，所以随便写了一个循环边界。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Sub XY翻转()</div><div class="line">    Dim j As Integer</div><div class="line">        For j = 1 To 20</div><div class="line">            Dim i As Integer</div><div class="line">            For i = 1 To 20</div><div class="line">                Sheets(&quot;Sheet7&quot;).Select</div><div class="line">                Cells(i, j) = Sheets(&quot;Sheet6&quot;).Cells(j, i)</div><div class="line">            Next i</div><div class="line">        Next j</div><div class="line">End Sub</div></pre></td></tr></table></figure>
-<p>点击三角或者按<code>F5</code> 执行代码</p>
-<p><br><br>参考：</p>
-<ol>
-<li><a href="http://jingyan.baidu.com/article/7908e85c6f3456af481ad214.html" target="_blank" rel="external">For 循环</a>  2. <a href="http://wenku.baidu.com/link?url=qrB8HuJ3O_X9L3MH3bsOjjQXVhgIN2eph73Zq0K_MIiFq6KEHQuc9DzFBPM4YAq1jmzIYtYDxW7obHigBLFykMdJzPzUqnaTeqMLbX3bfl_" target="_blank" rel="external">Excel VBA入门</a></li>
-</ol>
+        
+          
+            <h2 id="版本控制工具："><a href="#版本控制工具：" class="headerlink" title="版本控制工具："></a>版本控制工具：</h2><ul>
+<li><a href="http://subversion.apache.org/packages.html#windows" title="svn windows 下载" target="_blank" rel="external">Subversion</a></li>
+</ul>
+<ul>
+<li><a href="http://www.sourceinsight.com/down35.html" title="source insight 下载" target="_blank" rel="external">Source Insight</a></li>
+<li><a href="http://www.sourceinsight.com.cn/support.htm" title="si 文档" target="_blank" rel="external">Source Insight 文档</a></li>
+</ul>
 
+          
+        
       
     </div>
     
@@ -406,42 +395,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Excel/" rel="tag"># Excel</a>
-          
-            <a href="/tags/VBA/" rel="tag"># VBA</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/15/2016-08-15-Android-动画资源-API-Guide/" rel="next" title="Android API Guide - 动画资源">
-                <i class="fa fa-chevron-left"></i> Android API Guide - 动画资源
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/18/2016-08-18-Axure-RP添加页面内滚动效果/" rel="prev" title="Axure RP添加页面内滚动效果">
-                Axure RP添加页面内滚动效果 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -451,11 +412,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -463,10 +427,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -711,10 +671,10 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-
+  
 
   
 
