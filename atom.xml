@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-02-10T05:35:27.930Z</updated>
+  <updated>2018-04-02T10:06:34.801Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -16,44 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>有趣的现象</title>
-    <link href="http://hanlyjiang.cn/2018/02/10/2018/2018-02-10-%E4%B8%8D%E7%94%A8%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    <id>http://hanlyjiang.cn/2018/02/10/2018/2018-02-10-不用版本控制/</id>
-    <published>2018-02-10T04:58:57.932Z</published>
-    <updated>2018-02-10T05:35:27.930Z</updated>
+    <title>Mac版 Navicat Premium 12.0.25 激活</title>
+    <link href="http://hanlyjiang.cn/2018/04/02/2018/2018-04-02-Navicat-crack/"/>
+    <id>http://hanlyjiang.cn/2018/04/02/2018/2018-04-02-Navicat-crack/</id>
+    <published>2018-04-02T09:57:50.692Z</published>
+    <updated>2018-04-02T10:06:34.801Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="现象一、不使用版本控制工具"><a href="#现象一、不使用版本控制工具" class="headerlink" title="现象一、不使用版本控制工具"></a>现象一、不使用版本控制工具</h2><p>在公司里发现一个普遍现象，就是大家都不习惯使用版本控制工具。虽然公司也有使用svn作为版本控制工具，但是大家的使用频率很低，同步版本库的频率非常低，而且很多项目代码不会往svn上放。</p>
-<p>那么平时是如何做版本控制的呢？</p>
-<blockquote>
-<p>把整个工程目录复制一份，加上时间戳。这个还可以说的过去。</p>
-</blockquote>
-<p>那么多人做一个工程时怎么合并多人修改呢？</p>
-<blockquote>
-<p>A 说你修改了啥，B 把修改一句句复制过去</p>
-</blockquote>
-<p>那么如何保存某个发布版本的代码呢，比如发了一个1.0版本，现在开发到1.1 了？</p>
-<blockquote>
-<p>没有相应措施</p>
-</blockquote>
-<h3 id="真实场景："><a href="#真实场景：" class="headerlink" title="真实场景："></a>真实场景：</h3><p>把一个工程给一个同事整合到他的工程里面去，于是有了以下一幕：<br>合了一半，但是又觉得现在代码太乱了，万一运行不起来，把之前自己的都搞坏了。       </p>
-<blockquote>
-<p>A君：卧槽，我之前没有备份，怎么办？现在还来不来得及吗？<br>我: 你没有用版本控制吗？<br>A君： 没有   </p>
-</blockquote>
-<p>于是A君赶紧在IDE里按 ctrl+z, 结果步数太多，回不去了。。。</p>
+    <content type="html"><![CDATA[<p>详细请参考： <a href="https://github.com/DoubleLabyrinth/navicat-keygen" target="_blank" rel="external">Github-navicat-keygen</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/DoubleLabyrinth/navicat-keygen.git</div><div class="line">cd navicat-keygen</div><div class="line">make release</div><div class="line"></div><div class="line">cp /Applications/Navicat Premium.app/Contents/Resources/rpk /Applications/Navicat Premium.app/Contents/Resources/rpk.bak</div><div class="line"></div><div class="line">openssl genrsa -out 2048key.pem 2048</div><div class="line">openssl rsa -in 2048key.pem -pubout -out rpk</div><div class="line"></div><div class="line">cp rpk /Applications/Navicat Premium.app/Contents/Resources/rpk</div><div class="line"></div><div class="line">./navicat-keygen 2048key.pem # 记录 snKey，此处终端不关闭</div><div class="line"></div><div class="line"># 使用 snKey 激活Navicat Premium并选择手动激活</div><div class="line"># 复制弹出框中的请求码到 之前未关闭的终端，Enter，获取注册码</div><div class="line"># 将注册码粘贴到Navicat Premium 激活对话框，点击激活即可</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;现象一、不使用版本控制工具&quot;&gt;&lt;a href=&quot;#现象一、不使用版本控制工具&quot; class=&quot;headerlink&quot; title=&quot;现象一、不使用版本控制工具&quot;&gt;&lt;/a&gt;现象一、不使用版本控制工具&lt;/h2&gt;&lt;p&gt;在公司里发现一个普遍现象，就是大家都不习惯使用版本控
+      &lt;p&gt;详细请参考： &lt;a href=&quot;https://github.com/DoubleLabyrinth/navicat-keygen&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github-navicat-keygen&lt;/a&gt;&lt;/p&gt;
+&lt;figure c
     
     </summary>
     
       <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-      <category term="工具" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
-      <category term="版本控制" scheme="http://hanlyjiang.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+      <category term="Navicat" scheme="http://hanlyjiang.cn/tags/Navicat/"/>
     
   </entry>
   
@@ -390,7 +375,7 @@ onView(withId(R.id.changeTextBt)).perform(click());
     <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
     <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
     <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T17:20:58.000Z</updated>
+    <updated>2018-02-11T05:34:41.416Z</updated>
     
     <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
 <p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
@@ -403,29 +388,16 @@ onView(withId(R.id.changeTextBt)).perform(click());
 </ul>
 <p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
 <hr>
-<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：</p>
-<pre><code>@Entity
-</code></pre><p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：</p>
-<pre><code>@Override
-void mySuperMethod() {... }
-</code></pre><p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：</p>
-<pre><code>@Author(
- name = &quot;Benjamin Franklin&quot;,
- date = &quot;3/27/2003&quot;
-  )
-  class MyClass() { ... }
-</code></pre><p>或者</p>
-<pre><code>@SuppressWarnings(value = &quot;unchecked&quot;)
- void myMethod() { ... }
-</code></pre><p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：</p>
-<pre><code>@SuppressWarnings(&quot;unchecked&quot;)
-void myMethod() { ... }
-</code></pre><p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
-<p>在一个声明中使用多个注解也是可以的：</p>
-<pre><code>@Author(name = &quot;Jane Doe&quot;)
-@EBook
-class MyClass { ... }
-</code></pre><p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
+<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div></pre></td></tr></table></figure></p>
+<p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySuperMethod</span><span class="params">()</span> </span>&#123;... &#125;</div></pre></td></tr></table></figure></p>
+<p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：           </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Author</span>(</div><div class="line">name = <span class="string">"Benjamin Franklin"</span>,</div><div class="line">date = <span class="string">"3/27/2003"</span></div><div class="line">)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>() </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>或者   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(value = <span class="string">"unchecked"</span>)</div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
+<p>在一个声明中使用多个注解也是可以的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@Author</span>(name = <span class="string">"Jane Doe"</span>)</div><div class="line"><span class="meta">@EBook</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
 <p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
 <p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
 <p>###注解可以被用在什么地方</p>
@@ -433,90 +405,35 @@ class MyClass { ... }
 <p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
 <ul>
 <li><p>类实例创建表达式：</p>
-<pre><code>new @Interned MyObject();
-</code></pre></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="meta">@Interned</span> MyObject();</div></pre></td></tr></table></figure>
+</li>
 <li><p>类型转换：</p>
-<pre><code>myString = (@NonNull String) str;
-</code></pre></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString = (<span class="meta">@NonNull</span> String) str;</div></pre></td></tr></table></figure>
+</li>
 <li><p><code>implements</code> 子句：</p>
-<pre><code>  class UnmodifiableList&lt;T&gt; implements 
-@Readonly List&lt;@Readonly T&gt; { ... }
-</code></pre></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">UnmodifiableList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span></span></div><div class="line"><span class="class">@<span class="title">Readonly</span> <span class="title">List</span>&lt;@<span class="title">Readonly</span> <span class="title">T</span>&gt; </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
 <li><p>异常抛出语句：</p>
-<pre><code>void monitorTemperature() throws
-@Critical TemperatureException { ... }
-</code></pre><p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">monitorTemperature</span><span class="params">()</span> <span class="keyword">throws</span></span></div><div class="line"><span class="function">@Critical TemperatureException </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
 <hr>
 <h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
 <p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：</p>
-<pre><code>@interface ClassPreamble {
-   String author();
-   String date();
-   int currentRevision() default 1;
-   String lastModified() default &quot;N/A&quot;;
-   String lastModifiedBy() default &quot;N/A&quot;;
-   // Note use of array
-   String[] reviewers();
-}
-</code></pre><p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
+<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line">   <span class="function">String <span class="title">author</span><span class="params">()</span></span>;</div><div class="line">   <span class="function">String <span class="title">date</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">int</span> <span class="title">currentRevision</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line">   <span class="function">String <span class="title">lastModified</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="function">String <span class="title">lastModifiedBy</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="comment">// Note use of array</span></div><div class="line">   String[] reviewers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
 <p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
-<p>在定义了注解类型之后，你就可以使用它了，如：</p>
-<pre><code>@ClassPreamble (
-   author = &quot;John Doe&quot;,
-   date = &quot;3/17/2002&quot;,
-   currentRevision = 6,
-   lastModified = &quot;4/12/2004&quot;,
-   lastModifiedBy = &quot;Jane Doe&quot;,
-   // Note array notation
-   reviewers = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Cindy&quot;}
-)
-public class Generation3List extends Generation2List {
-
-// class code goes here
-
-}
-</code></pre><p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：</p>
-<pre><code>// import this to use @Documented
-import java.lang.annotation.*;
-
-@Documented
-@interface ClassPreamble {
-
-   // Annotation element definitions
-
-}
-</code></pre><h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
+<p>在定义了注解类型之后，你就可以使用它了，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ClassPreamble</span> (</div><div class="line">   author = <span class="string">"John Doe"</span>,</div><div class="line">   date = <span class="string">"3/17/2002"</span>,</div><div class="line">   currentRevision = <span class="number">6</span>,</div><div class="line">   lastModified = <span class="string">"4/12/2004"</span>,</div><div class="line">   lastModifiedBy = <span class="string">"Jane Doe"</span>,</div><div class="line">   <span class="comment">// Note array notation</span></div><div class="line">   reviewers = &#123;<span class="string">"Alice"</span>, <span class="string">"Bob"</span>, <span class="string">"Cindy"</span>&#125;</div><div class="line">)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import this to use @Documented</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.*;</div><div class="line"></div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line"></div><div class="line">   <span class="comment">// Annotation element definitions</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
 <h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
-<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。</p>
-<pre><code>   // Javadoc comment follows
-    /**
-     * @deprecated
-     * explanation of why it was deprecated
-     */
-    @Deprecated
-    static void deprecatedMethod() { }
-}
-</code></pre><p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）</p>
-<pre><code>// mark method as a superclass method
-// that has been overridden
-@Override 
-int overriddenMethod() { }
-</code></pre><p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
-<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。</p>
-<pre><code>// use a deprecated method and tell 
-// compiler not to generate a warning
-@SuppressWarnings(&quot;deprecation&quot;)
- void useDeprecatedMethod() {
-     // deprecation warning
-     // - suppressed
-     objectOne.deprecatedMethod();
- }
-</code></pre><p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：</p>
-<pre><code>@SuppressWarnings({&quot;unchecked&quot;, &quot;deprecation&quot;})// 注意其中的&quot;{}&quot;
-</code></pre><p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
+<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// Javadoc comment follows</span></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * <span class="doctag">@deprecated</span></span></div><div class="line"><span class="comment">	 * explanation of why it was deprecated</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="meta">@Deprecated</span></div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deprecatedMethod</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mark method as a superclass method</span></div><div class="line"><span class="comment">// that has been overridden</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">overriddenMethod</span><span class="params">()</span> </span>&#123; &#125;</div></pre></td></tr></table></figure></p>
+<p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
+<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// use a deprecated method and tell</span></div><div class="line">  <span class="comment">// compiler not to generate a warning</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">useDeprecatedMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">// deprecation warning</span></div><div class="line">	<span class="comment">// - suppressed</span></div><div class="line">	objectOne.deprecatedMethod();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"deprecation"</span>&#125;)<span class="comment">// 注意其中的"&#123;&#125;"</span></div></pre></td></tr></table></figure></p>
+<p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
 <p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
 <h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
 <ul>
@@ -541,7 +458,7 @@ int overriddenMethod() { }
 <hr>
 <p>关于<strong>@FunctionalInterface</strong>注解：</p>
 <ul>
-<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a> </li>
+<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a></li>
 <li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
 </ul>
 ]]></content>
