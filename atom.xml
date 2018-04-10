@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-04-02T10:06:34.801Z</updated>
+  <updated>2018-04-10T08:09:17.008Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>武汉理工大学</title>
+    <link href="http://hanlyjiang.cn/2018/04/08/2018/2018-04-08-%E6%AD%A6%E6%B1%89%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/"/>
+    <id>http://hanlyjiang.cn/2018/04/08/2018/2018-04-08-武汉理工大学/</id>
+    <published>2018-04-08T05:55:51.359Z</published>
+    <updated>2018-04-10T08:09:17.008Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>“陶同学因个人原因去世后，陶同学全家都陷入极度的悲痛之中，未全面了解事件的具体情况，有一些不理性的言行，网上炒作严重超出我们的预期。对我们大学的声誉和王攀老师带来了不良影响，特此要求陶同学姐姐致歉。”</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“陶同学因个人原因去世后，陶同学全家都陷入极度的悲痛之中，未全面了解事件的具体情况，有一些不理性的言行，网上炒作严重超出我们的预期。对我们大学的声誉和王攀老师带来了不良影响，特此要求陶同学姐姐致歉。”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/tags/%E6%9D%82%E9%A1%B9/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac版 Navicat Premium 12.0.25 激活</title>
@@ -47,9 +75,10 @@
     <link href="http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Zip%E6%89%93%E5%8C%85%E8%BF%87%E6%BB%A4%E6%96%87%E4%BB%B6/"/>
     <id>http://hanlyjiang.cn/2018/02/08/2018/2018-02-08-Zip打包过滤文件/</id>
     <published>2018-02-08T03:20:54.686Z</published>
-    <updated>2018-02-08T04:18:08.847Z</updated>
+    <updated>2018-04-10T08:04:04.873Z</updated>
     
-    <content type="html"><![CDATA[<p>zip 压缩命令：<br><code>zip -r AndroidProject.zip AndroidProject/ -x@exclude.lst</code></p>
+    <content type="html"><![CDATA[<h4 id="zip-压缩命令中指定"><a href="#zip-压缩命令中指定" class="headerlink" title="zip 压缩命令中指定"></a>zip 压缩命令中指定</h4><p>如下命令会过滤掉test_data 目录中的 .svn 目录和 config 目录：<br><code>zip -r test_data.zip test_data --exclude &quot;*/.svn/*&quot; &quot;*/config/*&quot;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">test_data  -|</div><div class="line">            - config/</div><div class="line">                    | - config.xml</div><div class="line">            - test.xml</div><div class="line">            - .svn/</div><div class="line">                    | - db</div></pre></td></tr></table></figure></p>
+<h4 id="使用文件定义过滤列表"><a href="#使用文件定义过滤列表" class="headerlink" title="使用文件定义过滤列表"></a>使用文件定义过滤列表</h4><p><code>zip -r AndroidProject.zip AndroidProject/ -x@exclude.lst</code></p>
 <blockquote>
 <p>将 AndroidProject 文件夹打包成 AndroidProject.zip，打包过程中过滤 exclude.lst 文件中指定的文件或目录 </p>
 </blockquote>
@@ -58,9 +87,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;zip 压缩命令：&lt;br&gt;&lt;code&gt;zip -r AndroidProject.zip AndroidProject/ -x@exclude.lst&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;将 AndroidProject 文件夹打包成 AndroidPro
+      &lt;h4 id=&quot;zip-压缩命令中指定&quot;&gt;&lt;a href=&quot;#zip-压缩命令中指定&quot; class=&quot;headerlink&quot; title=&quot;zip 压缩命令中指定&quot;&gt;&lt;/a&gt;zip 压缩命令中指定&lt;/h4&gt;&lt;p&gt;如下命令会过滤掉test_data 目录中的 .svn 目录和 co
     
     </summary>
     
@@ -133,98 +160,6 @@
     
     
       <category term="Gson, Json解析" scheme="http://hanlyjiang.cn/tags/Gson-Json%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Github Pages 写博客</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
-</ol>
-<ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
-</ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
-    
-      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
-也遇到符号 “=”
-</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>1 . 项目–&gt; 项目选项</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
-<ul>
-<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
-<ul>
-<li>3 . 导入或者重新同步源码</li>
-</ul>
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
-<li>我使用的EA版本为 12.0</li>
-<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
-也遇到符号 “=”
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
-    
-    </summary>
-    
-      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
     
   </entry>
   
@@ -477,6 +412,98 @@ onView(withId(R.id.changeTextBt)).perform(click());
       <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
     
       <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Github Pages 写博客</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
+    
+      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
+也遇到符号 “=”
+</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>1 . 项目–&gt; 项目选项</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
+<ul>
+<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
+<ul>
+<li>3 . 导入或者重新同步源码</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
+<li>我使用的EA版本为 12.0</li>
+<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
+也遇到符号 “=”
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
     
   </entry>
   
@@ -1087,52 +1114,6 @@ mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
       <category term="kindle" scheme="http://hanlyjiang.cn/tags/kindle/"/>
     
       <category term="工具使用" scheme="http://hanlyjiang.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多个Github仓库合并到一个作为分支存在</title>
-    <link href="http://hanlyjiang.cn/2016/01/11/%E5%A4%9A%E4%B8%AAGithub%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%BA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8/"/>
-    <id>http://hanlyjiang.cn/2016/01/11/多个Github仓库合并到一个作为分支存在/</id>
-    <published>2016-01-11T02:12:50.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>目的： 将github上多个仓库合并到一个里面，保留提交记录</p>
-<pre><code>git clone https://github.com/hanlyjiang/AndroidLearning.git
-cd AndroidLearning
-
-# 合并第一个仓库
-git remote add RepoA https://github.com/hanlyjiang/AndroidUtils.git
-git pull RepoA
-git checkout -b android_utils_master RepoA/master
-git push origin android_utils_master
-git checkout -b android_utils_gh_pages RepoA/gh-pages
-git push origin android_utils_gh_pages
-
-# 合并第二个仓库
-git remote add RepoA https://github.com/hanlyjiang/AndroidDemos.git
-git pull RepoB
-git checkout -b android_demos_master RepoB/master
-</code></pre><p>然后再访问<a href="https://github.com/hanlyjiang/AndroidLearning" target="_blank" rel="external">https://github.com/hanlyjiang/AndroidLearning</a> 即可看到仓库都作为分支被推送过去了，接着在github上删掉被合并的两个仓库</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;目的： 将github上多个仓库合并到一个里面，保留提交记录&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/hanlyjiang/AndroidLearning.git
-cd AndroidLearning
-
-# 合并第一个仓库
-g
-    
-    </summary>
-    
-      <category term="版本控制" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    
-      <category term="GIT" scheme="http://hanlyjiang.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/GIT/"/>
-    
-    
-      <category term="git" scheme="http://hanlyjiang.cn/tags/git/"/>
     
   </entry>
   
