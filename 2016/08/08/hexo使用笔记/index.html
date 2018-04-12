@@ -89,12 +89,10 @@
 <meta property="og:site_name" content="HanlyJiang">
 <meta property="og:description" content="hexo 使用过程中的一些笔记，使用小技巧等等">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://hanlyjiang.cn/2016/08/08/hexo使用笔记/test.png">
-<meta property="og:updated_time" content="2018-04-12T01:57:41.000Z">
+<meta property="og:updated_time" content="2018-04-12T02:06:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 使用笔记">
 <meta name="twitter:description" content="hexo 使用过程中的一些笔记，使用小技巧等等">
-<meta name="twitter:image" content="http://hanlyjiang.cn/2016/08/08/hexo使用笔记/test.png">
 
 
 
@@ -388,9 +386,21 @@
 </ul>
 <p>此时在该目录下执行’npm install 即可’，原因是：.gitignore文件里面忽略了node_modules文件夹，所以这个文件夹没有更新上去。所以用npm重新安装即可。    </p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
-<li>使用 <figure class="highlight plain"><figcaption><span>可以显示摘要,``` <!--more-->```以上部分会显示为摘要</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 在hexo 中使用本地图片: [在 hexo 中无痛使用本地图片](http://www.tuicool.com/articles/umEBVfI)</div><div class="line"></div><div class="line">3. [Markdown 语法中文版](http://www.appinn.com/markdown/)</div><div class="line"></div><div class="line">4. [hexo 中文文档](https://hexo.io/zh-cn/docs/)</div><div class="line"></div><div class="line"></div><div class="line">### 使用技巧</div><div class="line">#### 插入图片(2018.04.12)    </div><div class="line">1. `config.yml` 中开启 `post_asset_folder: true`</div><div class="line">2. 在md文件同级目录下建立一个同名目录，然后放入图片，引用时按如下方式：</div></pre></td></tr></table></figure></li>
+<li><p>使用 <code>&lt;!--more--&gt;</code> 可以显示摘要,<code>&lt;!--more--&gt;</code>以上部分会显示为摘要</p>
+</li>
+<li><p>在hexo 中使用本地图片: <a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">在 hexo 中无痛使用本地图片</a></p>
+</li>
+<li><p><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown 语法中文版</a></p>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo 中文文档</a></p>
+</li>
 </ol>
-<p><img src="./test.png" alt="图片说明"><br>```</p>
+<h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><h4 id="插入图片-2018-04-12"><a href="#插入图片-2018-04-12" class="headerlink" title="插入图片(2018.04.12)"></a>插入图片(2018.04.12)</h4><ol>
+<li><code>config.yml</code> 中开启 <code>post_asset_folder: true</code></li>
+<li>在md文件同级目录下建立一个同名目录，然后放入图片，引用时按如下方式：    </li>
+</ol>
+<pre><code class="markdown">![<span class="string">图片说明</span>](<span class="link">./test.png</span>)
+</code></pre>
 
       
     </div>
@@ -572,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本命令-点击跳转到官方中文说明"><span class="nav-number">2.</span> <span class="nav-text">基本命令-点击跳转到官方中文说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">3.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本命令-点击跳转到官方中文说明"><span class="nav-number">2.</span> <span class="nav-text">基本命令-点击跳转到官方中文说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">3.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用技巧"><span class="nav-number">5.1.</span> <span class="nav-text">使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入图片-2018-04-12"><span class="nav-number">5.1.1.</span> <span class="nav-text">插入图片(2018.04.12)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
