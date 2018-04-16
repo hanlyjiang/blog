@@ -264,6 +264,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanly Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanlyJiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" itemprop="url">使用Github Pages 写博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T10:44:38+08:00">
+                2017-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂项/" itemprop="url" rel="index">
+                    <span itemprop="name">杂项</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂项/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1696,229 +1872,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2016/08/07/2016-08-07-Android-上使用Echart-js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hanly Jiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HanlyJiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/07/2016-08-07-Android-上使用Echart-js/" itemprop="url">Android 上使用WebView 和Echart 展示图表数据</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-07T14:19:13+08:00">
-                2016-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前在项目中使用过MPAndroidChart 显示过数据图表，现在需要使用HTML + Echart 来显示，写了一个Demo,DEMO中实现了线图，饼图，还有柱状图。</p>
-<p>示例代码地址:<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs" title="示例代码" target="_blank" rel="external">点击跳转到github</a></p>
-<h2 id="使用到的开源项目"><a href="#使用到的开源项目" class="headerlink" title="使用到的开源项目"></a>使用到的开源项目</h2><ul>
-<li><a href="http://echarts.baidu.com/" target="_blank" rel="external">EChart 库 -js</a><ul>
-<li>版本：2.2.7</li>
-</ul>
-</li>
-<li><a href="http://git.oschina.net/free/ECharts" target="_blank" rel="external">EChart java 对象库</a> 这是一个针对ECharts3.x(2.x)版本的Java类库，实现了所有ECharts中的Json结构对应的Java对象，并且可以很方便的创建Option。这个库引用了Gson，所以build.gradle 中也要加入GSON 的依赖。<ul>
-<li>版本 2.2.7 </li>
-</ul>
-</li>
-</ul>
-<h2 id="JS-和-html-编写"><a href="#JS-和-html-编写" class="headerlink" title="JS 和 html 编写"></a>JS 和 html 编写</h2><p>为方便测试，html页面和js代码放置于项目的assets 目录中，Android代码访问路径为：file:///android_asset/jsWeb/echart.html</p>
-<h3 id="html-页面编写"><a href="#html-页面编写" class="headerlink" title="html 页面编写"></a>html 页面编写</h3><ol>
-<li><p>在head中引入 js 脚本，主要代码如下：(<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external">点击查看全部代码：<em>echart.html</em></a>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;!-- 导入script --&gt;</div><div class="line">&lt;script src=&quot;http://echarts.baidu.com/echarts2/doc/example/www/js/echarts.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;./android.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>body中请求需要的EChart脚本，并添加对应控件,主要代码如下: (<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external"> 点击查看全部代码：<em>echart.html</em></a>) 。   我在其中添加了一个js中指定数据的EChart 表格用于测试   </p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;main&quot; style=&quot;height:400px&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        // 路径配置</div><div class="line">        require.config(&#123;</div><div class="line">          paths: &#123;</div><div class="line">            echarts: &apos;http://echarts.baidu.com/echarts2/doc/example/www/js&apos;</div><div class="line">            //echarts: &apos;./www/js&apos;</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">        // 使用</div><div class="line">        require(</div><div class="line">          [</div><div class="line">            &apos;echarts&apos;,</div><div class="line">            &apos;echarts/chart/line&apos;, // 使用柱状图就加载line模块，按需加载</div><div class="line">            &apos;echarts/chart/bar&apos;, // 使用柱状图就加载bar模块，按需加载</div><div class="line">            &apos;echarts/chart/pie&apos;, // 使用柱状图就加载pie模块，按需加载</div><div class="line">          ],</div><div class="line">          function (ec) &#123;</div><div class="line">            // 基于准备好的dom，初始化echarts图表</div><div class="line">            var myChart = ec.init(document.getElementById(&apos;main&apos;));</div><div class="line">            //设置数据</div><div class="line">            var option = &#123;</div><div class="line">            // .... 数据部分</div><div class="line">        &#125;;</div><div class="line">            // 为echarts对象加载数据</div><div class="line">            myChart.setOption(option);</div><div class="line">          &#125;</div><div class="line">        )</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;hr/&gt;</div><div class="line">&lt;p&gt;</div><div class="line">&lt;b&gt;从Android 代码中获取数据绘制图表&lt;/b&gt;&lt;br/&gt;</div><div class="line">&lt;button onClick=&quot;loadALineChart()&quot; style=&quot;height:40px&quot;&gt;线状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(2)&quot; style=&quot;height:40px&quot;&gt;饼状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(1)&quot; style=&quot;height:40px&quot;&gt;柱状图&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;textcontent&quot;&gt;没有内容&lt;/p&gt;</div><div class="line">&lt;div id=&quot;chart2&quot; style=&quot;height:400px&quot;/&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h3 id="JS-脚本"><a href="#JS-脚本" class="headerlink" title="JS 脚本"></a>JS 脚本</h3><p>这里有一点要注意：Android WebView 提供的接口返回String 类型的json option 字符串，而JS 端接受到字符串后需要用JSON.parse 方法转化成js的Object 对象，只有转换成对象之后才可以传入到Echart的setOption 方法中显示出来。<br>主要代码如下，<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/android.js" target="_blank" rel="external">点击查看全部代码</a></p>
-<pre><code>function toast(msg){
-Android.showToast(msg);
-}
-
-function loadALineChart(){
-    // 必须加JOSN.parse 转换数据类型
-    var option = JSON.parse(Android.getLineChartOptions());
-
-    var chart2Doc = document.getElementById(&apos;chart2&apos;);
-    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
-
-    myChart2.setOption(option);
-    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
-    toast(option);
-}
-
-/**
-type :  1 - 饼状图
-        2 - 柱状图
-*/
-function loadAChart(type){
-    // 必须用JSON.parse() 转换一下，才可以显示，否则数据类型会不对
-    var option = JSON.parse(Android.getPieChartOptions(type));
-    var chart2Doc = document.getElementById(&apos;chart2&apos;);
-    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
-
-    myChart2.setOption(option);
-    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
-}
-</code></pre><h2 id="Android-代码编写"><a href="#Android-代码编写" class="headerlink" title="Android 代码编写"></a>Android 代码编写</h2><h3 id="1-WebAppInterface-定义和实现"><a href="#1-WebAppInterface-定义和实现" class="headerlink" title="1. WebAppInterface 定义和实现"></a>1. WebAppInterface 定义和实现</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 注入到JS里的对象接口</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WebAppInterface</span> </span>&#123;</div><div class="line">    Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WebAppInterface</span><span class="params">(Context c)</span> </span>&#123;</div><div class="line">        mContext = c;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 获取</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLineChartOptions</span><span class="params">()</span> </span>&#123;</div><div class="line">        GsonOption option = markLineChartOptions();</div><div class="line">        LogUtils.d(option.toString());</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showToast</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * PieChart 或者柱状图数据示例</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> type 1 - 饼状图数据； 2 - 柱状图数据</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPieChartOptions</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line"></div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                showDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.currentThread().sleep(<span class="number">1000</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//地址：http://echarts.baidu.com/doc/example/pie7.html</span></div><div class="line">        GsonOption option = <span class="keyword">new</span> GsonOption();</div><div class="line">        <span class="comment">// 设置标题</span></div><div class="line">        option.title(<span class="keyword">new</span> Title().text(<span class="string">"某站点用户访问来源"</span>).subtext(<span class="string">"纯属虚构"</span>).x(X.center));</div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>) &#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125; (&#123;d&#125;%)"</span>);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type == <span class="number">1</span>)&#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125;"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 设置图例</span></div><div class="line">        option.legend().data(<span class="string">"直接访问"</span>, <span class="string">"邮件营销"</span>, <span class="string">"联盟广告"</span>, <span class="string">"视频广告"</span>, <span class="string">"搜索引擎"</span>).orient(Orient.vertical).x(X.left);</div><div class="line"></div><div class="line">        <span class="comment">// 是否可以拖动以计算</span></div><div class="line">        option.calculable(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>)&#123;</div><div class="line">            <span class="comment">// 构造数据</span></div><div class="line">            Pie  pie1 = <span class="keyword">new</span> Pie(<span class="string">"访问来源"</span>);</div><div class="line">            pie1.type(SeriesType.pie).radius(<span class="string">"45%"</span>).center(<span class="string">"50%"</span>,<span class="string">"60%"</span>);</div><div class="line">            pie1.data(<span class="keyword">new</span> Data(<span class="string">"直接访问"</span>,<span class="number">335</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"邮件营销"</span>,<span class="number">310</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"联盟广告"</span>,<span class="number">234</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"视频广告"</span>,<span class="number">135</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"搜索引擎"</span>,<span class="number">1548</span>)</div><div class="line">            );</div><div class="line">            option.series(pie1);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type ==<span class="number">1</span>) &#123;</div><div class="line">            <span class="comment">// 构建柱状数据</span></div><div class="line">            option.xAxis(<span class="keyword">new</span> CategoryAxis().name(<span class="string">"访问来源"</span>).data(<span class="string">"视频广告"</span>,<span class="string">"搜索引擎"</span>,<span class="string">"联盟广告"</span>,<span class="string">"邮件营销"</span>,<span class="string">"直接访问"</span>));</div><div class="line">            option.yAxis(<span class="keyword">new</span> ValueAxis());</div><div class="line"></div><div class="line">            Bar bar = <span class="keyword">new</span> Bar(<span class="string">"访问来源"</span>);</div><div class="line">            bar.data(<span class="number">11</span>,<span class="number">4</span>,<span class="number">14</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">88</span>);</div><div class="line">            option.series(bar);</div><div class="line">        &#125;</div><div class="line">        Log.d(<span class="string">"TAG"</span>,option.toString());</div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                dismissDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<pre><code>    @JavascriptInterface
-    public GsonOption markLineChartOptions() {
-        GsonOption option = new GsonOption();
-        option.legend(&quot;高度(km)与气温(°C)变化关系&quot;);
-
-        option.toolbox().show(true).feature(Tool.mark, Tool.dataView, new MagicType(Magic.line, Magic.bar), Tool.restore, Tool.saveAsImage);
-
-        option.calculable(true);
-        option.tooltip().trigger(Trigger.axis).formatter(&quot;Temperature : &lt;br/&gt;{b}km : {c}°C&quot;);
-
-        ValueAxis valueAxis = new ValueAxis();
-        valueAxis.axisLabel().formatter(&quot;{value} °C&quot;);
-        option.xAxis(valueAxis);
-
-        CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.axisLine().onZero(false);
-        categoryAxis.axisLabel().formatter(&quot;{value} km&quot;);
-        categoryAxis.boundaryGap(false);
-        categoryAxis.data(0, 10, 20, 30, 40, 50, 60, 70, 80);
-        option.yAxis(categoryAxis);
-
-        Line line = new Line();
-        line.smooth(true).name(&quot;高度(km)与气温(°C)变化关系&quot;).data(15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5).itemStyle().normal().lineStyle().shadowColor(&quot;rgba(0,0,0,0.4)&quot;);
-        option.series(line);
-        return option;
-    }
-}
-</code></pre><h3 id="2-WebView-上启用JavaScript-并注入Java对象："><a href="#2-WebView-上启用JavaScript-并注入Java对象：" class="headerlink" title="2. WebView 上启用JavaScript 并注入Java对象："></a>2. WebView 上启用JavaScript 并注入Java对象：</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a></p>
-<pre><code>webSettings.setJavaScriptEnabled(true);
-mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1969,7 +1922,7 @@ mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1991,7 +1944,7 @@ mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

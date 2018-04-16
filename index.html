@@ -264,6 +264,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanly Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanlyJiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/16/Android-View-Restore/" itemprop="url">Android View状态的保存与恢复</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T21:51:08+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
+<li>配置变更-旋转屏幕</li>
+<li>Fragment 重新恢复</li>
+<li>系统关闭App 之后重启从后台恢复</li>
+</ol>
+<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
+<li>View拥有id(且为唯一id)</li>
+<li>调用 setSaveEnabled(true)</li>
+</ol>
+<h2 id="View-保存与恢复流程"><a href="#View-保存与恢复流程" class="headerlink" title="View 保存与恢复流程"></a>View 保存与恢复流程</h2><p><img src="save.png" alt="store and restore"></p>
+<h2 id="通用做法"><a href="#通用做法" class="headerlink" title="通用做法"></a>通用做法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 保存ParentState</span></div><div class="line">        Bundle state = <span class="keyword">new</span> Bundle();</div><div class="line">        </div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        state.putParcelable(PARENT_STATE, superState);</div><div class="line"></div><div class="line">        <span class="comment">// 扩展自己的state存储</span></div><div class="line">        state.putFloat(STATE_LEVEL, mapView.getLevel());</div><div class="line">        state.putDouble(STATE_CENTER_X, mapView.getCenter().getX());</div><div class="line">        state.putDouble(STATE_CENTER_Y, mapView.getCenter().getY());</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        Bundle bundle = (Bundle) state;</div><div class="line">        <span class="comment">// 恢复Parent state</span></div><div class="line">        Parcelable parentState = bundle.getParcelable(PARENT_STATE);</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(parentState);</div><div class="line"></div><div class="line">        <span class="comment">// 恢复自己的 state</span></div><div class="line">        <span class="keyword">float</span> level = bundle.getFloat(STATE_LEVEL);</div><div class="line">        <span class="keyword">double</span> centerX = bundle.getDouble(STATE_CENTER_X);</div><div class="line">        <span class="keyword">double</span> centerY = bundle.getDouble(STATE_CENTER_Y);</div><div class="line"></div><div class="line">        mapView.setCenter(<span class="keyword">new</span> Point(centerX, centerY));</div><div class="line">        mapView.setLevel(level);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="如果id相同呢？"><a href="#如果id相同呢？" class="headerlink" title="如果id相同呢？"></a>如果id相同呢？</h2><blockquote>
+<p>看下之前的条件，需要view拥有id，而且id唯一，这是为什么呢？<br>具体请参考： <a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">trickyandroid.com</a>    </p>
+</blockquote>
+<p>因为所有的View的状态都被存储在一个 <code>SparseArray&lt;Parcelable&gt; container</code>里面，不论其层级。那么不同层级的id有一样的情况下如何处理？    </p>
+<p>比方说，我有一个如下界面：<br><img src="view.png" alt="布局效果"></p>
+<p>其中地类名称和面积是动态生成并加入到视图体系的。每一行的结构都一样，是一个自定义的 <code>PropSetView</code> :<br><img src="layout.png" alt="Layout结构">    </p>
+<p>由于每一行内部的空间id都一样，会导致同样id的view只有一个存储成功，恢复后所有的Item的状态都和最后一个item一致    </p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>自动生成 <code>PropSetView</code> 后，为其分配一个唯一id(API17之后可以通过<code>View.generateViewId()</code>方法生成，但是要注意id的恢复)    </li>
+<li><code>PropSetView</code> 中重写若干方法，在保存流程中，自己负责存储并恢复自己的子View的状态，不存储到总的SpareArray中，避免id相同覆盖要恢复的状态 :   <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        MySavedState ss = <span class="keyword">new</span> MySavedState(superState);</div><div class="line">        ss.childrenStates = <span class="keyword">new</span> SparseArray();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; getChildCount(); i++) &#123;</div><div class="line">            getChildAt(i).saveHierarchyState(ss.childrenStates);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ss;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        MySavedState ss = (MySavedState) state;</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(ss.getSuperState());</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; getChildCount(); i++) &#123;</div><div class="line">            getChildAt(i).restoreHierarchyState(ss.childrenStates);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchSaveInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">        dispatchFreezeSelfOnly(container);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchRestoreInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">        dispatchThawSelfOnly(container);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MySavedState</span> <span class="keyword">extends</span> <span class="title">BaseSavedState</span> </span>&#123;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> ClassLoaderCreator&lt;MySavedState&gt; CREATOR</div><div class="line">                = <span class="keyword">new</span> ClassLoaderCreator&lt;MySavedState&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> MySavedState <span class="title">createFromParcel</span><span class="params">(Parcel source, ClassLoader loader)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> MySavedState(source, loader);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> MySavedState <span class="title">createFromParcel</span><span class="params">(Parcel source)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> createFromParcel(<span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">public</span> MySavedState[] newArray(<span class="keyword">int</span> size) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> MySavedState[size];</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        SparseArray childrenStates;</div><div class="line"></div><div class="line">        MySavedState(Parcelable superState) &#123;</div><div class="line">            <span class="keyword">super</span>(superState);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="title">MySavedState</span><span class="params">(Parcel in, ClassLoader classLoader)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(in);</div><div class="line">            childrenStates = in.readSparseArray(classLoader);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToParcel</span><span class="params">(Parcel out, <span class="keyword">int</span> flags)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.writeToParcel(out, flags);</div><div class="line">            out.writeSparseArray(childrenStates);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ol>
+<li><a href="https://developer.android.com/guide/topics/resources/runtime-changes.html#RetainingAnObject" target="_blank" rel="external">Google-在配置变更期间保留对象
+</a></li>
+<li><a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">Saving Android View state correctly - trickyandroid.com</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2018/04/12/2018/AI切图留边/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +506,9 @@
           <p>AI 导出图片时如何扩展出一定的透明边距？</p>
 <ol>
 <li>选中对象</li>
-<li>菜单 - 切片 - 从所选对象建立
+<li>菜单 - 切片 - 从所选对象建立</li>
+<li>菜单 - 对象 - 变换 - 缩放</li>
+<li>导出 - 导出为web格式 - 导出切片即可，此时也可以调整图片大小
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/12/2018/AI切图留边/#more" rel="contents">
@@ -1105,7 +1276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hanly Jiang">
@@ -1124,7 +1295,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/26/2016-08-03-Java注解介绍/" itemprop="url">Java注解介绍</a></h1>
+                <a class="post-title-link" href="/2017/08/26/2016-08-03-Android测试支持库01/" itemprop="url">Android 测试支持库介绍</a></h1>
         
 
         <div class="post-meta">
@@ -1170,8 +1341,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Android/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
                   </a>
                 </span>
 
@@ -1208,10 +1379,10 @@
 
       
         
-          <p>本文是对 “Oracle java 教程注解” 的翻译<br>
+          <p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/26/2016-08-03-Java注解介绍/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/2016-08-03-Android测试支持库01/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1421,7 +1592,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hanly Jiang">
@@ -1440,183 +1611,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" itemprop="url">使用Github Pages 写博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T10:44:38+08:00">
-                2017-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂项/" itemprop="url" rel="index">
-                    <span itemprop="name">杂项</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂项/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
-</ol>
-<ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
-</ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hanly Jiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HanlyJiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/26/2016-08-03-Android测试支持库01/" itemprop="url">Android 测试支持库介绍</a></h1>
+                <a class="post-title-link" href="/2017/08/26/2016-08-03-Java注解介绍/" itemprop="url">Java注解介绍</a></h1>
         
 
         <div class="post-meta">
@@ -1662,8 +1657,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/测试/" itemprop="url" rel="index">
-                    <span itemprop="name">测试</span>
+                  <a href="/categories/Android/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1700,10 +1695,10 @@
 
       
         
-          <p>Android Testing support Library 提供了一个强大的Android 应用测试框架。 library提供了一系列用以快速建立和运行测试代码的APIs，包括Junit4 和 功能性UI测试。支持从IDE或者命令行来使用这些APIs。</p>
+          <p>本文是对 “Oracle java 教程注解” 的翻译<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/26/2016-08-03-Android测试支持库01/#more" rel="contents">
+            <a class="btn" href="/2017/08/26/2016-08-03-Java注解介绍/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1791,7 +1786,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1813,7 +1808,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

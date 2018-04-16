@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-04-12T02:02:24.000Z</updated>
+  <updated>2018-04-16T15:28:47.000Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -16,19 +16,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android View状态的保存与恢复</title>
+    <link href="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/"/>
+    <id>http://hanlyjiang.cn/2018/04/16/Android-View-Restore/</id>
+    <published>2018-04-16T13:51:08.255Z</published>
+    <updated>2018-04-16T15:28:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
+<li>配置变更-旋转屏幕</li>
+<li>Fragment 重新恢复</li>
+<li>系统关闭App 之后重启从后台恢复</li>
+</ol>
+<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
+<li>View拥有id(且为唯一id)</li>
+<li>调用 setSaveEnabled(true)</li>
+</ol>
+<h2 id="View-保存与恢复流程"><a href="#View-保存与恢复流程" class="headerlink" title="View 保存与恢复流程"></a>View 保存与恢复流程</h2><p><img src="save.png" alt="store and restore"></p>
+<h2 id="通用做法"><a href="#通用做法" class="headerlink" title="通用做法"></a>通用做法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 保存ParentState</span></div><div class="line">        Bundle state = <span class="keyword">new</span> Bundle();</div><div class="line">        </div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        state.putParcelable(PARENT_STATE, superState);</div><div class="line"></div><div class="line">        <span class="comment">// 扩展自己的state存储</span></div><div class="line">        state.putFloat(STATE_LEVEL, mapView.getLevel());</div><div class="line">        state.putDouble(STATE_CENTER_X, mapView.getCenter().getX());</div><div class="line">        state.putDouble(STATE_CENTER_Y, mapView.getCenter().getY());</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        Bundle bundle = (Bundle) state;</div><div class="line">        <span class="comment">// 恢复Parent state</span></div><div class="line">        Parcelable parentState = bundle.getParcelable(PARENT_STATE);</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(parentState);</div><div class="line"></div><div class="line">        <span class="comment">// 恢复自己的 state</span></div><div class="line">        <span class="keyword">float</span> level = bundle.getFloat(STATE_LEVEL);</div><div class="line">        <span class="keyword">double</span> centerX = bundle.getDouble(STATE_CENTER_X);</div><div class="line">        <span class="keyword">double</span> centerY = bundle.getDouble(STATE_CENTER_Y);</div><div class="line"></div><div class="line">        mapView.setCenter(<span class="keyword">new</span> Point(centerX, centerY));</div><div class="line">        mapView.setLevel(level);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="如果id相同呢？"><a href="#如果id相同呢？" class="headerlink" title="如果id相同呢？"></a>如果id相同呢？</h2><blockquote>
+<p>看下之前的条件，需要view拥有id，而且id唯一，这是为什么呢？<br>具体请参考： <a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">trickyandroid.com</a>    </p>
+</blockquote>
+<p>因为所有的View的状态都被存储在一个 <code>SparseArray&lt;Parcelable&gt; container</code>里面，不论其层级。那么不同层级的id有一样的情况下如何处理？    </p>
+<p>比方说，我有一个如下界面：<br><img src="view.png" alt="布局效果"></p>
+<p>其中地类名称和面积是动态生成并加入到视图体系的。每一行的结构都一样，是一个自定义的 <code>PropSetView</code> :<br><img src="layout.png" alt="Layout结构">    </p>
+<p>由于每一行内部的空间id都一样，会导致同样id的view只有一个存储成功，恢复后所有的Item的状态都和最后一个item一致    </p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>自动生成 <code>PropSetView</code> 后，为其分配一个唯一id(API17之后可以通过<code>View.generateViewId()</code>方法生成，但是要注意id的恢复)    </li>
+<li><code>PropSetView</code> 中重写若干方法，在保存流程中，自己负责存储并恢复自己的子View的状态，不存储到总的SpareArray中，避免id相同覆盖要恢复的状态 :   <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        MySavedState ss = <span class="keyword">new</span> MySavedState(superState);</div><div class="line">        ss.childrenStates = <span class="keyword">new</span> SparseArray();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; getChildCount(); i++) &#123;</div><div class="line">            getChildAt(i).saveHierarchyState(ss.childrenStates);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ss;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        MySavedState ss = (MySavedState) state;</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(ss.getSuperState());</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; getChildCount(); i++) &#123;</div><div class="line">            getChildAt(i).restoreHierarchyState(ss.childrenStates);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchSaveInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">        dispatchFreezeSelfOnly(container);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchRestoreInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">        dispatchThawSelfOnly(container);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MySavedState</span> <span class="keyword">extends</span> <span class="title">BaseSavedState</span> </span>&#123;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> ClassLoaderCreator&lt;MySavedState&gt; CREATOR</div><div class="line">                = <span class="keyword">new</span> ClassLoaderCreator&lt;MySavedState&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> MySavedState <span class="title">createFromParcel</span><span class="params">(Parcel source, ClassLoader loader)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> MySavedState(source, loader);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> MySavedState <span class="title">createFromParcel</span><span class="params">(Parcel source)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> createFromParcel(<span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">public</span> MySavedState[] newArray(<span class="keyword">int</span> size) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> MySavedState[size];</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        SparseArray childrenStates;</div><div class="line"></div><div class="line">        MySavedState(Parcelable superState) &#123;</div><div class="line">            <span class="keyword">super</span>(superState);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="title">MySavedState</span><span class="params">(Parcel in, ClassLoader classLoader)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(in);</div><div class="line">            childrenStates = in.readSparseArray(classLoader);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToParcel</span><span class="params">(Parcel out, <span class="keyword">int</span> flags)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.writeToParcel(out, flags);</div><div class="line">            out.writeSparseArray(childrenStates);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ol>
+<li><a href="https://developer.android.com/guide/topics/resources/runtime-changes.html#RetainingAnObject" target="_blank" rel="external">Google-在配置变更期间保留对象
+</a></li>
+<li><a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">Saving Android View state correctly - trickyandroid.com</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;何时触发？&quot;&gt;&lt;a href=&quot;#何时触发？&quot; class=&quot;headerlink&quot; title=&quot;何时触发？&quot;&gt;&lt;/a&gt;何时触发？&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;配置变更-旋转屏幕&lt;/li&gt;
+&lt;li&gt;Fragment 重新恢复&lt;/li&gt;
+&lt;li&gt;系统关闭App 之后
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/tags/Android/"/>
+    
+      <category term="自定义控件" scheme="http://hanlyjiang.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AI切图留边</title>
     <link href="http://hanlyjiang.cn/2018/04/12/2018/AI%E5%88%87%E5%9B%BE%E7%95%99%E8%BE%B9/"/>
     <id>http://hanlyjiang.cn/2018/04/12/2018/AI切图留边/</id>
     <published>2018-04-12T01:10:45.000Z</published>
-    <updated>2018-04-12T02:02:24.000Z</updated>
+    <updated>2018-04-15T02:23:05.000Z</updated>
     
     <content type="html"><![CDATA[<p>AI 导出图片时如何扩展出一定的透明边距？</p>
 <ol>
 <li>选中对象</li>
-<li>菜单 - 切片 - 从所选对象建立<a id="more"></a>
-<img src="./create_pice.png" alt="菜单 - 切片"><br><img src="./create_pice_from_obj.png" alt="从所选对象建立"></li>
+<li>菜单 - 切片 - 从所选对象建立</li>
 <li>菜单 - 对象 - 变换 - 缩放</li>
-<li>导出 - 导出为web格式 - 导出切片即可，此时也可以调整图片大小  </li>
+<li>导出 - 导出为web格式 - 导出切片即可，此时也可以调整图片大小  <a id="more"></a>
+<img src="./create_pice.png" alt="菜单 - 切片"><br><img src="./create_pice_from_obj.png" alt="从所选对象建立"></li>
 </ol>
 ]]></content>
     
@@ -37,7 +92,9 @@
       &lt;p&gt;AI 导出图片时如何扩展出一定的透明边距？&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;选中对象&lt;/li&gt;
-&lt;li&gt;菜单 - 切片 - 从所选对象建立
+&lt;li&gt;菜单 - 切片 - 从所选对象建立&lt;/li&gt;
+&lt;li&gt;菜单 - 对象 - 变换 - 缩放&lt;/li&gt;
+&lt;li&gt;导出 - 导出为web格式 - 导出切片即可，此时也可以调整图片大小
     
     </summary>
     
@@ -193,208 +250,6 @@
   </entry>
   
   <entry>
-    <title>Java注解介绍</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2018-02-11T05:34:41.416Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
-<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
-<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
-<p>注解有以下几种用途：</p>
-<ul>
-<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
-<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
-<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
-</ul>
-<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
-<hr>
-<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div></pre></td></tr></table></figure></p>
-<p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySuperMethod</span><span class="params">()</span> </span>&#123;... &#125;</div></pre></td></tr></table></figure></p>
-<p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：           </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Author</span>(</div><div class="line">name = <span class="string">"Benjamin Franklin"</span>,</div><div class="line">date = <span class="string">"3/27/2003"</span></div><div class="line">)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>() </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-<p>或者   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(value = <span class="string">"unchecked"</span>)</div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-<p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
-<p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
-<p>在一个声明中使用多个注解也是可以的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@Author</span>(name = <span class="string">"Jane Doe"</span>)</div><div class="line"><span class="meta">@EBook</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
-<p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
-<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
-<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
-<p>###注解可以被用在什么地方</p>
-<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
-<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
-<ul>
-<li><p>类实例创建表达式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="meta">@Interned</span> MyObject();</div></pre></td></tr></table></figure>
-</li>
-<li><p>类型转换：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString = (<span class="meta">@NonNull</span> String) str;</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>implements</code> 子句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">UnmodifiableList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span></span></div><div class="line"><span class="class">@<span class="title">Readonly</span> <span class="title">List</span>&lt;@<span class="title">Readonly</span> <span class="title">T</span>&gt; </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>异常抛出语句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">monitorTemperature</span><span class="params">()</span> <span class="keyword">throws</span></span></div><div class="line"><span class="function">@Critical TemperatureException </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
-<hr>
-<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
-<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line">   <span class="function">String <span class="title">author</span><span class="params">()</span></span>;</div><div class="line">   <span class="function">String <span class="title">date</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">int</span> <span class="title">currentRevision</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line">   <span class="function">String <span class="title">lastModified</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="function">String <span class="title">lastModifiedBy</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="comment">// Note use of array</span></div><div class="line">   String[] reviewers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
-<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
-<p>在定义了注解类型之后，你就可以使用它了，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ClassPreamble</span> (</div><div class="line">   author = <span class="string">"John Doe"</span>,</div><div class="line">   date = <span class="string">"3/17/2002"</span>,</div><div class="line">   currentRevision = <span class="number">6</span>,</div><div class="line">   lastModified = <span class="string">"4/12/2004"</span>,</div><div class="line">   lastModifiedBy = <span class="string">"Jane Doe"</span>,</div><div class="line">   <span class="comment">// Note array notation</span></div><div class="line">   reviewers = &#123;<span class="string">"Alice"</span>, <span class="string">"Bob"</span>, <span class="string">"Cindy"</span>&#125;</div><div class="line">)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import this to use @Documented</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.*;</div><div class="line"></div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line"></div><div class="line">   <span class="comment">// Annotation element definitions</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
-<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
-<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// Javadoc comment follows</span></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * <span class="doctag">@deprecated</span></span></div><div class="line"><span class="comment">	 * explanation of why it was deprecated</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="meta">@Deprecated</span></div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deprecatedMethod</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mark method as a superclass method</span></div><div class="line"><span class="comment">// that has been overridden</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">overriddenMethod</span><span class="params">()</span> </span>&#123; &#125;</div></pre></td></tr></table></figure></p>
-<p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
-<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// use a deprecated method and tell</span></div><div class="line">  <span class="comment">// compiler not to generate a warning</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">useDeprecatedMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">// deprecation warning</span></div><div class="line">	<span class="comment">// - suppressed</span></div><div class="line">	objectOne.deprecatedMethod();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"deprecation"</span>&#125;)<span class="comment">// 注意其中的"&#123;&#125;"</span></div></pre></td></tr></table></figure></p>
-<p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
-<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
-<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
-<ul>
-<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
-<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
-<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
-</ul>
-<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
-<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
-<ul>
-<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
-<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
-<li><code>ElementType.FIELD</code> 类成员或属性</li>
-<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
-<li><code>ElementType.METHOD</code> 方法级别的注解</li>
-<li><code>ElementType.PACKAGE</code> 包声明</li>
-<li><code>ElementType.PARAMETER</code> 方法的参数</li>
-<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
-</ul>
-<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
-<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
-<hr>
-<p>关于<strong>@FunctionalInterface</strong>注解：</p>
-<ul>
-<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a></li>
-<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
-    
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
-    
-      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
-也遇到符号 “=”
-</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>1 . 项目–&gt; 项目选项</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
-<ul>
-<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
-<ul>
-<li>3 . 导入或者重新同步源码</li>
-</ul>
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
-<li>我使用的EA版本为 12.0</li>
-<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
-也遇到符号 “=”
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
-    
-    </summary>
-    
-      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Github Pages 写博客</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
-</ol>
-<ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
-</ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
-    
-      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android 测试支持库介绍</title>
     <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
     <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
@@ -533,6 +388,208 @@ onView(withId(R.id.changeTextBt)).perform(click());
     
     
       <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
+也遇到符号 “=”
+</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>1 . 项目–&gt; 项目选项</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
+<ul>
+<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
+<ul>
+<li>3 . 导入或者重新同步源码</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
+<li>我使用的EA版本为 12.0</li>
+<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
+也遇到符号 “=”
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java注解介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2018-02-11T05:34:41.416Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
+<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
+<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
+<p>注解有以下几种用途：</p>
+<ul>
+<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
+<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
+<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
+</ul>
+<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
+<hr>
+<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div></pre></td></tr></table></figure></p>
+<p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySuperMethod</span><span class="params">()</span> </span>&#123;... &#125;</div></pre></td></tr></table></figure></p>
+<p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：           </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Author</span>(</div><div class="line">name = <span class="string">"Benjamin Franklin"</span>,</div><div class="line">date = <span class="string">"3/27/2003"</span></div><div class="line">)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>() </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>或者   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(value = <span class="string">"unchecked"</span>)</div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
+<p>在一个声明中使用多个注解也是可以的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@Author</span>(name = <span class="string">"Jane Doe"</span>)</div><div class="line"><span class="meta">@EBook</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
+<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
+<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
+<p>###注解可以被用在什么地方</p>
+<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
+<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
+<ul>
+<li><p>类实例创建表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="meta">@Interned</span> MyObject();</div></pre></td></tr></table></figure>
+</li>
+<li><p>类型转换：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString = (<span class="meta">@NonNull</span> String) str;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>implements</code> 子句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">UnmodifiableList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span></span></div><div class="line"><span class="class">@<span class="title">Readonly</span> <span class="title">List</span>&lt;@<span class="title">Readonly</span> <span class="title">T</span>&gt; </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>异常抛出语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">monitorTemperature</span><span class="params">()</span> <span class="keyword">throws</span></span></div><div class="line"><span class="function">@Critical TemperatureException </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
+<hr>
+<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
+<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line">   <span class="function">String <span class="title">author</span><span class="params">()</span></span>;</div><div class="line">   <span class="function">String <span class="title">date</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">int</span> <span class="title">currentRevision</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line">   <span class="function">String <span class="title">lastModified</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="function">String <span class="title">lastModifiedBy</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="comment">// Note use of array</span></div><div class="line">   String[] reviewers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
+<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
+<p>在定义了注解类型之后，你就可以使用它了，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ClassPreamble</span> (</div><div class="line">   author = <span class="string">"John Doe"</span>,</div><div class="line">   date = <span class="string">"3/17/2002"</span>,</div><div class="line">   currentRevision = <span class="number">6</span>,</div><div class="line">   lastModified = <span class="string">"4/12/2004"</span>,</div><div class="line">   lastModifiedBy = <span class="string">"Jane Doe"</span>,</div><div class="line">   <span class="comment">// Note array notation</span></div><div class="line">   reviewers = &#123;<span class="string">"Alice"</span>, <span class="string">"Bob"</span>, <span class="string">"Cindy"</span>&#125;</div><div class="line">)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import this to use @Documented</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.*;</div><div class="line"></div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line"></div><div class="line">   <span class="comment">// Annotation element definitions</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
+<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
+<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// Javadoc comment follows</span></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * <span class="doctag">@deprecated</span></span></div><div class="line"><span class="comment">	 * explanation of why it was deprecated</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="meta">@Deprecated</span></div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deprecatedMethod</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mark method as a superclass method</span></div><div class="line"><span class="comment">// that has been overridden</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">overriddenMethod</span><span class="params">()</span> </span>&#123; &#125;</div></pre></td></tr></table></figure></p>
+<p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
+<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// use a deprecated method and tell</span></div><div class="line">  <span class="comment">// compiler not to generate a warning</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">useDeprecatedMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">// deprecation warning</span></div><div class="line">	<span class="comment">// - suppressed</span></div><div class="line">	objectOne.deprecatedMethod();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"deprecation"</span>&#125;)<span class="comment">// 注意其中的"&#123;&#125;"</span></div></pre></td></tr></table></figure></p>
+<p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
+<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
+<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
+<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
+<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
+</ul>
+<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
+<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
+<ul>
+<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
+<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
+<li><code>ElementType.FIELD</code> 类成员或属性</li>
+<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
+<li><code>ElementType.METHOD</code> 方法级别的注解</li>
+<li><code>ElementType.PACKAGE</code> 包声明</li>
+<li><code>ElementType.PARAMETER</code> 方法的参数</li>
+<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
+</ul>
+<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
+<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
+<hr>
+<p>关于<strong>@FunctionalInterface</strong>注解：</p>
+<ul>
+<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a></li>
+<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
+    
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
+    
+      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Github Pages 写博客</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
+    
+      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
@@ -912,7 +969,7 @@ svn checkout http://svn.server.com/svn/project_repo --username=tom
     <link href="http://hanlyjiang.cn/2016/08/08/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://hanlyjiang.cn/2016/08/08/hexo使用笔记/</id>
     <published>2016-08-08T02:57:45.000Z</published>
-    <updated>2018-04-12T02:06:01.000Z</updated>
+    <updated>2018-04-15T02:22:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>hexo 使用过程中的一些笔记，使用小技巧等等<br><a id="more"></a></p>
 <p>参考： <a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">官方文档</a></p>
@@ -997,117 +1054,6 @@ svn checkout http://svn.server.com/svn/project_repo --username=tom
       <category term="Android" scheme="http://hanlyjiang.cn/tags/Android/"/>
     
       <category term="Android 测试" scheme="http://hanlyjiang.cn/tags/Android-%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 上使用WebView 和Echart 展示图表数据</title>
-    <link href="http://hanlyjiang.cn/2016/08/07/2016-08-07-Android-%E4%B8%8A%E4%BD%BF%E7%94%A8Echart-js/"/>
-    <id>http://hanlyjiang.cn/2016/08/07/2016-08-07-Android-上使用Echart-js/</id>
-    <published>2016-08-07T06:19:13.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前在项目中使用过MPAndroidChart 显示过数据图表，现在需要使用HTML + Echart 来显示，写了一个Demo,DEMO中实现了线图，饼图，还有柱状图。</p>
-<p>示例代码地址:<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs" title="示例代码" target="_blank" rel="external">点击跳转到github</a></p>
-<h2 id="使用到的开源项目"><a href="#使用到的开源项目" class="headerlink" title="使用到的开源项目"></a>使用到的开源项目</h2><ul>
-<li><a href="http://echarts.baidu.com/" target="_blank" rel="external">EChart 库 -js</a><ul>
-<li>版本：2.2.7</li>
-</ul>
-</li>
-<li><a href="http://git.oschina.net/free/ECharts" target="_blank" rel="external">EChart java 对象库</a> 这是一个针对ECharts3.x(2.x)版本的Java类库，实现了所有ECharts中的Json结构对应的Java对象，并且可以很方便的创建Option。这个库引用了Gson，所以build.gradle 中也要加入GSON 的依赖。<ul>
-<li>版本 2.2.7 </li>
-</ul>
-</li>
-</ul>
-<h2 id="JS-和-html-编写"><a href="#JS-和-html-编写" class="headerlink" title="JS 和 html 编写"></a>JS 和 html 编写</h2><p>为方便测试，html页面和js代码放置于项目的assets 目录中，Android代码访问路径为：file:///android_asset/jsWeb/echart.html</p>
-<h3 id="html-页面编写"><a href="#html-页面编写" class="headerlink" title="html 页面编写"></a>html 页面编写</h3><ol>
-<li><p>在head中引入 js 脚本，主要代码如下：(<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external">点击查看全部代码：<em>echart.html</em></a>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;!-- 导入script --&gt;</div><div class="line">&lt;script src=&quot;http://echarts.baidu.com/echarts2/doc/example/www/js/echarts.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;./android.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>body中请求需要的EChart脚本，并添加对应控件,主要代码如下: (<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/echart.html" target="_blank" rel="external"> 点击查看全部代码：<em>echart.html</em></a>) 。   我在其中添加了一个js中指定数据的EChart 表格用于测试   </p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;main&quot; style=&quot;height:400px&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        // 路径配置</div><div class="line">        require.config(&#123;</div><div class="line">          paths: &#123;</div><div class="line">            echarts: &apos;http://echarts.baidu.com/echarts2/doc/example/www/js&apos;</div><div class="line">            //echarts: &apos;./www/js&apos;</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">        // 使用</div><div class="line">        require(</div><div class="line">          [</div><div class="line">            &apos;echarts&apos;,</div><div class="line">            &apos;echarts/chart/line&apos;, // 使用柱状图就加载line模块，按需加载</div><div class="line">            &apos;echarts/chart/bar&apos;, // 使用柱状图就加载bar模块，按需加载</div><div class="line">            &apos;echarts/chart/pie&apos;, // 使用柱状图就加载pie模块，按需加载</div><div class="line">          ],</div><div class="line">          function (ec) &#123;</div><div class="line">            // 基于准备好的dom，初始化echarts图表</div><div class="line">            var myChart = ec.init(document.getElementById(&apos;main&apos;));</div><div class="line">            //设置数据</div><div class="line">            var option = &#123;</div><div class="line">            // .... 数据部分</div><div class="line">        &#125;;</div><div class="line">            // 为echarts对象加载数据</div><div class="line">            myChart.setOption(option);</div><div class="line">          &#125;</div><div class="line">        )</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;hr/&gt;</div><div class="line">&lt;p&gt;</div><div class="line">&lt;b&gt;从Android 代码中获取数据绘制图表&lt;/b&gt;&lt;br/&gt;</div><div class="line">&lt;button onClick=&quot;loadALineChart()&quot; style=&quot;height:40px&quot;&gt;线状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(2)&quot; style=&quot;height:40px&quot;&gt;饼状图&lt;/button&gt;</div><div class="line">&lt;button onClick=&quot;loadAChart(1)&quot; style=&quot;height:40px&quot;&gt;柱状图&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;textcontent&quot;&gt;没有内容&lt;/p&gt;</div><div class="line">&lt;div id=&quot;chart2&quot; style=&quot;height:400px&quot;/&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h3 id="JS-脚本"><a href="#JS-脚本" class="headerlink" title="JS 脚本"></a>JS 脚本</h3><p>这里有一点要注意：Android WebView 提供的接口返回String 类型的json option 字符串，而JS 端接受到字符串后需要用JSON.parse 方法转化成js的Object 对象，只有转换成对象之后才可以传入到Echart的setOption 方法中显示出来。<br>主要代码如下，<a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/assets/jsWeb/android.js" target="_blank" rel="external">点击查看全部代码</a></p>
-<pre><code>function toast(msg){
-Android.showToast(msg);
-}
-
-function loadALineChart(){
-    // 必须加JOSN.parse 转换数据类型
-    var option = JSON.parse(Android.getLineChartOptions());
-
-    var chart2Doc = document.getElementById(&apos;chart2&apos;);
-    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
-
-    myChart2.setOption(option);
-    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
-    toast(option);
-}
-
-/**
-type :  1 - 饼状图
-        2 - 柱状图
-*/
-function loadAChart(type){
-    // 必须用JSON.parse() 转换一下，才可以显示，否则数据类型会不对
-    var option = JSON.parse(Android.getPieChartOptions(type));
-    var chart2Doc = document.getElementById(&apos;chart2&apos;);
-    var myChart2 = require(&apos;echarts&apos;).init(chart2Doc);
-
-    myChart2.setOption(option);
-    document.getElementById(&apos;textcontent&apos;).innerHTML=option;
-}
-</code></pre><h2 id="Android-代码编写"><a href="#Android-代码编写" class="headerlink" title="Android 代码编写"></a>Android 代码编写</h2><h3 id="1-WebAppInterface-定义和实现"><a href="#1-WebAppInterface-定义和实现" class="headerlink" title="1. WebAppInterface 定义和实现"></a>1. WebAppInterface 定义和实现</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 注入到JS里的对象接口</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WebAppInterface</span> </span>&#123;</div><div class="line">    Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WebAppInterface</span><span class="params">(Context c)</span> </span>&#123;</div><div class="line">        mContext = c;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 获取</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLineChartOptions</span><span class="params">()</span> </span>&#123;</div><div class="line">        GsonOption option = markLineChartOptions();</div><div class="line">        LogUtils.d(option.toString());</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showToast</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * PieChart 或者柱状图数据示例</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> type 1 - 饼状图数据； 2 - 柱状图数据</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@JavascriptInterface</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPieChartOptions</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line"></div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                showDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.currentThread().sleep(<span class="number">1000</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//地址：http://echarts.baidu.com/doc/example/pie7.html</span></div><div class="line">        GsonOption option = <span class="keyword">new</span> GsonOption();</div><div class="line">        <span class="comment">// 设置标题</span></div><div class="line">        option.title(<span class="keyword">new</span> Title().text(<span class="string">"某站点用户访问来源"</span>).subtext(<span class="string">"纯属虚构"</span>).x(X.center));</div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>) &#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125; (&#123;d&#125;%)"</span>);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type == <span class="number">1</span>)&#123;</div><div class="line">            option.tooltip().trigger(Trigger.item).formatter(<span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125;"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 设置图例</span></div><div class="line">        option.legend().data(<span class="string">"直接访问"</span>, <span class="string">"邮件营销"</span>, <span class="string">"联盟广告"</span>, <span class="string">"视频广告"</span>, <span class="string">"搜索引擎"</span>).orient(Orient.vertical).x(X.left);</div><div class="line"></div><div class="line">        <span class="comment">// 是否可以拖动以计算</span></div><div class="line">        option.calculable(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(type == <span class="number">2</span>)&#123;</div><div class="line">            <span class="comment">// 构造数据</span></div><div class="line">            Pie  pie1 = <span class="keyword">new</span> Pie(<span class="string">"访问来源"</span>);</div><div class="line">            pie1.type(SeriesType.pie).radius(<span class="string">"45%"</span>).center(<span class="string">"50%"</span>,<span class="string">"60%"</span>);</div><div class="line">            pie1.data(<span class="keyword">new</span> Data(<span class="string">"直接访问"</span>,<span class="number">335</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"邮件营销"</span>,<span class="number">310</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"联盟广告"</span>,<span class="number">234</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"视频广告"</span>,<span class="number">135</span>),</div><div class="line">                    <span class="keyword">new</span> Data(<span class="string">"搜索引擎"</span>,<span class="number">1548</span>)</div><div class="line">            );</div><div class="line">            option.series(pie1);</div><div class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span>(type ==<span class="number">1</span>) &#123;</div><div class="line">            <span class="comment">// 构建柱状数据</span></div><div class="line">            option.xAxis(<span class="keyword">new</span> CategoryAxis().name(<span class="string">"访问来源"</span>).data(<span class="string">"视频广告"</span>,<span class="string">"搜索引擎"</span>,<span class="string">"联盟广告"</span>,<span class="string">"邮件营销"</span>,<span class="string">"直接访问"</span>));</div><div class="line">            option.yAxis(<span class="keyword">new</span> ValueAxis());</div><div class="line"></div><div class="line">            Bar bar = <span class="keyword">new</span> Bar(<span class="string">"访问来源"</span>);</div><div class="line">            bar.data(<span class="number">11</span>,<span class="number">4</span>,<span class="number">14</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">88</span>);</div><div class="line">            option.series(bar);</div><div class="line">        &#125;</div><div class="line">        Log.d(<span class="string">"TAG"</span>,option.toString());</div><div class="line">        mWebView.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                dismissDialog();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> option.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<pre><code>    @JavascriptInterface
-    public GsonOption markLineChartOptions() {
-        GsonOption option = new GsonOption();
-        option.legend(&quot;高度(km)与气温(°C)变化关系&quot;);
-
-        option.toolbox().show(true).feature(Tool.mark, Tool.dataView, new MagicType(Magic.line, Magic.bar), Tool.restore, Tool.saveAsImage);
-
-        option.calculable(true);
-        option.tooltip().trigger(Trigger.axis).formatter(&quot;Temperature : &lt;br/&gt;{b}km : {c}°C&quot;);
-
-        ValueAxis valueAxis = new ValueAxis();
-        valueAxis.axisLabel().formatter(&quot;{value} °C&quot;);
-        option.xAxis(valueAxis);
-
-        CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.axisLine().onZero(false);
-        categoryAxis.axisLabel().formatter(&quot;{value} km&quot;);
-        categoryAxis.boundaryGap(false);
-        categoryAxis.data(0, 10, 20, 30, 40, 50, 60, 70, 80);
-        option.yAxis(categoryAxis);
-
-        Line line = new Line();
-        line.smooth(true).name(&quot;高度(km)与气温(°C)变化关系&quot;).data(15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5).itemStyle().normal().lineStyle().shadowColor(&quot;rgba(0,0,0,0.4)&quot;);
-        option.series(line);
-        return option;
-    }
-}
-</code></pre><h3 id="2-WebView-上启用JavaScript-并注入Java对象："><a href="#2-WebView-上启用JavaScript-并注入Java对象：" class="headerlink" title="2. WebView 上启用JavaScript 并注入Java对象："></a>2. WebView 上启用JavaScript 并注入Java对象：</h3><p><a href="https://github.com/hanlyjiang/Demo-AndroidEChartWebJs/blob/master/AppTemplate/src/main/java/com/github/hanlyjiang/androidtemplate/EChartLocalInterfaceActivity.java" target="_blank" rel="external">点击查看全部文件内容</a></p>
-<pre><code>webSettings.setJavaScriptEnabled(true);
-mWebView.addJavascriptInterface(new WebAppInterface(this), &quot;Android&quot;);
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前在项目中使用过MPAndroidChart 显示过数据图表，现在需要使用HTML + Echart 来显示，写了一个Demo,DEMO中实现了线图，饼图，还有柱状图。&lt;/p&gt;
-&lt;p&gt;示例代码地址:&lt;a href=&quot;https://github.com/hanlyjian
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/tags/Android/"/>
-    
-      <category term="EChart" scheme="http://hanlyjiang.cn/tags/EChart/"/>
-    
-      <category term="JS" scheme="http://hanlyjiang.cn/tags/JS/"/>
-    
-      <category term="Webview" scheme="http://hanlyjiang.cn/tags/Webview/"/>
     
   </entry>
   
