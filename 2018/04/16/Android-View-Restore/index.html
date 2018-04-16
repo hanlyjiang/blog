@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  View 保存与恢复流程 通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta name="description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
 <meta name="keywords" content="Android,自定义控件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android View状态的保存与恢复">
 <meta property="og:url" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/index.html">
 <meta property="og:site_name" content="HanlyJiang">
-<meta property="og:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  View 保存与恢复流程 通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta property="og:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/save.png">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/view.png">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/layout.png">
-<meta property="og:updated_time" content="2018-04-16T15:28:47.000Z">
+<meta property="og:updated_time" content="2018-04-16T15:33:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android View状态的保存与恢复">
-<meta name="twitter:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  View 保存与恢复流程 通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta name="twitter:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
 <meta name="twitter:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/save.png">
 
 
@@ -363,11 +363,11 @@
 <li>Fragment 重新恢复</li>
 <li>系统关闭App 之后重启从后台恢复</li>
 </ol>
+<h2 id="View-保存与恢复流程"><a href="#View-保存与恢复流程" class="headerlink" title="View 保存与恢复流程"></a>View 保存与恢复流程</h2><p><img src="save.png" alt="store and restore"></p>
 <h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
 <li>View拥有id(且为唯一id)</li>
 <li>调用 setSaveEnabled(true)</li>
 </ol>
-<h2 id="View-保存与恢复流程"><a href="#View-保存与恢复流程" class="headerlink" title="View 保存与恢复流程"></a>View 保存与恢复流程</h2><p><img src="save.png" alt="store and restore"></p>
 <h2 id="通用做法"><a href="#通用做法" class="headerlink" title="通用做法"></a>通用做法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 保存ParentState</span></div><div class="line">        Bundle state = <span class="keyword">new</span> Bundle();</div><div class="line">        </div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        state.putParcelable(PARENT_STATE, superState);</div><div class="line"></div><div class="line">        <span class="comment">// 扩展自己的state存储</span></div><div class="line">        state.putFloat(STATE_LEVEL, mapView.getLevel());</div><div class="line">        state.putDouble(STATE_CENTER_X, mapView.getCenter().getX());</div><div class="line">        state.putDouble(STATE_CENTER_Y, mapView.getCenter().getY());</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        Bundle bundle = (Bundle) state;</div><div class="line">        <span class="comment">// 恢复Parent state</span></div><div class="line">        Parcelable parentState = bundle.getParcelable(PARENT_STATE);</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(parentState);</div><div class="line"></div><div class="line">        <span class="comment">// 恢复自己的 state</span></div><div class="line">        <span class="keyword">float</span> level = bundle.getFloat(STATE_LEVEL);</div><div class="line">        <span class="keyword">double</span> centerX = bundle.getDouble(STATE_CENTER_X);</div><div class="line">        <span class="keyword">double</span> centerY = bundle.getDouble(STATE_CENTER_Y);</div><div class="line"></div><div class="line">        mapView.setCenter(<span class="keyword">new</span> Point(centerX, centerY));</div><div class="line">        mapView.setLevel(level);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h2 id="如果id相同呢？"><a href="#如果id相同呢？" class="headerlink" title="如果id相同呢？"></a>如果id相同呢？</h2><blockquote>
 <p>看下之前的条件，需要view拥有id，而且id唯一，这是为什么呢？<br>具体请参考： <a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">trickyandroid.com</a>    </p>
@@ -565,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何时触发？"><span class="nav-number">1.</span> <span class="nav-text">何时触发？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件"><span class="nav-number">2.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-保存与恢复流程"><span class="nav-number">3.</span> <span class="nav-text">View 保存与恢复流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用做法"><span class="nav-number">4.</span> <span class="nav-text">通用做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果id相同呢？"><span class="nav-number">5.</span> <span class="nav-text">如果id相同呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">5.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">6.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何时触发？"><span class="nav-number">1.</span> <span class="nav-text">何时触发？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-保存与恢复流程"><span class="nav-number">2.</span> <span class="nav-text">View 保存与恢复流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件"><span class="nav-number">3.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用做法"><span class="nav-number">4.</span> <span class="nav-text">通用做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果id相同呢？"><span class="nav-number">5.</span> <span class="nav-text">如果id相同呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">5.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">6.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
 
           </div>
