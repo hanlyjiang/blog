@@ -57,7 +57,8 @@ ERROR Try running: 'npm install hexo --save'
 ### 使用技巧
 #### 插入图片(2018.04.12)    
 1. `config.yml` 中开启 `post_asset_folder: true`
-2. 在md文件同级目录下建立一个同名目录，然后放入图片，引用时按如下方式：
-```
-![图片说明](./test.png)
-```
+2. 在md文件同级目录下建立一个同名目录，然后放入图片，引用时按如下方式：    
+  
+```markdown    
+    ![图片说明](./test.png)    
+```    
