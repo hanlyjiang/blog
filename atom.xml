@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-04-16T15:33:31.000Z</updated>
+  <updated>2018-04-17T08:44:23.787Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -20,9 +20,11 @@
     <link href="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/"/>
     <id>http://hanlyjiang.cn/2018/04/16/Android-View-Restore/</id>
     <published>2018-04-16T13:51:08.255Z</published>
-    <updated>2018-04-16T15:33:31.000Z</updated>
+    <updated>2018-04-17T08:44:23.787Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
+    <content type="html"><![CDATA[<p>如何正确的恢复View的状态？</p>
+<a id="more"></a>
+<h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
 <li>配置变更-旋转屏幕</li>
 <li>Fragment 重新恢复</li>
 <li>系统关闭App 之后重启从后台恢复</li>
@@ -49,15 +51,13 @@
 <li><a href="https://developer.android.com/guide/topics/resources/runtime-changes.html#RetainingAnObject" target="_blank" rel="external">Google-在配置变更期间保留对象
 </a></li>
 <li><a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">Saving Android View state correctly - trickyandroid.com</a></li>
+<li><a href="https://developer.android.com/guide/components/activities.html" target="_blank" rel="external">Google-保存 Activity 状态</a>    </li>
 </ol>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;何时触发？&quot;&gt;&lt;a href=&quot;#何时触发？&quot; class=&quot;headerlink&quot; title=&quot;何时触发？&quot;&gt;&lt;/a&gt;何时触发？&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;配置变更-旋转屏幕&lt;/li&gt;
-&lt;li&gt;Fragment 重新恢复&lt;/li&gt;
-&lt;li&gt;系统关闭App 之后
+      &lt;p&gt;如何正确的恢复View的状态？&lt;/p&gt;
     
     </summary>
     
@@ -292,223 +292,6 @@
   </entry>
   
   <entry>
-    <title>使用Github Pages 写博客</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
-<p>参考的一些文章：    </p>
-<ol>
-<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
-<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
-</ol>
-<ul>
-<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
-<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
-</li>
-<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
-<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
-</li>
-</ul>
-<p>差不多了，主要就这两个问题。</p>
-<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
-<p>更新一下提交到github后遇到的问题和一些记录：</p>
-<ol>
-<li>可以在本地使用jekyll 来build</li>
-<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
-<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
-</code></pre></li>
-</ol>
-<p>build blog with github pages using bootstrap</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
-    
-      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用SublimeText 编辑Markdown 文件并预览</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<!-- toc -->
-<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
-<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
-<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
-<ul>
-<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
-</ul>
-<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
-</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
-<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
-<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
-<li><p>修改配置：         </p>
-<ul>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
-<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
-<li><p>修改以下三项       </p>
-<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
-&quot;file_path_conversions&quot;: &quot;relative&quot;,   
-&quot;image_path_conversion&quot;: &quot;relative&quot;,   
-</code></pre></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
-</ul>
-<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
-<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
-<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
-<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
-<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      使用SublimeText 编辑Markdown 文件并预览
-    
-    </summary>
-    
-      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
-    
-    
-      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java注解介绍</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2018-02-11T05:34:41.416Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
-<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
-<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
-<p>注解有以下几种用途：</p>
-<ul>
-<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
-<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
-<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
-</ul>
-<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
-<hr>
-<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div></pre></td></tr></table></figure></p>
-<p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySuperMethod</span><span class="params">()</span> </span>&#123;... &#125;</div></pre></td></tr></table></figure></p>
-<p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：           </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Author</span>(</div><div class="line">name = <span class="string">"Benjamin Franklin"</span>,</div><div class="line">date = <span class="string">"3/27/2003"</span></div><div class="line">)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>() </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-<p>或者   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(value = <span class="string">"unchecked"</span>)</div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-<p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
-<p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
-<p>在一个声明中使用多个注解也是可以的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@Author</span>(name = <span class="string">"Jane Doe"</span>)</div><div class="line"><span class="meta">@EBook</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
-<p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
-<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
-<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
-<p>###注解可以被用在什么地方</p>
-<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
-<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
-<ul>
-<li><p>类实例创建表达式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="meta">@Interned</span> MyObject();</div></pre></td></tr></table></figure>
-</li>
-<li><p>类型转换：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString = (<span class="meta">@NonNull</span> String) str;</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>implements</code> 子句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">UnmodifiableList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span></span></div><div class="line"><span class="class">@<span class="title">Readonly</span> <span class="title">List</span>&lt;@<span class="title">Readonly</span> <span class="title">T</span>&gt; </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>异常抛出语句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">monitorTemperature</span><span class="params">()</span> <span class="keyword">throws</span></span></div><div class="line"><span class="function">@Critical TemperatureException </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
-<hr>
-<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
-<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line">   <span class="function">String <span class="title">author</span><span class="params">()</span></span>;</div><div class="line">   <span class="function">String <span class="title">date</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">int</span> <span class="title">currentRevision</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line">   <span class="function">String <span class="title">lastModified</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="function">String <span class="title">lastModifiedBy</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="comment">// Note use of array</span></div><div class="line">   String[] reviewers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
-<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
-<p>在定义了注解类型之后，你就可以使用它了，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ClassPreamble</span> (</div><div class="line">   author = <span class="string">"John Doe"</span>,</div><div class="line">   date = <span class="string">"3/17/2002"</span>,</div><div class="line">   currentRevision = <span class="number">6</span>,</div><div class="line">   lastModified = <span class="string">"4/12/2004"</span>,</div><div class="line">   lastModifiedBy = <span class="string">"Jane Doe"</span>,</div><div class="line">   <span class="comment">// Note array notation</span></div><div class="line">   reviewers = &#123;<span class="string">"Alice"</span>, <span class="string">"Bob"</span>, <span class="string">"Cindy"</span>&#125;</div><div class="line">)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import this to use @Documented</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.*;</div><div class="line"></div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line"></div><div class="line">   <span class="comment">// Annotation element definitions</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
-<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
-<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// Javadoc comment follows</span></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * <span class="doctag">@deprecated</span></span></div><div class="line"><span class="comment">	 * explanation of why it was deprecated</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="meta">@Deprecated</span></div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deprecatedMethod</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mark method as a superclass method</span></div><div class="line"><span class="comment">// that has been overridden</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">overriddenMethod</span><span class="params">()</span> </span>&#123; &#125;</div></pre></td></tr></table></figure></p>
-<p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
-<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// use a deprecated method and tell</span></div><div class="line">  <span class="comment">// compiler not to generate a warning</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">useDeprecatedMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">// deprecation warning</span></div><div class="line">	<span class="comment">// - suppressed</span></div><div class="line">	objectOne.deprecatedMethod();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"deprecation"</span>&#125;)<span class="comment">// 注意其中的"&#123;&#125;"</span></div></pre></td></tr></table></figure></p>
-<p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
-<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
-<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
-<ul>
-<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
-<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
-<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
-</ul>
-<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
-<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
-<ul>
-<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
-<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
-<li><code>ElementType.FIELD</code> 类成员或属性</li>
-<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
-<li><code>ElementType.METHOD</code> 方法级别的注解</li>
-<li><code>ElementType.PACKAGE</code> 包声明</li>
-<li><code>ElementType.PARAMETER</code> 方法的参数</li>
-<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
-</ul>
-<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
-<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
-<hr>
-<p>关于<strong>@FunctionalInterface</strong>注解：</p>
-<ul>
-<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a></li>
-<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
-    
-    
-      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
-    
-      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android 测试支持库介绍</title>
     <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
     <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
@@ -647,6 +430,223 @@ onView(withId(R.id.changeTextBt)).perform(click());
     
     
       <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java注解介绍</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2018-02-11T05:34:41.416Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是对 “Oracle java 教程注解” 的翻译<br><a id="more"></a></p>
+<p>原文地址： <a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" title="Oracle java 教程- 注解" target="_blank" rel="external">Lesson: Annotations</a></p>
+<h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><p>注解（Annotations）是一种类型的元数据，提供和一个程序相关的数据，但是它却不是程序本身，对于程序的代码执行也没有直接影响。</p>
+<p>注解有以下几种用途：</p>
+<ul>
+<li><strong>给编译器提供信息</strong> - 编译器可以利用注解来检测错误和取消警告（suppress warnings）。</li>
+<li><strong>编译时和部署时处理</strong> -  工具软件可以处理注解信息来生成代码，XML文件，等等</li>
+<li><strong>运行时处理</strong> - 某些注释可以在运行时被处理</li>
+</ul>
+<p>这一教程解释了注解可以被用在哪些地方：如何使用注解；Java 平台有哪些可用的预定义注释；type注释如何与类型可插拔系统一起协作写出支持强类型检查的代码；如何实现可复用的注解。</p>
+<hr>
+<h2 id="注解基础知识"><a href="#注解基础知识" class="headerlink" title="注解基础知识"></a>注解基础知识</h2><h3 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h3><p>最简单的注解如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div></pre></td></tr></table></figure></p>
+<p><code>@</code>符号向编译器表面后面跟着的是一条注解。在下面的示例中，<code>Override</code>是一个注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySuperMethod</span><span class="params">()</span> </span>&#123;... &#125;</div></pre></td></tr></table></figure></p>
+<p>注解也可以包含额外的元素，这些元素可以带名称，也可以不带名称：           </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Author</span>(</div><div class="line">name = <span class="string">"Benjamin Franklin"</span>,</div><div class="line">date = <span class="string">"3/27/2003"</span></div><div class="line">)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>() </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>或者   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(value = <span class="string">"unchecked"</span>)</div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<p>如果只有一个元素，那么该元素的名称可以省略，它的名称将会被设置为 <code>value</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果注解中没有元素，那么括弧也可以省略（如<code>@Override</code> 的例子）。</p>
+<p>在一个声明中使用多个注解也是可以的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@Author</span>(name = <span class="string">"Jane Doe"</span>)</div><div class="line"><span class="meta">@EBook</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如果多个注解具有相同的类型，就称之为<strong>重复注解(repeating annotation)</strong>   </p>
+<p>重复注解是Java SE 8 才支持的，查看<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a> 了解更多关于重复注解的信息。</p>
+<p>注解的类型可以是java.lang 或者 java.lang.annotation 包中定义的一个类型。 在之前的例子中，<code>Override</code> 和 <code>SuppressWarnings</code> 是 Java预定义的注解(<a href="http://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="external">预定义的Java注解</a>)，你也可以定义你自己的注解类型，之前示例中的<code>Author</code>和<code>Ebook</code> 注解就是自定义的注解。</p>
+<p>###注解可以被用在什么地方</p>
+<p>注解可以被用在声明上，如类声明，类属性声明，方法声明，还有其他的程序元素。 当注解应用于声明是，一个注解通常占据单独的一行。</p>
+<p>在JavaSE 8 Release 中，注解也可以被用在类型的使用上，如：</p>
+<ul>
+<li><p>类实例创建表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="meta">@Interned</span> MyObject();</div></pre></td></tr></table></figure>
+</li>
+<li><p>类型转换：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString = (<span class="meta">@NonNull</span> String) str;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>implements</code> 子句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">UnmodifiableList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span></span></div><div class="line"><span class="class">@<span class="title">Readonly</span> <span class="title">List</span>&lt;@<span class="title">Readonly</span> <span class="title">T</span>&gt; </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>异常抛出语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">monitorTemperature</span><span class="params">()</span> <span class="keyword">throws</span></span></div><div class="line"><span class="function">@Critical TemperatureException </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这些格式的注解被称之为<em>类型注解</em>。 你可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html" target="_blank" rel="external">Type Annotations and Pluggable Type Systems</a> 了解更多信息。</p>
+<hr>
+<h2 id="声明注解类型"><a href="#声明注解类型" class="headerlink" title="声明注解类型"></a>声明注解类型</h2><p>许多注解用于替换代码中的注释。</p>
+<p>设想有一个软件组织在每个类的内容开始部分使用注释提供一些重要的信息，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="comment">// Author: John Doe</span></div><div class="line">   <span class="comment">// Date: 3/17/2002</span></div><div class="line">   <span class="comment">// Current revision: 6</span></div><div class="line">   <span class="comment">// Last modified: 4/12/2004</span></div><div class="line">   <span class="comment">// By: Jane Doe</span></div><div class="line">   <span class="comment">// Reviewers: Alice, Bill, Cindy</span></div><div class="line"></div><div class="line">   <span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>为了使用注解来添加相同的元数据，首先你需要有一个 注解类型。 可以通过如下格式定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line">   <span class="function">String <span class="title">author</span><span class="params">()</span></span>;</div><div class="line">   <span class="function">String <span class="title">date</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">int</span> <span class="title">currentRevision</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line">   <span class="function">String <span class="title">lastModified</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="function">String <span class="title">lastModifiedBy</span><span class="params">()</span> <span class="keyword">default</span> "N/A"</span>;</div><div class="line">   <span class="comment">// Note use of array</span></div><div class="line">   String[] reviewers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注解的定义和接口的定义方式很像，不过注解的 <code>interface</code> 关键词前面有一个(<code>@</code>)。 实际上注解类型也是一种<strong><code>interface</code></strong>，这个在后面会说明，但是现在你并不需要理解这一点。</p>
+<p>示例中的注解定义包含了<strong><em>注解类型元素</em></strong> 定义，它看起来很像一个方法，但是它可以定义默认值。</p>
+<p>在定义了注解类型之后，你就可以使用它了，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ClassPreamble</span> (</div><div class="line">   author = <span class="string">"John Doe"</span>,</div><div class="line">   date = <span class="string">"3/17/2002"</span>,</div><div class="line">   currentRevision = <span class="number">6</span>,</div><div class="line">   lastModified = <span class="string">"4/12/2004"</span>,</div><div class="line">   lastModifiedBy = <span class="string">"Jane Doe"</span>,</div><div class="line">   <span class="comment">// Note array notation</span></div><div class="line">   reviewers = &#123;<span class="string">"Alice"</span>, <span class="string">"Bob"</span>, <span class="string">"Cindy"</span>&#125;</div><div class="line">)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generation3List</span> <span class="keyword">extends</span> <span class="title">Generation2List</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// class code goes here</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>提示：</strong> 为了使<code>@ClassPreamble</code> 中的信息可以出现在生成的java doc 中，你必须在<code>@ClassPreamble</code> 的定义前加上<code>@Docmented</code> 注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import this to use @Documented</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.*;</div><div class="line"></div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@interface</span> ClassPreamble &#123;</div><div class="line"></div><div class="line">   <span class="comment">// Annotation element definitions</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="预定义的注解类型"><a href="#预定义的注解类型" class="headerlink" title="预定义的注解类型"></a>预定义的注解类型</h2><p>Java SE API 中已经预定义了一系列的注解类型。其中一些被java编译器读取使用，还有一些用于其他的注解。</p>
+<h3 id="被Java-语言使用的注解"><a href="#被Java-语言使用的注解" class="headerlink" title="被Java 语言使用的注解"></a>被Java 语言使用的注解</h3><p><code>java.lang</code>包里定义了以下注解： <code>@Deprecated</code>，<code>@Override</code>，<code>@SupressWarnings</code>。</p>
+<p><strong>@DePrecated</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html" target="_blank" rel="external"><code>@Deprecated</code></a> 注解表示被其标记的元素已经废弃，不应该再被使用。 当使用一个被<code>@Deprecated</code> 标记的类/方法/变量时，编译器会生成一个警告。 当一个元素被废弃时，在它的Javadoc 注释中也应该使用<code>@Deprecated</code> 注解标记，如下面的示例代码所示. Javadoc中使用的<code>@</code> 符号和注解中使用<code>@</code>符号并非巧合，实际上它们是相关联的概率。 另外，请注意 javadoc中<code>@</code>后的内容以一个小写的<em><strong>d</strong></em>开头，而注解中的是大写的 <em><strong>D</strong></em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// Javadoc comment follows</span></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * <span class="doctag">@deprecated</span></span></div><div class="line"><span class="comment">	 * explanation of why it was deprecated</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="meta">@Deprecated</span></div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deprecatedMethod</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>@Override</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank" rel="external"><code>@Override</code></a> 注解告诉编译器被注解的元素覆盖了超类的对应的声明。（方法覆盖在  <a href="http://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="external">Interfaces and Inheritance</a> 中说明）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mark method as a superclass method</span></div><div class="line"><span class="comment">// that has been overridden</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">overriddenMethod</span><span class="params">()</span> </span>&#123; &#125;</div></pre></td></tr></table></figure></p>
+<p>但是，在覆盖方法时并不强制要求使用这个注解，它只是用来预防错误。 如果一个方法被<code>@Override</code> 标记却没有正确的覆盖超类的对应方法，那么编译器就会生成一个错误。</p>
+<p><strong>@SupressWarnings</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html" target="_blank" rel="external"><code>@SupressWarnings</code></a> 注解禁止编译器产生本来应该产生的警告。下面的例子使用了一个被抛弃的方法，所以编译器会产生一条警告，但是 @SupressWarnings 注解能禁止编译器产生这条警告。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// use a deprecated method and tell</span></div><div class="line">  <span class="comment">// compiler not to generate a warning</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">useDeprecatedMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="comment">// deprecation warning</span></div><div class="line">	<span class="comment">// - suppressed</span></div><div class="line">	objectOne.deprecatedMethod();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>每一个警告都属于一个类别，而Java 语言规范列出了两种警告类别：<br><code>deprecation</code> 和 <code>unchecked</code>,在与泛型出现之前旧代码交互时可能会出现未检查的警告。<br>你也可以在一个<code>@SuppressWarnings</code>注解中禁止多个种类的警告：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"deprecation"</span>&#125;)<span class="comment">// 注意其中的"&#123;&#125;"</span></div></pre></td></tr></table></figure></p>
+<p><strong>@SafeVarags</strong> 当<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html" target="_blank" rel="external"><code>@SafeVarags</code></a> 注解被用于方法或者构造函数时，表示代码没有对 <code>varargs</code> 参数做潜在的不安全操作，当使用这个注解时， 和<code>varargs</code>  相关的unchecked 警告将会被禁止。</p>
+<p><strong>@FunctionalInterface</strong> Java SE8 引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html" target="_blank" rel="external"><code>@FunctionalInterface</code></a> 注解，用于指示指定的元素是Java语言规范定义的功能接口（Functional interface）。</p>
+<h3 id="应用在其他注解上的注解"><a href="#应用在其他注解上的注解" class="headerlink" title="应用在其他注解上的注解"></a>应用在其他注解上的注解</h3><p>应用在其他注解上的注解被称之为 _元注解(meta<em>annotations)</em>，<code>java.lang.annotation</code> 中定义了一些元注解:<br><strong>@Retention</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html" target="_blank" rel="external"><code>@Retention</code></a>注解指定被标记的注解如何存储：</p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code> - 只在源代码中保存，而编译器会忽略</li>
+<li><code>RetentionPolicy.CLASS</code> - java 编译器在编译时保存，但JVM会忽略。</li>
+<li><code>RetentionPolicy.RUNTIME</code> - JVM 会保存，因此可以在运行时环境中使用(runtime environment)</li>
+</ul>
+<p><strong>@Documented</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html" target="_blank" rel="external"><code>@Documented</code></a> 注解指示JavaDoc工具处理时被标记的元素应该生成文档。（默认情况下注解不会包包含到javadoc中），你可以查看 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="external">Javadoc tools page</a> 获取更多信息。</p>
+<p><strong>@Target</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html" target="_blank" rel="external"><code>@Target</code></a> 注解用于限制其他注解可以使用的元素，可以使用的值如下：</p>
+<ul>
+<li><code>ElementType.ANNOTATION_TYPE</code> 可以使用在任何元素上</li>
+<li><code>ElementType.CONSTRUCTOR</code> 使用于构造函数</li>
+<li><code>ElementType.FIELD</code> 类成员或属性</li>
+<li><code>ElementType.LOCAL_VARIABLE</code> 本地变量</li>
+<li><code>ElementType.METHOD</code> 方法级别的注解</li>
+<li><code>ElementType.PACKAGE</code> 包声明</li>
+<li><code>ElementType.PARAMETER</code> 方法的参数</li>
+<li><code>ElementType.TYPE</code>一个类的任何元素 （any element of a class）</li>
+</ul>
+<p><strong>@Inherited</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html" target="_blank" rel="external"><code>@Inherited</code></a>   默认情况下子类是没有继承父类的注解信息的，而使用此注解后，子类会继承父类的注解。使用了<code>@Inherited</code> 注解后，当用户查询类中的注解信息时，如果没有找到相应类型的注解信息，则会去父类中查询。<code>@Inherited</code> 注解只用于类声明上的注解。</p>
+<p><strong>@Repeatable</strong> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html" target="_blank" rel="external"><code>@Repeatable</code></a> 注解时 Java SE 8 引入的, 表被声明的注解可以在一个元素声明上使用多次。更多信息可以查看 <a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank" rel="external">Repeating Annotations</a>。</p>
+<hr>
+<p>关于<strong>@FunctionalInterface</strong>注解：</p>
+<ul>
+<li><a href="http://colobu.com/2014/10/28/secrets-of-java-8-functional-interface/?from=codefrom.com&amp;from_s=xinzhi.codefrom.com" target="_blank" rel="external">Java 8函数式接口functional interface的秘密</a></li>
+<li><a href="http://blog.oneapm.com/apm-tech/226.html" target="_blank" rel="external">深入浅出 Java 8 Lambda 表达式</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是对 “Oracle java 教程注解” 的翻译&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hanlyjiang.cn/categories/Android/"/>
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/categories/Android/Java/"/>
+    
+    
+      <category term="Java" scheme="http://hanlyjiang.cn/tags/Java/"/>
+    
+      <category term="Java注解" scheme="http://hanlyjiang.cn/tags/Java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用SublimeText 编辑Markdown 文件并预览</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2015-04-26-write-markdown-using-sublimetext-on-windows/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc -->
+<h2 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h2><p>下载链接：    </p>
+<p>SublimeText2:  <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a><br>SublimeText3:  <a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a>   </p>
+<p>选择对应系统的安装包下载就可以了，下载安装后在文件上右键就可以选择用SublimeText 编辑了。    </p>
+<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><h3 id="1-Package-Control"><a href="#1-Package-Control" class="headerlink" title="1. Package Control"></a>1. Package Control</h3><p>网址： <a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a>        </p>
+<ul>
+<li>安装方式：<br>  1 . 复制网页左边的一段python代码（根据SublimeText版本选择），在SublimeText中按<em>Ctrl+`</em> ，然后Enter键回车。<br>  2 . 退出重新打开。<br>  3 . 此时就可以通过菜单中的 Preferences –&gt; Package Control 来使用它了。  </li>
+</ul>
+<h3 id="2-Markdown-Editing"><a href="#2-Markdown-Editing" class="headerlink" title="2. Markdown Editing"></a>2. Markdown Editing</h3><pre><code>通过 Preferences --&gt; Package Control --&gt;  Install Packages ,搜索安装    
+</code></pre><h3 id="3-Markdown-Preview"><a href="#3-Markdown-Preview" class="headerlink" title="3. Markdown Preview"></a>3. Markdown Preview</h3><ol>
+<li>安装：通过 Preferences –&gt; Package Control –&gt;  Install Packages ,搜索安装    </li>
+<li>使用：编辑Markdown文件时按 <em>Ctrl</em>+<em>B</em>  就可以将Markdown文件转换为Html文件        </li>
+<li><p>修改配置：         </p>
+<ul>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>A</em> 复制全部内容    </li>
+<li>菜单 –&gt; Preferences –&gt; Package Settings –&gt;  Markdown preview –&gt; Settings - Default , <em>Ctrl</em>+<em>V</em> 粘贴        </li>
+<li><p>修改以下三项       </p>
+<pre><code>&quot;build_action&quot;: &quot;browser&quot;,   
+&quot;file_path_conversions&quot;: &quot;relative&quot;,   
+&quot;image_path_conversion&quot;: &quot;relative&quot;,   
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>另外有个 Markdown Building 插件也是做相同的事情       </li>
+</ul>
+<p>OK,搞定，平常做笔记，写文章什么的就很方便了。   </p>
+<h2 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h2><ul>
+<li>Markdown 语法说明： <a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></li>
+<li><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins" target="_blank" rel="external">20 个强大的 Sublime Text 插件</a>    </li>
+<li><a href="http://www.imjeff.cn/blog/146/" target="_blank" rel="external">Sublime Text 3 支持的热门插件推荐</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      使用SublimeText 编辑Markdown 文件并预览
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/Markdown/"/>
+    
+    
+      <category term="Markdown" scheme="http://hanlyjiang.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Github Pages 写博客</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：&lt;a href=&quot;&amp;quot;https://libelosophy.git
+    
+    </summary>
+    
+      <category term="杂项" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="博客" scheme="http://hanlyjiang.cn/categories/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Github" scheme="http://hanlyjiang.cn/tags/Github/"/>
+    
+      <category term="博客搭建" scheme="http://hanlyjiang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   

@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta name="description" content="如何正确的恢复View的状态？">
 <meta name="keywords" content="Android,自定义控件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android View状态的保存与恢复">
 <meta property="og:url" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/index.html">
 <meta property="og:site_name" content="HanlyJiang">
-<meta property="og:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta property="og:description" content="如何正确的恢复View的状态？">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/save.png">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/view.png">
 <meta property="og:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/layout.png">
-<meta property="og:updated_time" content="2018-04-16T15:33:31.000Z">
+<meta property="og:updated_time" content="2018-04-17T08:44:23.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android View状态的保存与恢复">
-<meta name="twitter:description" content="何时触发？ 配置变更-旋转屏幕 Fragment 重新恢复 系统关闭App 之后重启从后台恢复  View 保存与恢复流程 条件 View拥有id(且为唯一id) 调用 setSaveEnabled(true)  通用做法1234567891011121314151617181920212223242526272829303132@Nullable    @Override    protect">
+<meta name="twitter:description" content="如何正确的恢复View的状态？">
 <meta name="twitter:image" content="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/save.png">
 
 
@@ -358,7 +358,9 @@
       
 
       
-        <h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
+        <p>如何正确的恢复View的状态？</p>
+<a id="more"></a>
+<h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
 <li>配置变更-旋转屏幕</li>
 <li>Fragment 重新恢复</li>
 <li>系统关闭App 之后重启从后台恢复</li>
@@ -385,6 +387,7 @@
 <li><a href="https://developer.android.com/guide/topics/resources/runtime-changes.html#RetainingAnObject" target="_blank" rel="external">Google-在配置变更期间保留对象
 </a></li>
 <li><a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">Saving Android View state correctly - trickyandroid.com</a></li>
+<li><a href="https://developer.android.com/guide/components/activities.html" target="_blank" rel="external">Google-保存 Activity 状态</a>    </li>
 </ol>
 
       
