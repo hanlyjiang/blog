@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hanlyjiang.cn/"/>
-  <updated>2018-04-17T08:44:23.787Z</updated>
+  <updated>2018-04-17T08:52:04.181Z</updated>
   <id>http://hanlyjiang.cn/</id>
   
   <author>
@@ -20,9 +20,12 @@
     <link href="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/"/>
     <id>http://hanlyjiang.cn/2018/04/16/Android-View-Restore/</id>
     <published>2018-04-16T13:51:08.255Z</published>
-    <updated>2018-04-17T08:44:23.787Z</updated>
+    <updated>2018-04-17T08:52:04.181Z</updated>
     
     <content type="html"><![CDATA[<p>如何正确的恢复View的状态？</p>
+<blockquote>
+<p>即使您什么都不做，也不实现 onSaveInstanceState()，Activity 类的 onSaveInstanceState() 默认实现也会恢复部分 Activity 状态。具体地讲，默认实现会为布局中的每个 View 调用相应的 onSaveInstanceState() 方法，让每个视图都能提供有关自身的应保存信息。Android 框架中几乎每个小部件都会根据需要实现此方法，以便在重建 Activity 时自动保存和恢复对 UI 所做的任何可见更改。例如，EditText 小部件保存用户输入的任何文本，CheckBox 小部件保存复选框的选中或未选中状态。您只需为想要保存其状态的每个小部件提供一个唯一的 ID（通过 android:id 属性）。如果小部件没有 ID，则系统无法保存其状态。</p>
+</blockquote>
 <a id="more"></a>
 <h2 id="何时触发？"><a href="#何时触发？" class="headerlink" title="何时触发？"></a>何时触发？</h2><ol>
 <li>配置变更-旋转屏幕</li>
@@ -34,7 +37,7 @@
 <li>View拥有id(且为唯一id)</li>
 <li>调用 setSaveEnabled(true)</li>
 </ol>
-<h2 id="通用做法"><a href="#通用做法" class="headerlink" title="通用做法"></a>通用做法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 保存ParentState</span></div><div class="line">        Bundle state = <span class="keyword">new</span> Bundle();</div><div class="line">        </div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        state.putParcelable(PARENT_STATE, superState);</div><div class="line"></div><div class="line">        <span class="comment">// 扩展自己的state存储</span></div><div class="line">        state.putFloat(STATE_LEVEL, mapView.getLevel());</div><div class="line">        state.putDouble(STATE_CENTER_X, mapView.getCenter().getX());</div><div class="line">        state.putDouble(STATE_CENTER_Y, mapView.getCenter().getY());</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        Bundle bundle = (Bundle) state;</div><div class="line">        <span class="comment">// 恢复Parent state</span></div><div class="line">        Parcelable parentState = bundle.getParcelable(PARENT_STATE);</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(parentState);</div><div class="line"></div><div class="line">        <span class="comment">// 恢复自己的 state</span></div><div class="line">        <span class="keyword">float</span> level = bundle.getFloat(STATE_LEVEL);</div><div class="line">        <span class="keyword">double</span> centerX = bundle.getDouble(STATE_CENTER_X);</div><div class="line">        <span class="keyword">double</span> centerY = bundle.getDouble(STATE_CENTER_Y);</div><div class="line"></div><div class="line">        mapView.setCenter(<span class="keyword">new</span> Point(centerX, centerY));</div><div class="line">        mapView.setLevel(level);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="通用做法"><a href="#通用做法" class="headerlink" title="通用做法"></a>通用做法</h2><p>以下代码记录mapView的中心点和层级，并在重启时恢复中心点和层级。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 保存ParentState</span></div><div class="line">        Bundle state = <span class="keyword">new</span> Bundle();</div><div class="line">        </div><div class="line">        Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line">        state.putParcelable(PARENT_STATE, superState);</div><div class="line"></div><div class="line">        <span class="comment">// 扩展自己的state存储</span></div><div class="line">        state.putFloat(STATE_LEVEL, mapView.getLevel());</div><div class="line">        state.putDouble(STATE_CENTER_X, mapView.getCenter().getX());</div><div class="line">        state.putDouble(STATE_CENTER_Y, mapView.getCenter().getY());</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">        Bundle bundle = (Bundle) state;</div><div class="line">        <span class="comment">// 恢复Parent state</span></div><div class="line">        Parcelable parentState = bundle.getParcelable(PARENT_STATE);</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(parentState);</div><div class="line"></div><div class="line">        <span class="comment">// 恢复自己的 state</span></div><div class="line">        <span class="keyword">float</span> level = bundle.getFloat(STATE_LEVEL);</div><div class="line">        <span class="keyword">double</span> centerX = bundle.getDouble(STATE_CENTER_X);</div><div class="line">        <span class="keyword">double</span> centerY = bundle.getDouble(STATE_CENTER_Y);</div><div class="line"></div><div class="line">        mapView.setCenter(<span class="keyword">new</span> Point(centerX, centerY));</div><div class="line">        mapView.setLevel(level);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <h2 id="如果id相同呢？"><a href="#如果id相同呢？" class="headerlink" title="如果id相同呢？"></a>如果id相同呢？</h2><blockquote>
 <p>看下之前的条件，需要view拥有id，而且id唯一，这是为什么呢？<br>具体请参考： <a href="http://trickyandroid.com/saving-android-view-state-correctly/" target="_blank" rel="external">trickyandroid.com</a>    </p>
 </blockquote>
@@ -58,6 +61,9 @@
     <summary type="html">
     
       &lt;p&gt;如何正确的恢复View的状态？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使您什么都不做，也不实现 onSaveInstanceState()，Activity 类的 onSaveInstanceState() 默认实现也会恢复部分 Activity 状态。具体地讲，默认实现会为布局中的每个 View 调用相应的 onSaveInstanceState() 方法，让每个视图都能提供有关自身的应保存信息。Android 框架中几乎每个小部件都会根据需要实现此方法，以便在重建 Activity 时自动保存和恢复对 UI 所做的任何可见更改。例如，EditText 小部件保存用户输入的任何文本，CheckBox 小部件保存复选框的选中或未选中状态。您只需为想要保存其状态的每个小部件提供一个唯一的 ID（通过 android:id 属性）。如果小部件没有 ID，则系统无法保存其状态。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -250,48 +256,6 @@
   </entry>
   
   <entry>
-    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
-    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
-    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
-    <published>2017-08-26T02:44:38.000Z</published>
-    <updated>2017-08-26T02:44:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
-也遇到符号 “=”
-</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>1 . 项目–&gt; 项目选项</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
-<ul>
-<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
-<ul>
-<li>3 . 导入或者重新同步源码</li>
-</ul>
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
-<li>我使用的EA版本为 12.0</li>
-<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
-也遇到符号 “=”
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
-    
-    </summary>
-    
-      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android 测试支持库介绍</title>
     <link href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android%E6%B5%8B%E8%AF%95%E6%94%AF%E6%8C%81%E5%BA%9301/"/>
     <id>http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/</id>
@@ -430,6 +394,48 @@ onView(withId(R.id.changeTextBt)).perform(click());
     
     
       <category term="Android测试" scheme="http://hanlyjiang.cn/tags/Android%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</title>
+    <link href="http://hanlyjiang.cn/2017/08/26/%E3%80%90EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%91%20EA%20%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90UML%E7%B1%BB%E5%9B%BE%20%E9%94%99%E8%AF%AF%EF%BC%9A%20%E9%81%87%E5%88%B0%E6%9C%AA%E7%9F%A5%E7%9A%84%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/</id>
+    <published>2017-08-26T02:44:38.000Z</published>
+    <updated>2017-08-26T02:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
+也遇到符号 “=”
+</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>1 . 项目–&gt; 项目选项</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
+<ul>
+<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
+<ul>
+<li>3 . 导入或者重新同步源码</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
+<li>我使用的EA版本为 12.0</li>
+<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误提示&quot;&gt;&lt;a href=&quot;#错误提示&quot; class=&quot;headerlink&quot; title=&quot;错误提示&quot;&gt;&lt;/a&gt;错误提示&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;遇到未知的符号：（ 
+也遇到符号 “=”
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="EA使用教程" scheme="http://hanlyjiang.cn/categories/EA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="UML" scheme="http://hanlyjiang.cn/tags/UML/"/>
     
   </entry>
   
