@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="HanlyJiang">
 <meta property="og:description" content="zip 压缩命令中指定如下命令会过滤掉test_data 目录中的 .svn 目录和 config 目录：zip -r test_data.zip test_data --exclude &amp;quot;*/.svn/*&amp;quot; &amp;quot;*/config/*&amp;quot;123456test_data  -|            - config/                    | -">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T08:04:04.873Z">
+<meta property="og:updated_time" content="2018-05-28T04:31:44.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zip 命令打包时过滤掉指定文件">
 <meta name="twitter:description" content="zip 压缩命令中指定如下命令会过滤掉test_data 目录中的 .svn 目录和 config 目录：zip -r test_data.zip test_data --exclude &amp;quot;*/.svn/*&amp;quot; &amp;quot;*/config/*&amp;quot;123456test_data  -|            - config/                    | -">
@@ -359,8 +359,8 @@
 <blockquote>
 <p>将 AndroidProject 文件夹打包成 AndroidProject.zip，打包过程中过滤 exclude.lst 文件中指定的文件或目录 </p>
 </blockquote>
-<p><code>exclude.lst</code> 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>目录过滤</div><div class="line"><span class="meta">#</span> 直接目录，如 .git</div><div class="line">.git/*</div><div class="line"><span class="meta">#</span> 嵌套目录 如 Project/.git Project/test/.git</div><div class="line">*/.git/*</div><div class="line"></div><div class="line">*/bin/*</div><div class="line">bin/*</div><div class="line"></div><div class="line">gen/*</div><div class="line">*/gen/*</div><div class="line"></div><div class="line">build/*</div><div class="line">*/build/*</div><div class="line"></div><div class="line">.gradle/*</div><div class="line">*/.gradle/*</div><div class="line"></div><div class="line">.idea/*</div><div class="line">*/.idea/*</div><div class="line"></div><div class="line">*/obj/*</div><div class="line"></div><div class="line"><span class="meta">#</span> 文件类型过滤</div><div class="line">*.DS_Store</div><div class="line">*.apk</div><div class="line">*.a</div><div class="line">*.o</div><div class="line">*.iml</div><div class="line"><span class="meta">#</span>*.so</div><div class="line"></div><div class="line">*/jni-code/*</div></pre></td></tr></table></figure></p>
-
+<p><code>exclude.lst</code> 文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#目录过滤</span></div><div class="line"><span class="comment"># 直接目录，如 .git</span></div><div class="line">.git/*</div><div class="line"><span class="comment"># 嵌套目录 如 Project/.git Project/test/.git</span></div><div class="line">*/.git/*</div><div class="line"></div><div class="line">*/bin/*</div><div class="line">bin/*</div><div class="line"></div><div class="line">gen/*</div><div class="line">*/gen/*</div><div class="line"></div><div class="line">build/*</div><div class="line">*/build/*</div><div class="line"></div><div class="line">.gradle/*</div><div class="line">*/.gradle/*</div><div class="line"></div><div class="line">.idea/*</div><div class="line">*/.idea/*</div><div class="line"></div><div class="line">*/obj/*</div><div class="line"></div><div class="line"><span class="comment"># 文件类型过滤</span></div><div class="line">*.DS_Store</div><div class="line">*.apk</div><div class="line">*.a</div><div class="line">*.o</div><div class="line">*.iml</div><div class="line"><span class="comment">#*.so</span></div><div class="line"></div><div class="line">*/jni-code/*</div></pre></td></tr></table></figure></p>
+<h4 id="zip-加密-encrypt"><a href="#zip-加密-encrypt" class="headerlink" title="zip 加密: --encrypt"></a>zip 加密: <code>--encrypt</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zip -r --encrypt GuangZhouOA-Code.zip ./ --exclude <span class="string">"*/.DS_Store/*"</span></div></pre></td></tr></table></figure>
       
     </div>
     
@@ -481,7 +481,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -492,7 +492,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -503,7 +503,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -543,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#zip-压缩命令中指定"><span class="nav-number">1.</span> <span class="nav-text">zip 压缩命令中指定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用文件定义过滤列表"><span class="nav-number">2.</span> <span class="nav-text">使用文件定义过滤列表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#zip-压缩命令中指定"><span class="nav-number">1.</span> <span class="nav-text">zip 压缩命令中指定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用文件定义过滤列表"><span class="nav-number">2.</span> <span class="nav-text">使用文件定义过滤列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip-加密-encrypt"><span class="nav-number">3.</span> <span class="nav-text">zip 加密: --encrypt</span></a></li></ol></div>
             
 
           </div>

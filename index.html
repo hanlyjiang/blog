@@ -264,6 +264,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2018/06/09/2018/iOS企业应用发布/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanly Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanlyJiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/2018/iOS企业应用发布/" itemprop="url">iOS 企业应用内部发布</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T09:47:45+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>文章基于<a href="https://www.jianshu.com/p/89d22b430330" target="_blank" rel="external">iOS 企业内部(In-House)应用分发-简书</a> 修改   </p>
+</blockquote>
+<ul>
+<li><p><strong>企业内部应用:</strong><br>企业内部应用，即只在企业部门和员工内部使用、不对外公开的应用。苹果提供了专门的In-House证书用来发布这种应用，可以分发给任意的手机，只要通过一个URL即可下载安装，不用上传到App Stroe审核。我把企业内部应用也叫做In-House应用。</p>
+</li>
+<li><p><strong>In-House应用</strong>: 有时需要根据部门需求进行版本的快速迭代，因为不需要App Store审核，所以可以做到随时修改，随时发布，节省了大量的时间。In-House证书还可以用于应用的内测分发，现在大部分的内测分发平台如蒲公英，Fir.im等的公测功能就是使用In-House证书实现的。</p>
+</li>
+<li><p><strong>必须具备的两个条件：</strong><br>企业开发者账号。99$的普通开发者账号不行，必须以企业的名义申请一个299$的企业开发者账号Apple Developer Enterprise Program<br>带SSL证书的域名。企业内部应用需要把ipa文件上传到服务器，然后通过一个链接来下载安装，而苹果很重视安全性，要求这个链接的域名必须具有SSL证书，支持 https ，否则无法安装。<br>SSL证书其实并不是必需的，可以使用一些知名的云存储服务，比如亚马逊的AWS，阿里云等，也可以使用github,gitee,gitlab等代码托管仓库，这些大公司的云存储都支持Https，但299$的企业开发者账号就避免不了。</p>
+</li>
+</ul>
+<h3 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h3><ul>
+<li>Mac High Sierra(10.13.4)</li>
+<li>MacBook Pro (Retina, 15-inch, Mid 2015)</li>
+<li>XCode Version 9.2 (9C40b)</li>
+</ul>
+<h3 id="内部分发需要的文件"><a href="#内部分发需要的文件" class="headerlink" title="内部分发需要的文件"></a>内部分发需要的文件</h3><ul>
+<li>ipa文件。</li>
+<li>plist文件。名称必须与ipa文件一致，用于配置bundle id、版本号、ipa文件的URL、应用图标等。</li>
+<li>@1x 和 @2x 的Icon。下载安装时显示应用图标。</li>
+</ul>
+<h3 id="打包及发布过程"><a href="#打包及发布过程" class="headerlink" title="打包及发布过程"></a>打包及发布过程</h3><ul>
+<li>创建发布证书(Production Certificates)，选择In-House类型的。</li>
+<li>创建配置文件(Distribution Provisioning Profiles)     </li>
+<li><p>在Xcode选择对应的Code Signing 和 Provisioning Profile<br><img src="https://note.youdao.com/yws/public/resource/962d8d3e55f80202a91625cc1015620d/xmlnote/3D097706FF384ED0AAD35A04F596A987/1589" alt="配置"></p>
+</li>
+<li><p>菜单 - Product - Archive，<br>然后出现如下界面，点击<code>export</code>，选择相应设置导出，导出过程参考：<a href="https://www.jianshu.com/p/89d22b430330" target="_blank" rel="external">iOS 企业内部(In-House)应用分发</a><br><img src="https://note.youdao.com/yws/public/resource/962d8d3e55f80202a91625cc1015620d/xmlnote/390A96175B9D41739AB91F3607D11D2B/1604" alt="Archive-Export">    </p>
+<blockquote>
+<p><strong>提示：</strong>:操作过程中会提示输入 <code>ipa</code> 链接，<code>display-image</code> 链接，<code>full-size-image</code> 链接。<br>可以预先在gitee上建立一个仓库，如名为<code>appdist</code>的仓库，然后可以输入类似如下链接（hanlyjiang/appdist为用户名和仓库名称，替换为相应的链接）：   </p>
+<ul>
+<li>ipa: <a href="https://gitee.com/hanlyjiang/appdist/raw/master/app.ipa" target="_blank" rel="external">https://gitee.com/hanlyjiang/appdist/raw/master/app.ipa</a></li>
+<li>display-image: <a href="https://gitee.com/hanlyjiang/dayada/raw/master/image.57x57.png" target="_blank" rel="external">https://gitee.com/hanlyjiang/dayada/raw/master/image.57x57.png</a></li>
+<li>full-size-image: <a href="https://gitee.com/hanlyjiang/dayada/raw/master/image.512x512.png" target="_blank" rel="external">https://gitee.com/hanlyjiang/dayada/raw/master/image.512x512.png</a><br>当然，也可以后期直接编辑 plist 文件 </li>
+</ul>
+</blockquote>
+</li>
+<li><p>导出完成后，会有ipa文件和 <code>mainfest.plist</code> 文件生成，加入对应的图标   </p>
+</li>
+</ul>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><ul>
+<li>文件和图标一起上传AWS的S3云存储，或gitee，或github，或 gitlab 上然后获取可以下载的地址。<br>如 gitee 地址：<br><code>https://gitee.com/hanlyjiang/iospub/raw/master/manifest.plist</code></li>
+<li>发布一个web页面，加入如下链接：<br><code>itms-services://?action=download-manifest&amp;url=https://gitee.com/hanlyjiang/dayada/raw/master/manifest.plist</code>，可以用<code>&lt;a&gt;</code>标签包裹，最好在点击做出响应提示用户正在进行什么操作，可以参考蒲公英       </li>
+</ul>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>iOS的企业内部应用是通过访问plist文件来安装的，因为plist文件中包含了对应的ipa文件和图标的URL，iPhone会根据URL自动下载并安装应用程序。</p>
+<p>在iPhone的Safari浏览器中打开之前的web页面：</p>
+<p>首先会询问是否打开要打开链接，点击“打开”，然后询问是否要安装App，点击“安装”</p>
+<h3 id="不信任的企业开发者"><a href="#不信任的企业开发者" class="headerlink" title="不信任的企业开发者"></a>不信任的企业开发者</h3><p>如果你的手机是 iOS 9 及以上系统，那么第一次打开企业级应用时，你并不能打开App，提示需要手动信任开发者证书，iOS 9 以后，安装的企业级应用在第一次打开之前必须要用户手动去信任这些App，参考 <a href="https://support.apple.com/en-us/HT204460" target="_blank" rel="external">Guidelines for installing custom enterprise apps on iOS</a>。具体步骤如下：    </p>
+<blockquote>
+<p>打开 <code>设置</code> –&gt; <code>通用</code> –&gt; <code>描述文件与设备管理</code><br>在 企业级应用 分组下，点击 信任 开发者的证书</p>
+</blockquote>
+<h3 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h3><ul>
+<li>如何在Xcode中打开archive窗口：<br><img src="https://note.youdao.com/yws/public/resource/962d8d3e55f80202a91625cc1015620d/xmlnote/D9D22A96290D43A282D8E0091AC869EB/1537" alt="image"></li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://help.apple.com/deployment/ios/?spm=a2c4e.11153940.blogcont5039.5.160d30c0tdaSdZ#/apda0e3426d7" target="_blank" rel="external">以无线方式安装企业内部应用/help.apple.com </a></li>
+<li><a href="https://support.apple.com/en-au/HT204477" target="_blank" rel="external">Trust manually installed certificate profiles in iOS/support.apple.com</a></li>
+<li><a href="https://discussions.apple.com/thread/5128050" target="_blank" rel="external">itms-services ad hoc deployment problem/discussions.apple.com</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2018/04/16/Android-View-Restore/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -927,8 +1126,8 @@
 <blockquote>
 <p>将 AndroidProject 文件夹打包成 AndroidProject.zip，打包过程中过滤 exclude.lst 文件中指定的文件或目录 </p>
 </blockquote>
-<p><code>exclude.lst</code> 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>目录过滤</div><div class="line"><span class="meta">#</span> 直接目录，如 .git</div><div class="line">.git/*</div><div class="line"><span class="meta">#</span> 嵌套目录 如 Project/.git Project/test/.git</div><div class="line">*/.git/*</div><div class="line"></div><div class="line">*/bin/*</div><div class="line">bin/*</div><div class="line"></div><div class="line">gen/*</div><div class="line">*/gen/*</div><div class="line"></div><div class="line">build/*</div><div class="line">*/build/*</div><div class="line"></div><div class="line">.gradle/*</div><div class="line">*/.gradle/*</div><div class="line"></div><div class="line">.idea/*</div><div class="line">*/.idea/*</div><div class="line"></div><div class="line">*/obj/*</div><div class="line"></div><div class="line"><span class="meta">#</span> 文件类型过滤</div><div class="line">*.DS_Store</div><div class="line">*.apk</div><div class="line">*.a</div><div class="line">*.o</div><div class="line">*.iml</div><div class="line"><span class="meta">#</span>*.so</div><div class="line"></div><div class="line">*/jni-code/*</div></pre></td></tr></table></figure></p>
-
+<p><code>exclude.lst</code> 文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#目录过滤</span></div><div class="line"><span class="comment"># 直接目录，如 .git</span></div><div class="line">.git/*</div><div class="line"><span class="comment"># 嵌套目录 如 Project/.git Project/test/.git</span></div><div class="line">*/.git/*</div><div class="line"></div><div class="line">*/bin/*</div><div class="line">bin/*</div><div class="line"></div><div class="line">gen/*</div><div class="line">*/gen/*</div><div class="line"></div><div class="line">build/*</div><div class="line">*/build/*</div><div class="line"></div><div class="line">.gradle/*</div><div class="line">*/.gradle/*</div><div class="line"></div><div class="line">.idea/*</div><div class="line">*/.idea/*</div><div class="line"></div><div class="line">*/obj/*</div><div class="line"></div><div class="line"><span class="comment"># 文件类型过滤</span></div><div class="line">*.DS_Store</div><div class="line">*.apk</div><div class="line">*.a</div><div class="line">*.o</div><div class="line">*.iml</div><div class="line"><span class="comment">#*.so</span></div><div class="line"></div><div class="line">*/jni-code/*</div></pre></td></tr></table></figure></p>
+<h4 id="zip-加密-encrypt"><a href="#zip-加密-encrypt" class="headerlink" title="zip 加密: --encrypt"></a>zip 加密: <code>--encrypt</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zip -r --encrypt GuangZhouOA-Code.zip ./ --exclude <span class="string">"*/.DS_Store/*"</span></div></pre></td></tr></table></figure>
           
         
       
@@ -1256,6 +1455,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanly Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HanlyJiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/26/2014-06-30-build-blog-with-github-pages-using-bootstrap/" itemprop="url">使用Github Pages 写博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T10:44:38+08:00">
+                2017-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂项/" itemprop="url" rel="index">
+                    <span itemprop="name">杂项</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂项/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>按例在搭建完成后应该来一篇，不过为了避免重复造轮子，只写一些我操作过程中遇到的问题，并简单记录一下操作过程。其实之前搞过一次，使用的是octpress，这次用的是bootstrap。之前的博客地址：<a href="&quot;https://libelosophy.github.com&quot;">Blog on the way</a>.</p>
+<p>参考的一些文章：    </p>
+<ol>
+<li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll QuickStart-Host on GitHub in 3 Minutes</a>    </li>
+<li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html" target="_blank" rel="external">GitHub Pages 搭建流程-基于jekyll-bootstrap</a> 在window上操作，现在正在windows操作。<br>差不多就这了，之前在ubuntu上操作时遇到几个问题，都记录在ubuntu上。<br>操作过程简单的写一下，主要写问题。</li>
+</ol>
+<ul>
+<li><p>ssh-keygen -t rsa -C “username@email.com” </p>
+<p>  生成公钥的时候，遇到了问题，如果使用cmd命令行环境，会找不到路径，在使用devkit中的msys作为命令行环境之后可以解决。</p>
+</li>
+<li><p>gem install jekyll 出错 会提示某gz文件无法下载</p>
+<p>  解决是看到了所指示<a href="&quot;http://rubygems.org/pages/download&quot;">gem页面</a>的一条命令：gem update –system ,之后再安装jekyll没有问题。</p>
+</li>
+</ul>
+<p>差不多了，主要就这两个问题。</p>
+<p>最后说一个想法，我比较喜欢用手机随便记录点什么，也许可以利用git 的api 来写个手机应用。</p>
+<p>更新一下提交到github后遇到的问题和一些记录：</p>
+<ol>
+<li>可以在本地使用jekyll 来build</li>
+<li>有时会出现上传后没有更新的情况，注意下邮箱中的通知，如：<br>The page build failed with the following error:<br>The file <code>_posts/2014-06-29-build-blog-with-github-pages.md</code> contains markdown errors. For more information, see <a href="https://help.github.com/articles/page-build-failed-markdown-errors" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-markdown-errors</a>.<br>If you have any questions please contact us at <a href="https://github.com/contact" target="_blank" rel="external">https://github.com/contact</a>.</li>
+<li>一直出上面的错误，依照<a href="&quot;https://help.github.com/articles/migrating-your-pages-site-from-maruku&quot;">github的help</a>修改_config.yml再push就没有错了，整了半天。<br>添加一行：        <pre><code>markdown: kramdown
+</code></pre></li>
+</ol>
+<p>build blog with github pages using bootstrap</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Android测试支持库01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1400,322 +1775,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hanly Jiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HanlyJiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/26/【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号/" itemprop="url">【EA使用教程】 EA 源码生成UML类图 错误： 遇到未知的符号</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T10:44:38+08:00">
-                2017-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/EA使用教程/" itemprop="url" rel="index">
-                    <span itemprop="name">EA使用教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><pre><code>遇到未知的符号：（ 
-也遇到符号 “=”
-</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> 编码错误导致注释部分超过界限，代码格式变乱</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>1 . 项目–&gt; 项目选项</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802124411048" alt="设置1"></p>
-<ul>
-<li>2 . 源代码工程 –&gt; 源代码编辑使用字符集，设置成对应的字符集</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20160802123502036" alt="设置2"></p>
-<ul>
-<li>3 . 导入或者重新同步源码</li>
-</ul>
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ol>
-<li>我使用的EA版本为 12.0</li>
-<li>如果在项目菜单中找不到对于的设置项，可能是版本差异，可以参考：<br><a href="http://blog.csdn.net/gfdonx/article/details/49562095" target="_blank" rel="external">在EA中将代码导入模型的时候，查看源码出现中文乱码的解决方案</a></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanlyjiang.cn/2017/08/26/2016-08-03-Java注解介绍/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hanly Jiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HanlyJiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/26/2016-08-03-Java注解介绍/" itemprop="url">Java注解介绍</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T10:44:38+08:00">
-                2017-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文是对 “Oracle java 教程注解” 的翻译<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/26/2016-08-03-Java注解介绍/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1766,7 +1825,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1777,7 +1836,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1788,7 +1847,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
